@@ -1,6 +1,83 @@
 const headerShell = document.querySelector("[data-header-shell]");
 const revealElements = document.querySelectorAll(".reveal");
 
+function shuffleArray(items) {
+    const clonedItems = [...items];
+
+    for (let index = clonedItems.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [clonedItems[index], clonedItems[randomIndex]] = [clonedItems[randomIndex], clonedItems[index]];
+    }
+
+    return clonedItems;
+}
+
+function setupDynamicFurnitureGallery() {
+    const furnitureSlider = document.querySelector('[data-dynamic-gallery="muebles"]');
+
+    if (!furnitureSlider) {
+        return;
+    }
+
+    const fallbackImages = [
+        {
+            src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+            alt: "Mesa de comedor de madera rustica"
+        },
+        {
+            src: "https://images.unsplash.com/photo-1505409628601-edc9af17fda6?auto=format&fit=crop&w=1200&q=80",
+            alt: "Sillas y muebles de madera en interior calido"
+        },
+        {
+            src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+            alt: "Mesa de madera maciza en ambiente moderno"
+        },
+        {
+            src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+            alt: "Mesada de cocina con muebles de madera"
+        },
+        {
+            src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+            alt: "Muebles de madera rustica en living"
+        }
+    ];
+
+    const rawKeywords = furnitureSlider.dataset.keywords || "";
+    const searchKeywords = rawKeywords
+        .split(",")
+        .map((keyword) => keyword.trim())
+        .filter(Boolean);
+
+    const selectedFallbacks = shuffleArray(fallbackImages).slice(0, 5);
+
+    const dynamicSources = selectedFallbacks.map((image, index) => {
+        const keyword = searchKeywords[index % searchKeywords.length] || "wood furniture";
+        return {
+            src: `https://source.unsplash.com/featured/1200x900/?${encodeURIComponent(keyword)}&sig=${index + 1}`,
+            fallbackSrc: image.src,
+            alt: image.alt
+        };
+    });
+
+    furnitureSlider.innerHTML = "";
+
+    dynamicSources.forEach((image, index) => {
+        const img = document.createElement("img");
+        img.className = `slide${index === 0 ? " active" : ""}`;
+        img.src = image.src;
+        img.alt = image.alt;
+        img.loading = "lazy";
+        img.referrerPolicy = "no-referrer";
+        img.dataset.fallbackSrc = image.fallbackSrc;
+        img.addEventListener("error", () => {
+            if (img.src !== image.fallbackSrc) {
+                img.src = image.fallbackSrc;
+            }
+        });
+        furnitureSlider.appendChild(img);
+    });
+}
+
 function updateHeaderState() {
     if (!headerShell) {
         return;
@@ -116,6 +193,7 @@ function setupGallerySliders() {
     });
 }
 
+setupDynamicFurnitureGallery();
 updateHeaderState();
 setupRevealAnimations();
 setupAnchorOffset();
