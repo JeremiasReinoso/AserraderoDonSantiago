@@ -488,18 +488,6 @@ h3 {
     padding: 1.5rem;
 }
 
-.service-icon {
-    display: grid;
-    place-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 1rem;
-    background: linear-gradient(135deg, var(--color-forest), var(--color-wood));
-    font-size: 0.875rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-}
-
 .service-card h3,
 .product-card h3,
 .differential-card h3,
@@ -508,9 +496,9 @@ h3 {
 }
 
 .service-card h3 {
-    margin-top: 1.5rem;
-    font-size: 2rem;
-    font-weight: 600;
+    margin-top: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
 }
 
 .service-card p,
