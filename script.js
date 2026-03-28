@@ -236,6 +236,8 @@ function setupHeroSlider() {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const images = [
         "https://images.unsplash.com/photo-1597007030739-6d2e1b0f1c4a",
+        "img/Viviendas Modulares/Obra Modular 3.jpeg",
+        "img/Viviendas Modulares/Obra Modular 4.jpeg",
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
         "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
         "https://images.unsplash.com/photo-1449844908441-8829872d2607",
