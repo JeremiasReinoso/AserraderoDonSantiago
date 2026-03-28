@@ -237,7 +237,9 @@ function setupHeroSlider() {
     const images = [
         "https://images.unsplash.com/photo-1597007030739-6d2e1b0f1c4a",
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-        "https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+        "https://images.unsplash.com/photo-1449844908441-8829872d2607",
+        "https://images.unsplash.com/photo-1502005097973-6a7082348e28"
     ];
 
     const preload = images.map((src) => {
