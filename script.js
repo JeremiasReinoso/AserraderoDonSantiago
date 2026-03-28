@@ -227,7 +227,7 @@ function setupGallerySliders() {
 
 // Slider de fondo del HERO (imagenes estables)
 function setupHeroSlider() {
-    const hero = document.querySelector("[data-hero]");
+    const hero = document.querySelector(".hero");
 
     if (!hero) {
         return;
@@ -259,12 +259,14 @@ function setupHeroSlider() {
     }, 4000);
 }
 
-setupDynamicFurnitureGallery();
-updateHeaderState();
-setupRevealAnimations();
-setupMobileNav();
-setupAnchorOffset();
-setupGallerySliders();
-setupHeroSlider();
+document.addEventListener("DOMContentLoaded", () => {
+    setupDynamicFurnitureGallery();
+    updateHeaderState();
+    setupRevealAnimations();
+    setupMobileNav();
+    setupAnchorOffset();
+    setupGallerySliders();
+    setupHeroSlider();
 
-window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+});
