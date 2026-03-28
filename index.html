@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navbar principal -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
                 <div class="nav-main">
-                    <a href="index.html#inicio" class="brand">
-                        <div class="brand-mark">DS</div>
+                    <a href="index.html#inicio" class="brand" aria-label="Aserradero Don Santiago">
                         <div class="brand-copy">
-                            <p class="brand-location">El Hoyo, Chubut</p>
-                            <p class="brand-name">Aserradero Don Santiago</p>
+                            <span class="brand-title">Don Santiago</span>
+                            <span class="brand-subtitle">Aserradero</span>
                         </div>
                     </a>
                     <nav class="desktop-nav" aria-label="Principal">
@@ -35,8 +35,13 @@
                         <a href="index.html#contacto">Contacto</a>
                     </nav>
                     <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20hacer%20una%20consulta." target="_blank" rel="noreferrer" class="button button-whatsapp header-whatsapp">WhatsApp</a>
+                    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                    </button>
                 </div>
-                <nav class="mobile-nav" aria-label="Principal movil">
+                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal movil" data-mobile-nav>
                     <a href="index.html#inicio">Inicio</a>
                     <a href="index.html#productos">Productos</a>
                     <a href="index.html#servicios">Servicios</a>
@@ -115,7 +120,7 @@
             <div class="container differential-layout">
                 <div class="differential-intro reveal">
                     <div class="differential-panel">
-                        <p class="section-eyebrow">¿Por que elegirnos?</p>
+                        <p class="section-eyebrow">�Por que elegirnos?</p>
                         <h2>Un aserradero que tiene todo lo que necesitas</h2>
                         <p>No se trata solo de vender madera. Se trata de resolver con criterio tecnico, acompanar cada decision y elevar la calidad percibida de cada obra.</p>
                     </div>
@@ -152,8 +157,8 @@
                             <img class="slide active" src="img/Muebles De Madera/Ropero de madera.jpg" alt="Ropero de madera">
                             <img class="slide" src="img/Muebles De Madera/Mueble De Madera 1.jpg" alt="Mueble de madera">
                             <img class="slide" src="img/Muebles De Madera/Mesada cocina 1.jpg" alt="Mesada de cocina de madera">
-                            <img class="slide" src="img/Muebles De Madera/Mueble Para BaÃ±o.jpg" alt="Mueble de madera para bano">
-                            <img class="slide" src="img/Muebles De Madera/Mueble Para BaÃ±o 2.jpg" alt="Mueble de bano de madera">
+                            <img class="slide" src="img/Muebles De Madera/Mueble Para Baño.jpg" alt="Mueble de madera para bano">
+                            <img class="slide" src="img/Muebles De Madera/Mueble Para Baño 2.jpg" alt="Mueble de bano de madera">
                         </div>
                         <div class="gallery-overlay"></div>
                         <div class="gallery-caption"><h3>Muebles de Madera</h3></div>
@@ -224,4 +229,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
 
