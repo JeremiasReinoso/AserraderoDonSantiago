@@ -358,6 +358,28 @@ h3 {
     overflow: hidden;
 }
 
+.hero-media {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 1200ms ease, transform 6000ms ease;
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .hero-image,
 .hero-overlay,
 .hero-fade {
@@ -372,9 +394,7 @@ h3 {
 }
 
 .hero-overlay {
-    background:
-        linear-gradient(180deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.82)),
-        linear-gradient(110deg, rgba(46, 125, 50, 0.24), rgba(141, 110, 99, 0.18));
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
 }
 
 .hero-fade {
@@ -389,6 +409,26 @@ h3 {
     min-height: 100vh;
     padding-top: 9rem;
     padding-bottom: 5rem;
+}
+
+.hero-section--slider .hero-content {
+    min-height: 100vh;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+}
+
+.hero-section--slider .hero-copy {
+    max-width: 560px;
+    animation: hero-rise 900ms ease 150ms both;
+}
+
+.hero-section--slider .hero-kicker {
+    letter-spacing: 0.3em;
+}
+
+.hero-section--slider h1 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.04em;
 }
 
 .hero-grid {
@@ -946,6 +986,17 @@ h3 {
     0% {
         opacity: 0;
         transform: translateY(-16px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
     }
     100% {
         opacity: 1;
