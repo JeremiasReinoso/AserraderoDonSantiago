@@ -1,4 +1,6 @@
 const headerShell = document.querySelector("[data-header-shell]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const mobileNav = document.querySelector("[data-mobile-nav]");
 const revealElements = document.querySelectorAll(".reveal");
 
 function shuffleArray(items) {
@@ -112,6 +114,36 @@ function setupRevealAnimations() {
     revealElements.forEach((element) => observer.observe(element));
 }
 
+// Menu mobile: abrir/cerrar y accesibilidad
+function setupMobileNav() {
+    if (!headerShell || !navToggle || !mobileNav) {
+        return;
+    }
+
+    const setExpanded = (isOpen) => {
+        headerShell.classList.toggle("is-open", isOpen);
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute("aria-label", isOpen ? "Cerrar menu" : "Abrir menu");
+    };
+
+    const toggleMenu = () => {
+        const isOpen = headerShell.classList.contains("is-open");
+        setExpanded(!isOpen);
+    };
+
+    navToggle.addEventListener("click", toggleMenu);
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setExpanded(false));
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+            setExpanded(false);
+        }
+    });
+}
+
 function setupAnchorOffset() {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -196,6 +228,7 @@ function setupGallerySliders() {
 setupDynamicFurnitureGallery();
 updateHeaderState();
 setupRevealAnimations();
+setupMobileNav();
 setupAnchorOffset();
 setupGallerySliders();
 
