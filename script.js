@@ -225,11 +225,41 @@ function setupGallerySliders() {
     });
 }
 
+// Slider de fondo del HERO
+function setupHeroSlider() {
+    const heroSlider = document.querySelector("[data-hero-slider]");
+
+    if (!heroSlider) {
+        return;
+    }
+
+    const slides = Array.from(heroSlider.querySelectorAll(".hero-slide"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (slides.length <= 1 || reduceMotion.matches) {
+        slides.forEach((slide, index) => slide.classList.toggle("is-active", index === 0));
+        return;
+    }
+
+    let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+    if (activeIndex === -1) {
+        activeIndex = 0;
+        slides[0].classList.add("is-active");
+    }
+
+    window.setInterval(() => {
+        slides[activeIndex].classList.remove("is-active");
+        activeIndex = (activeIndex + 1) % slides.length;
+        slides[activeIndex].classList.add("is-active");
+    }, 4500);
+}
+
 setupDynamicFurnitureGallery();
 updateHeaderState();
 setupRevealAnimations();
 setupMobileNav();
 setupAnchorOffset();
 setupGallerySliders();
+setupHeroSlider();
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });
