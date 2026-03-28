@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <!-- Navbar principal -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
                 <div class="nav-main">
-                    <a href="../index.html#inicio" class="brand">
-                        <div class="brand-mark">DS</div>
+                    <a href="../index.html#inicio" class="brand" aria-label="Aserradero Don Santiago">
                         <div class="brand-copy">
-                            <p class="brand-location">El Hoyo, Chubut</p>
-                            <p class="brand-name">Aserradero Don Santiago</p>
+                            <span class="brand-title">Don Santiago</span>
+                            <span class="brand-subtitle">Aserradero</span>
                         </div>
                     </a>
                     <nav class="desktop-nav" aria-label="Principal">
@@ -35,8 +35,13 @@
                         <a href="../index.html#contacto">Contacto</a>
                     </nav>
                     <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Modulos%20Habitacionales." target="_blank" rel="noreferrer" class="button button-whatsapp header-whatsapp">WhatsApp</a>
+                    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                    </button>
                 </div>
-                <nav class="mobile-nav" aria-label="Principal movil">
+                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal movil" data-mobile-nav>
                     <a href="../index.html#inicio">Inicio</a>
                     <a href="../index.html#productos">Productos</a>
                     <a href="../index.html#servicios">Servicios</a>
@@ -157,8 +162,8 @@
                 <div class="contact-shell reveal">
                     <div class="contact-grid">
                         <div>
-                            <p class="section-eyebrow">Â¿Listo para avanzar?</p>
-                            <h2>Â¿Queres empezar tu proyecto?</h2>
+                            <p class="section-eyebrow">¿Listo para avanzar?</p>
+                            <h2>¿Queres empezar tu proyecto?</h2>
                             <p class="contact-text">Escribinos y armamos una propuesta profesional y a medida.</p>
                         </div>
                         <div class="contact-cards">
@@ -192,5 +197,7 @@
     <script src="../script.js"></script>
 </body>
 </html>
+
+
 
 
