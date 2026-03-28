@@ -250,38 +250,115 @@ function setupHeroSlider() {
         return;
     }
 
-    let activeIndex = 0;
     let activeLayer = 0;
+    let activeIndex = -1;
+    const failedImages = new Set();
+    const preloadTimeoutMs = 9000;
 
-    const setLayerImage = (src, shouldSwitch) => {
-        const nextLayer = shouldSwitch ? layers[1 - activeLayer] : layers[activeLayer];
-        const img = new Image();
+    const preloadImage = (src) =>
+        new Promise((resolve, reject) => {
+            const img = new Image();
+            let settled = false;
+            const timer = window.setTimeout(() => {
+                if (settled) {
+                    return;
+                }
+                settled = true;
+                reject(new Error("timeout"));
+            }, preloadTimeoutMs);
 
-        img.onload = () => {
-            nextLayer.style.backgroundImage = `url('${src}')`;
+            img.onload = () => {
+                if (settled) {
+                    return;
+                }
+                settled = true;
+                window.clearTimeout(timer);
+                resolve(src);
+            };
 
-            if (shouldSwitch) {
-                nextLayer.classList.add("is-active");
-                layers[activeLayer].classList.remove("is-active");
-                activeLayer = 1 - activeLayer;
-            } else {
-                nextLayer.classList.add("is-active");
+            img.onerror = () => {
+                if (settled) {
+                    return;
+                }
+                settled = true;
+                window.clearTimeout(timer);
+                reject(new Error("error"));
+            };
+
+            img.decoding = "async";
+            img.src = src;
+        });
+
+    const findNextIndex = (fromIndex) => {
+        for (let step = 1; step <= images.length; step += 1) {
+            const candidateIndex = (fromIndex + step) % images.length;
+            const candidate = images[candidateIndex];
+            if (!failedImages.has(candidate)) {
+                return candidateIndex;
             }
-        };
+        }
 
-        img.src = src;
+        return -1;
     };
 
-    setLayerImage(images[activeIndex], false);
+    const swapToIndex = (nextIndex) => {
+        if (nextIndex === -1 || nextIndex === activeIndex) {
+            return;
+        }
 
-    if (reduceMotion.matches || images.length <= 1) {
-        return;
-    }
+        const nextSrc = images[nextIndex];
+        const nextLayer = layers[1 - activeLayer];
 
-    window.setInterval(() => {
-        activeIndex = (activeIndex + 1) % images.length;
-        setLayerImage(images[activeIndex], true);
-    }, 4000);
+        preloadImage(nextSrc)
+            .then(() => {
+                nextLayer.style.backgroundImage = `url('${nextSrc}')`;
+                nextLayer.classList.add("is-active");
+
+                window.requestAnimationFrame(() => {
+                    layers[activeLayer].classList.remove("is-active");
+                    activeLayer = 1 - activeLayer;
+                    activeIndex = nextIndex;
+                });
+            })
+            .catch(() => {
+                failedImages.add(nextSrc);
+                const fallbackIndex = findNextIndex(nextIndex);
+                if (fallbackIndex !== -1 && fallbackIndex !== nextIndex) {
+                    swapToIndex(fallbackIndex);
+                }
+            });
+    };
+
+    const loadInitial = () => {
+        const startIndex = findNextIndex(-1);
+        if (startIndex === -1) {
+            return;
+        }
+
+        const startSrc = images[startIndex];
+
+        preloadImage(startSrc)
+            .then(() => {
+                layers[activeLayer].style.backgroundImage = `url('${startSrc}')`;
+                layers[activeLayer].classList.add("is-active");
+                activeIndex = startIndex;
+
+                if (reduceMotion.matches || images.length <= 1) {
+                    return;
+                }
+
+                window.setInterval(() => {
+                    const nextIndex = findNextIndex(activeIndex);
+                    swapToIndex(nextIndex);
+                }, 4000);
+            })
+            .catch(() => {
+                failedImages.add(startSrc);
+                loadInitial();
+            });
+    };
+
+    loadInitial();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
