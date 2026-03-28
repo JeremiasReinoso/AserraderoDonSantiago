@@ -352,32 +352,15 @@ h3 {
     box-shadow: var(--shadow-glass);
 }
 
-.hero-section {
+.hero {
     position: relative;
     min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
-}
-
-.hero-media {
-    position: absolute;
-    inset: 0;
-}
-
-.hero-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    transform: scale(1.06);
-    transition: opacity 1200ms ease, transform 6000ms ease;
-}
-
-.hero-slide.is-active {
-    opacity: 1;
-    transform: scale(1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
 }
 
 .hero-image,
@@ -397,6 +380,13 @@ h3 {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
 }
 
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
+    pointer-events: none;
+}
+
 .hero-fade {
     top: auto;
     height: 12rem;
@@ -411,22 +401,21 @@ h3 {
     padding-bottom: 5rem;
 }
 
-.hero-section--slider .hero-content {
-    min-height: 100vh;
-    padding-top: 10rem;
-    padding-bottom: 6rem;
+.hero-content--center {
+    justify-content: center;
+    text-align: center;
 }
 
-.hero-section--slider .hero-copy {
+.hero .hero-copy {
     max-width: 560px;
     animation: hero-rise 900ms ease 150ms both;
 }
 
-.hero-section--slider .hero-kicker {
+.hero .hero-kicker {
     letter-spacing: 0.3em;
 }
 
-.hero-section--slider h1 {
+.hero h1 {
     font-family: "Playfair Display", serif;
     letter-spacing: 0.04em;
 }
