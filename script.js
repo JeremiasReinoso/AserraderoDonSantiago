@@ -244,14 +244,35 @@ function setupHeroSlider() {
         "https://images.unsplash.com/photo-1502005097973-6a7082348e28"
     ];
 
-    const preload = images.map((src) => {
-        const img = new Image();
-        img.src = src;
-        return img;
-    });
+    const layers = Array.from(hero.querySelectorAll(".hero-bg"));
+
+    if (layers.length < 2) {
+        return;
+    }
 
     let activeIndex = 0;
-    hero.style.backgroundImage = `url('${images[activeIndex]}')`;
+    let activeLayer = 0;
+
+    const setLayerImage = (src, shouldSwitch) => {
+        const nextLayer = shouldSwitch ? layers[1 - activeLayer] : layers[activeLayer];
+        const img = new Image();
+
+        img.onload = () => {
+            nextLayer.style.backgroundImage = `url('${src}')`;
+
+            if (shouldSwitch) {
+                nextLayer.classList.add("is-active");
+                layers[activeLayer].classList.remove("is-active");
+                activeLayer = 1 - activeLayer;
+            } else {
+                nextLayer.classList.add("is-active");
+            }
+        };
+
+        img.src = src;
+    };
+
+    setLayerImage(images[activeIndex], false);
 
     if (reduceMotion.matches || images.length <= 1) {
         return;
@@ -259,7 +280,7 @@ function setupHeroSlider() {
 
     window.setInterval(() => {
         activeIndex = (activeIndex + 1) % images.length;
-        hero.style.backgroundImage = `url('${images[activeIndex]}')`;
+        setLayerImage(images[activeIndex], true);
     }, 4000);
 }
 
