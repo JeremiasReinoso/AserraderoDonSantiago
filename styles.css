@@ -409,9 +409,10 @@ h3 {
 .hero-content {
     display: flex;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
-    padding-top: 9rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     position: relative;
     z-index: 3;
 }
