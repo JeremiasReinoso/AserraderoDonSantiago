@@ -1005,6 +1005,7 @@ h3 {
 @media (min-width: 640px) {
     .hero-actions {
         flex-direction: row;
+        justify-content:center;
     }
 
     .metrics-grid {
