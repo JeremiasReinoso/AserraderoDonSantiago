@@ -35,10 +35,6 @@ function setupDynamicFurnitureGallery() {
             alt: "Mesa de madera maciza en ambiente moderno"
         },
         {
-            src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-            alt: "Mesada de cocina con muebles de madera"
-        },
-        {
             src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
             alt: "Muebles de madera rustica en living"
         }
