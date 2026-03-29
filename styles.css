@@ -1012,27 +1012,7 @@ h3 {
     gap: 0.75rem;
 }
 
-.hero-whatsapp .whatsapp-btn-icon {
-    animation: icon-bounce 2.5s ease-in-out infinite;
-}
 
-@keyframes icon-bounce {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    15% {
-        transform: translateX(-3px) rotate(-5deg);
-    }
-    30% {
-        transform: translateX(3px) rotate(5deg);
-    }
-    45% {
-        transform: translateX(-2px) rotate(-3deg);
-    }
-    60%, 100% {
-        transform: translateX(0);
-    }
-}
 
 @keyframes nav-drop {
     0% {
