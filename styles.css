@@ -861,7 +861,7 @@ h3 {
 .contact-action {
     margin-top: 2.5rem;
     display:flex;
-    text-align:center; 
+    justify-content:center; 
 }
 
 .site-footer {
