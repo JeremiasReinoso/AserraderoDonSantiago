@@ -622,6 +622,59 @@ h3 {
     line-height: 1.9;
 }
 
+.button-small {
+    padding: 0.75rem 1.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.product-meta {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-soft);
+}
+
+.product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.benefits-grid,
+.info-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.benefit-card,
+.info-card {
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-glass);
+}
+
+.benefit-card h3,
+.info-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.benefit-card p,
+.info-card p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.68);
+}
+
 .service-divider {
     width: 100%;
     height: 1px;
@@ -1156,6 +1209,11 @@ h3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .benefits-grid,
+    .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .contact-shell {
         padding: 3rem;
     }
@@ -1195,6 +1253,10 @@ h3 {
 @media (min-width: 1280px) {
     .services-grid,
     .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .benefits-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
