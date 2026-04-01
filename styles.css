@@ -856,6 +856,46 @@ h3 {
     justify-content:center; 
 }
 
+/* Nuevos estilos para layout con mapa */
+.contact-grid-new {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.contact-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-map-container {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    background: rgba(255, 255, 255, 0.03);
+    min-height: 300px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.08), rgba(141, 110, 99, 0.08));
+    border-radius: var(--radius-lg);
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-lg);
+}
+
 .site-footer {
     border-top: 1px solid var(--border-soft);
     padding: 2rem 0;
@@ -1079,6 +1119,14 @@ h3 {
 
     .contact-shell {
         padding: 3rem;
+    }
+
+    .contact-grid-new {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-map-container {
+        min-height: 400px;
     }
 
     .footer-content {
