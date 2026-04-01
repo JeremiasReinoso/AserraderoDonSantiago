@@ -59,90 +59,32 @@
             <div class="container hero-content">
                 <div class="hero-grid">
                     <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
-                        <p class="hero-kicker">Servicios</p>
                         <h1>Tornillos</h1>
-                        <p class="hero-description">Fijaciones precisas para estructuras y terminaciones.</p>
-                        <div class="hero-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Tornillos." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
-                        </div>
                     </div>
-                    <aside class="hero-panel glass-panel reveal reveal-active" data-reveal="hero-panel">
-                        <div class="metrics-grid">
-                            <div class="metric-card"><p class="metric-label">Rapidez</p><p class="metric-value">Alta</p></div>
-                            <div class="metric-card"><p class="metric-label">Eficiencia</p><p class="metric-value">Superior</p></div>
-                            <div class="metric-card"><p class="metric-label">Calidad</p><p class="metric-value">Premium</p></div>
-                            <div class="metric-card"><p class="metric-label">Respuesta</p><p class="metric-value">Personalizada</p></div>
-                        </div>
-                        <div class="hero-panel-detail">
-                            <p class="panel-label">Diferencial</p>
-                            <p class="panel-text">Tornillos de alto rendimiento para obra y carpinteria. Variedad de medidas y usos.</p>
-                        </div>
-                    </aside>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Descripcion</p>
-                    <h2>Sobre Tornillos</h2>
-                    <p class="section-text">Te guiamos para seleccionar el tipo correcto.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Beneficios</p>
-                    <h2>Ventajas para tu proyecto</h2>
-                </div>
-                <div class="services-grid">
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;"><h3>Rapidez</h3><p>Instalacion rapida y segura.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;"><h3>Eficiencia</h3><p>Alta precision y ajuste firme.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;"><h3>Calidad</h3><p>Materiales resistentes y durables.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;"><h3>Valor agregado</h3><p>Disponibilidad inmediata de stock.</p><div class="service-divider"></div></article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container differential-layout">
-                <div class="differential-intro reveal">
-                    <div class="differential-panel">
-                        <p class="section-eyebrow">Proceso</p>
-                        <h2>Como trabajamos</h2>
-                        <p>Te guiamos para seleccionar el tipo correcto.</p>
-                    </div>
-                </div>
-                <div class="differential-list">
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;"><div class="differential-number">01</div><div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;"><div class="differential-number">02</div><div><h3>Diseno</h3><p>Planificamos con criterio tecnico y visual.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;"><div class="differential-number">03</div><div><h3>Fabricacion</h3><p>Producimos con control de calidad y detalle.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;"><div class="differential-number">04</div><div><h3>Montaje</h3><p>Instalamos y entregamos con terminaciones prolijas.</p></div></article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section contact-section">
-            <div class="container">
-                <div class="contact-shell reveal">
-                    <div class="contact-grid">
-                        <div>
-                            <p class="section-eyebrow">¿Listo para avanzar?</p>
-                            <h2>¿Queres empezar tu proyecto?</h2>
-                            <p class="contact-text">Escribinos y armamos una propuesta profesional y a medida.</p>
+                <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+                    <form id="order-form" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <label for="quantity" style="font-weight: 600; font-size: 16px;">Cantidad</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="1000" value="1" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
                         </div>
-                        <div class="contact-cards">
-                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">24 Horas</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Atencion</p><p class="contact-card-value">Personalizada</p></div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <label for="unit" style="font-weight: 600; font-size: 16px;">Unidad</label>
+                            <select id="unit" name="unit" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                                <option value="">Selecciona una opción</option>
+                                <option value="kilo">Por Kilo</option>
+                                <option value="bolsa">Por Bolsa</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="contact-action">
-                        <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Tornillos." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
-                    </div>
+
+                        <button type="submit" class="button button-primary shine" style="margin-top: 20px;">Comprar</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -163,6 +105,17 @@
     </a>
 
     <script src="../script.js"></script>
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const quantity = document.getElementById('quantity').value;
+            const unit = document.getElementById('unit').value;
+            const unitText = unit === 'kilo' ? 'Kilo' : 'Bolsa';
+            const message = `Hola Aserradero Don Santiago, quiero pedir ${quantity} ${unitText}(s) de Tornillos.`;
+            const whatsappURL = `https://wa.me/5492944928970?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 </body>
 </html>
 
