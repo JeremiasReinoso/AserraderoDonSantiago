@@ -18,41 +18,59 @@
     <style>
         .product-panel {
             display: grid;
-            gap: 1.5rem;
+            gap: 1.75rem;
         }
 
         .product-panel-head {
             display: grid;
-            gap: 0.35rem;
+            gap: 0.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .product-panel-eyebrow {
-            font-size: 0.8rem;
-            letter-spacing: 0.16em;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.55);
         }
 
         .product-panel-title {
-            font-size: 1.2rem;
+            font-size: 1.35rem;
             font-weight: 700;
             margin: 0;
+            color: #ffffff;
         }
 
         .product-panel-text {
             margin: 0;
-            color: rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
         }
 
         .product-details-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.5rem;
+            gap: 1.25rem;
+        }
+
+        .product-detail-block {
+            display: grid;
+            gap: 0.75rem;
         }
 
         .product-detail-block h3 {
-            margin: 0 0 0.5rem;
+            margin: 0;
             font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .product-detail-block.full {
+            grid-column: span 2;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .product-detail-list {
@@ -60,18 +78,53 @@
             margin: 0;
             padding: 0;
             display: grid;
-            gap: 0.45rem;
-            color: rgba(255, 255, 255, 0.78);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
         }
 
-        .product-detail-list li::before {
-            content: "•";
-            margin-right: 0.5rem;
-            color: rgba(255, 255, 255, 0.5);
+        .product-detail-item {
+            position: relative;
+            padding: 0.9rem 0.95rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .product-detail-block.full {
-            grid-column: span 2;
+        .product-detail-item::before {
+            content: "";
+            position: absolute;
+            top: 0.7rem;
+            left: 0.75rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.45);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+        }
+
+        .product-detail-item span {
+            display: block;
+            padding-left: 0.7rem;
+        }
+
+        .product-detail-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 24px 34px rgba(0, 0, 0, 0.28);
+        }
+
+        .product-detail-block.advantages h3 {
+            color: #ffffff;
+        }
+
+        .product-detail-block.advantages .product-detail-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+            border-color: rgba(255, 255, 255, 0.18);
         }
 
         @media (max-width: 900px) {
@@ -81,6 +134,10 @@
 
             .product-detail-block.full {
                 grid-column: span 1;
+            }
+
+            .product-detail-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -146,28 +203,28 @@
                                 <div class="product-detail-block">
                                     <h3>Caracteristicas</h3>
                                     <ul class="product-detail-list">
-                                        <li>Fabricado con capas de madera prensadas</li>
-                                        <li>Alta resistencia a la humedad</li>
-                                        <li>Superficie lisa y uniforme</li>
-                                        <li>Alta durabilidad</li>
+                                        <li class="product-detail-item"><span>Fabricado con capas de madera prensadas</span></li>
+                                        <li class="product-detail-item"><span>Alta resistencia a la humedad</span></li>
+                                        <li class="product-detail-item"><span>Superficie lisa y uniforme</span></li>
+                                        <li class="product-detail-item"><span>Alta durabilidad</span></li>
                                     </ul>
                                 </div>
                                 <div class="product-detail-block">
                                     <h3>Usos</h3>
                                     <ul class="product-detail-list">
-                                        <li>Encofrados de hormigon</li>
-                                        <li>Construccion general</li>
-                                        <li>Estructuras temporales</li>
-                                        <li>Muebles industriales</li>
+                                        <li class="product-detail-item"><span>Encofrados de hormigon</span></li>
+                                        <li class="product-detail-item"><span>Construccion general</span></li>
+                                        <li class="product-detail-item"><span>Estructuras temporales</span></li>
+                                        <li class="product-detail-item"><span>Muebles industriales</span></li>
                                     </ul>
                                 </div>
-                                <div class="product-detail-block full">
+                                <div class="product-detail-block full advantages">
                                     <h3>Ventajas</h3>
                                     <ul class="product-detail-list">
-                                        <li>Reutilizable varias veces</li>
-                                        <li>Mayor vida util</li>
-                                        <li>Menor deformacion</li>
-                                        <li>Excelente relacion costo-beneficio</li>
+                                        <li class="product-detail-item"><span>Reutilizable varias veces</span></li>
+                                        <li class="product-detail-item"><span>Mayor vida util</span></li>
+                                        <li class="product-detail-item"><span>Menor deformacion</span></li>
+                                        <li class="product-detail-item"><span>Excelente relacion costo-beneficio</span></li>
                                     </ul>
                                 </div>
                             </div>
