@@ -15,6 +15,75 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .product-panel {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .product-panel-head {
+            display: grid;
+            gap: 0.35rem;
+        }
+
+        .product-panel-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .product-panel-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .product-panel-text {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .product-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-detail-block h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1rem;
+        }
+
+        .product-detail-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.45rem;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .product-detail-list li::before {
+            content: "•";
+            margin-right: 0.5rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .product-detail-block.full {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 900px) {
+            .product-details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-detail-block.full {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar principal -->
@@ -67,15 +136,41 @@
                         </div>
                     </div>
                     <aside class="hero-panel glass-panel reveal reveal-active" data-reveal="hero-panel">
-                        <div class="metrics-grid">
-                            <div class="metric-card"><p class="metric-label">Rapidez</p><p class="metric-value">Alta</p></div>
-                            <div class="metric-card"><p class="metric-label">Eficiencia</p><p class="metric-value">Superior</p></div>
-                            <div class="metric-card"><p class="metric-label">Calidad</p><p class="metric-value">Premium</p></div>
-                            <div class="metric-card"><p class="metric-label">Respuesta</p><p class="metric-value">Personalizada</p></div>
-                        </div>
-                        <div class="hero-panel-detail">
-                            <p class="panel-label">Diferencial</p>
-                            <p class="panel-text">Fenolico ideal para encofrados y superficies de alto uso. Resistente y durable.</p>
+                        <div class="product-panel">
+                            <div class="product-panel-head">
+                                <p class="product-panel-eyebrow">Producto</p>
+                                <h2 class="product-panel-title">Fenolico para obra</h2>
+                                <p class="product-panel-text">Tablero tecnico pensado para uso intensivo, humedad y reutilizacion.</p>
+                            </div>
+                            <div class="product-details-grid">
+                                <div class="product-detail-block">
+                                    <h3>Caracteristicas</h3>
+                                    <ul class="product-detail-list">
+                                        <li>Fabricado con capas de madera prensadas</li>
+                                        <li>Alta resistencia a la humedad</li>
+                                        <li>Superficie lisa y uniforme</li>
+                                        <li>Alta durabilidad</li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail-block">
+                                    <h3>Usos</h3>
+                                    <ul class="product-detail-list">
+                                        <li>Encofrados de hormigon</li>
+                                        <li>Construccion general</li>
+                                        <li>Estructuras temporales</li>
+                                        <li>Muebles industriales</li>
+                                    </ul>
+                                </div>
+                                <div class="product-detail-block full">
+                                    <h3>Ventajas</h3>
+                                    <ul class="product-detail-list">
+                                        <li>Reutilizable varias veces</li>
+                                        <li>Mayor vida util</li>
+                                        <li>Menor deformacion</li>
+                                        <li>Excelente relacion costo-beneficio</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </aside>
                 </div>
@@ -88,21 +183,6 @@
                     <p class="section-eyebrow">Descripcion</p>
                     <h2>Sobre Fenolico</h2>
                     <p class="section-text">Te ayudamos a elegir el espesor y formato correcto.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Beneficios</p>
-                    <h2>Ventajas para tu proyecto</h2>
-                </div>
-                <div class="services-grid">
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;"><h3>Rapidez</h3><p>Facil de trabajar y montar.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;"><h3>Eficiencia</h3><p>Resistencia superior a la humedad.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;"><h3>Calidad</h3><p>Superficie prolija y uniforme.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;"><h3>Valor agregado</h3><p>Larga vida util en obra.</p><div class="service-divider"></div></article>
                 </div>
             </div>
         </section>
