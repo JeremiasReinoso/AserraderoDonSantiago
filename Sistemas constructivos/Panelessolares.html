@@ -165,54 +165,158 @@
             </div>
         </section>
 
-        <section class="section" id="calculadora-paneles">
+        <section class="section calc-section" id="calculadoras">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="section-eyebrow">Calculadora</p>
-                    <h2>Calcula cuantos paneles necesitas</h2>
-                    <p class="section-text">Completa los datos y obtene una estimacion rapida para tu consumo.</p>
+                    <p class="section-eyebrow">Herramientas</p>
+                    <h2>Calculadoras interactivas</h2>
+                    <p class="section-text">Ajusta los valores a tu situacion real y obtene estimaciones al instante.</p>
                 </div>
-                <div class="info-grid">
-                    <article class="info-card reveal hover-lift" style="--reveal-delay: 0.05s;">
-                        <h3>Datos de entrada</h3>
-                        <p class="section-text">Consumo mensual (kWh)</p>
-                        <input id="calc-consumo" type="number" min="50" max="1500" step="10" value="300">
 
-                        <p class="section-text">Horas pico solar (HSP)</p>
-                        <input id="calc-hsp" type="number" min="2.5" max="7" step="0.1" value="4.8">
-
-                        <p class="section-text">Potencia por panel (W)</p>
-                        <input id="calc-potencia" type="number" min="200" max="600" step="10" value="400">
-
-                        <p class="section-text">Eficiencia del sistema (%)</p>
-                        <input id="calc-eficiencia" type="number" min="70" max="95" step="1" value="85">
-
-                        <button type="button" class="button button-primary shine" id="calc-paneles-btn">Calcular</button>
-                    </article>
-
-                    <article class="info-card reveal hover-lift" style="--reveal-delay: 0.1s;">
-                        <h3>Resultados estimados</h3>
-                        <div class="contact-cards">
-                            <div class="contact-card">
-                                <p class="contact-card-label">Paneles necesarios</p>
-                                <p class="contact-card-value" id="res-paneles">8</p>
+                <div class="calc-grid">
+                    <article class="calc-card reveal hover-lift" style="--reveal-delay: 0.05s;">
+                        <h3>Cuantos paneles necesito?</h3>
+                        <p class="calc-subtext">Calcula la cantidad segun tu consumo y ubicacion.</p>
+                        <div class="calc-rows">
+                            <div class="calc-row">
+                                <label>Consumo mensual kWh <span id="v1">300</span></label>
+                                <input type="range" min="50" max="1500" value="300" step="10" oninput="calcP()">
                             </div>
-                            <div class="contact-card">
-                                <p class="contact-card-label">Potencia total</p>
-                                <p class="contact-card-value"><span id="res-kwp">3.2</span> kWp</p>
+                            <div class="calc-row">
+                                <label>Horas pico solar diarias <span id="v2">4.8</span></label>
+                                <input type="range" min="2.5" max="7" value="4.8" step="0.1" oninput="calcP()">
                             </div>
-                            <div class="contact-card">
-                                <p class="contact-card-label">Superficie aprox.</p>
-                                <p class="contact-card-value"><span id="res-m2">13</span> m2</p>
+                            <div class="calc-row">
+                                <label>Potencia por panel W <span id="v3">400</span></label>
+                                <input type="range" min="200" max="600" value="400" step="10" oninput="calcP()">
                             </div>
-                            <div class="contact-card">
-                                <p class="contact-card-label">Generacion mensual</p>
-                                <p class="contact-card-value"><span id="res-kwh">296</span> kWh</p>
+                            <div class="calc-row">
+                                <label>Eficiencia del sistema % <span id="v4">85</span></label>
+                                <input type="range" min="70" max="95" value="85" step="1" oninput="calcP()">
                             </div>
                         </div>
-                        <p class="section-text" style="margin-top: 12px;">Valores orientativos. Para un calculo preciso, consultanos.</p>
+                        <div class="calc-results">
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rp1">8</p>
+                                <p class="calc-result-label">Paneles necesarios</p>
+                            </div>
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rp2">3.2</p>
+                                <p class="calc-result-label">kWp del sistema</p>
+                            </div>
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rp3">13</p>
+                                <p class="calc-result-label">m2 de techo</p>
+                            </div>
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rp4">296</p>
+                                <p class="calc-result-label">kWh/mes generados</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="calc-card reveal hover-lift" style="--reveal-delay: 0.1s;">
+                        <h3>Que bateria necesito?</h3>
+                        <p class="calc-subtext">Estima la capacidad para tu autonomia deseada.</p>
+                        <div class="calc-rows">
+                            <div class="calc-row">
+                                <label>Consumo diario kWh <span id="vb1">10</span></label>
+                                <input type="range" min="2" max="40" value="10" step="0.5" oninput="calcB()">
+                            </div>
+                            <div class="calc-row">
+                                <label>Dias de autonomia <span id="vb2">2</span></label>
+                                <input type="range" min="1" max="7" value="2" step="1" oninput="calcB()">
+                            </div>
+                            <div class="calc-row">
+                                <label>Descarga maxima DOD % <span id="vb3">80</span></label>
+                                <input type="range" min="40" max="95" value="80" step="5" oninput="calcB()">
+                            </div>
+                            <div class="calc-row">
+                                <label>Tipo de bateria</label>
+                                <select onchange="calcB()" id="btype">
+                                    <option value="2500|10|15">LiFePO4 10kWh ~$2,500 USD</option>
+                                    <option value="1800|10|12">NMC 10kWh ~$1,800 USD</option>
+                                    <option value="400|2|6">AGM 2kWh ~$400 USD</option>
+                                    <option value="300|2|5">Gel 2kWh ~$300 USD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calc-results">
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rb1">25</p>
+                                <p class="calc-result-label">kWh necesarios</p>
+                            </div>
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rb2">3</p>
+                                <p class="calc-result-label">Baterias recomendadas</p>
+                            </div>
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rb3">$7,500</p>
+                                <p class="calc-result-label">Costo estimado USD</p>
+                            </div>
+                            <div class="calc-result">
+                                <p class="calc-result-number" id="rb4">15</p>
+                                <p class="calc-result-label">Anos de vida util</p>
+                            </div>
+                        </div>
                     </article>
                 </div>
+
+                <article class="calc-card calc-card-wide reveal hover-lift" style="--reveal-delay: 0.15s;" id="roi-card">
+                    <h3>Calculadora de rentabilidad ROI</h3>
+                    <p class="calc-subtext">En cuantos anos recuperas la inversion? El grafico muestra el ahorro acumulado ano a ano.</p>
+                    <div class="calc-roi-grid">
+                        <div class="calc-row">
+                            <label>Inversion inicial USD <span id="vi1">8,000</span></label>
+                            <input type="range" min="2000" max="30000" value="8000" step="500" oninput="calcROI()">
+                        </div>
+                        <div class="calc-row">
+                            <label>Ahorro mensual USD <span id="vi2">80</span></label>
+                            <input type="range" min="20" max="400" value="80" step="5" oninput="calcROI()">
+                        </div>
+                        <div class="calc-row">
+                            <label>Aumento tarifa anual % <span id="vi3">8</span></label>
+                            <input type="range" min="0" max="30" value="8" step="1" oninput="calcROI()">
+                        </div>
+                        <div class="calc-row">
+                            <label>Subsidio / incentivo USD <span id="vi4">0</span></label>
+                            <input type="range" min="0" max="5000" value="0" step="100" oninput="calcROI()">
+                        </div>
+                    </div>
+                    <div class="calc-metrics">
+                        <div class="calc-metric">
+                            <p class="calc-metric-label">Retorno de inversion</p>
+                            <p class="calc-metric-value" id="rm1">7 anos</p>
+                        </div>
+                        <div class="calc-metric">
+                            <p class="calc-metric-label">Ahorro a 25 anos</p>
+                            <p class="calc-metric-value" id="rm2">$42,000</p>
+                        </div>
+                        <div class="calc-metric">
+                            <p class="calc-metric-label">Ganancia neta</p>
+                            <p class="calc-metric-value" id="rm3">$34,000</p>
+                        </div>
+                        <div class="calc-metric">
+                            <p class="calc-metric-label">CO2 evitado kg/ano</p>
+                            <p class="calc-metric-value" id="rm4">1,440</p>
+                        </div>
+                    </div>
+                    <p class="calc-subnote">Ahorro acumulado por ano (verde = inversion recuperada)</p>
+                    <div class="calc-chart" id="roi-chart"></div>
+                </article>
+
+                <article class="calc-card calc-card-wide reveal hover-lift" style="--reveal-delay: 0.2s;">
+                    <h3>Estimador por electrodomestico</h3>
+                    <p class="calc-subtext">Ajusta las horas de uso de cada dispositivo para calcular tu consumo mensual real.</p>
+                    <div class="appliance-grid" id="agrid"></div>
+                    <div class="appliance-total">
+                        <div class="appliance-total-card">
+                            <p class="calc-metric-label">Consumo mensual total</p>
+                            <p class="calc-metric-value" id="tcons">0 kWh</p>
+                        </div>
+                        <p class="calc-subtext">Ajusta las horas de uso diario de cada dispositivo para ver el consumo mensual estimado.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -255,27 +359,132 @@
 
     <script src="../script.js"></script>
     <script>
-        function calcPaneles() {
-            var consumo = Number(document.getElementById('calc-consumo').value) || 0;
-            var hsp = Number(document.getElementById('calc-hsp').value) || 0;
-            var potencia = Number(document.getElementById('calc-potencia').value) || 0;
-            var eficiencia = (Number(document.getElementById('calc-eficiencia').value) || 0) / 100;
-
-            var consumoDiario = consumo / 30;
-            var generacionPorPanel = (potencia / 1000) * hsp * eficiencia;
-            var paneles = generacionPorPanel > 0 ? Math.ceil(consumoDiario / generacionPorPanel) : 0;
-
-            document.getElementById('res-paneles').textContent = paneles;
-            document.getElementById('res-kwp').textContent = (paneles * potencia / 1000).toFixed(1);
-            document.getElementById('res-m2').textContent = Math.round(paneles * 1.65);
-            document.getElementById('res-kwh').textContent = Math.round(paneles * generacionPorPanel * 30);
+        function calcP() {
+            var cc = document.querySelectorAll('#calculadoras .calc-card:nth-child(1) input');
+            var c = +cc[0].value,
+                h = +cc[1].value,
+                w = +cc[2].value,
+                e = +cc[3].value / 100;
+            document.getElementById('v1').textContent = c;
+            document.getElementById('v2').textContent = h.toFixed(1);
+            document.getElementById('v3').textContent = w;
+            document.getElementById('v4').textContent = Math.round(e * 100);
+            var d = c / 30,
+                g = (w / 1000) * h * e,
+                p = Math.ceil(d / g);
+            document.getElementById('rp1').textContent = p;
+            document.getElementById('rp2').textContent = (p * w / 1000).toFixed(1);
+            document.getElementById('rp3').textContent = Math.round(p * 1.65);
+            document.getElementById('rp4').textContent = Math.round(p * g * 30);
         }
 
-        document.getElementById('calc-paneles-btn').addEventListener('click', calcPaneles);
-        ['calc-consumo', 'calc-hsp', 'calc-potencia', 'calc-eficiencia'].forEach(function (id) {
-            document.getElementById(id).addEventListener('input', calcPaneles);
-        });
-        calcPaneles();
+        function calcB() {
+            var cc = document.querySelectorAll('#calculadoras .calc-card:nth-child(2) input');
+            var d = +cc[0].value,
+                dias = +cc[1].value,
+                dod = +cc[2].value / 100;
+            document.getElementById('vb1').textContent = d;
+            document.getElementById('vb2').textContent = dias;
+            document.getElementById('vb3').textContent = Math.round(dod * 100);
+            var sel = document.getElementById('btype'),
+                pts = sel.value.split('|');
+            var precio = +pts[0],
+                ukwh = +pts[1],
+                vida = +pts[2];
+            var cap = (d * dias) / dod,
+                nb = Math.ceil(cap / ukwh),
+                costo = nb * precio;
+            document.getElementById('rb1').textContent = cap.toFixed(1);
+            document.getElementById('rb2').textContent = nb;
+            document.getElementById('rb3').textContent = '$' + costo.toLocaleString();
+            document.getElementById('rb4').textContent = vida;
+        }
+
+        function calcROI() {
+            var cc = document.querySelectorAll('#roi-card input');
+            var inv = +cc[0].value,
+                aho = +cc[1].value,
+                inc = +cc[2].value / 100,
+                sub = +cc[3].value;
+            document.getElementById('vi1').textContent = inv.toLocaleString();
+            document.getElementById('vi2').textContent = aho;
+            document.getElementById('vi3').textContent = Math.round(inc * 100);
+            document.getElementById('vi4').textContent = sub;
+            var ir = inv - sub,
+                acum = 0,
+                ry = 0,
+                mens = aho,
+                data = [];
+            for (var y = 1; y <= 25; y++) {
+                acum += mens * 12;
+                data.push(acum);
+                if (acum >= ir && ry === 0) {
+                    ry = y;
+                }
+                mens *= 1 + inc;
+            }
+            document.getElementById('rm1').textContent = ry > 0 ? ry + ' anos' : '+25 anos';
+            document.getElementById('rm2').textContent = '$' + Math.round(data[24]).toLocaleString();
+            document.getElementById('rm3').textContent = '$' + Math.round(data[24] - ir).toLocaleString();
+            document.getElementById('rm4').textContent = Math.round(aho * 12 * 0.5).toLocaleString();
+            var ch = document.getElementById('roi-chart');
+            ch.innerHTML = '';
+            var mx = data[24];
+            data.forEach(function (v, i) {
+                var w2 = document.createElement('div');
+                w2.className = 'calc-chart-bar';
+                var b = document.createElement('div');
+                var h2 = Math.max(4, Math.round((v / mx) * 90));
+                b.style.height = h2 + 'px';
+                b.style.background = v >= ir ? '#81C784' : '#F5A623';
+                var l = document.createElement('div');
+                l.className = 'calc-chart-label';
+                l.textContent = (i + 1) % 5 === 0 ? (i + 1) + 'a' : '';
+                w2.appendChild(b);
+                w2.appendChild(l);
+                ch.appendChild(w2);
+            });
+        }
+
+        var apps = [
+            { n: 'Heladera', w: 150, h: 12 }, { n: 'Lavarropas', w: 500, h: 1 },
+            { n: 'Microondas', w: 1000, h: 0.5 }, { n: 'TV 55 pulgadas', w: 120, h: 4 },
+            { n: 'Computadora', w: 200, h: 6 }, { n: 'Aire acondicionado', w: 1500, h: 3 },
+            { n: 'Iluminacion LED', w: 60, h: 6 }, { n: 'Cargadores', w: 50, h: 4 },
+            { n: 'Bomba de agua', w: 750, h: 1 }, { n: 'Calefactor', w: 2000, h: 2 },
+            { n: 'Lavavajillas', w: 1200, h: 0.5 }, { n: 'Secarropas', w: 2500, h: 0.5 }
+        ];
+
+        function buildApps() {
+            var g = document.getElementById('agrid');
+            apps.forEach(function (a, i) {
+                var d = document.createElement('div');
+                d.className = 'appliance-card';
+                d.innerHTML =
+                    '<div class="appliance-title">' + a.n + '</div>' +
+                    '<div class="appliance-power">' + a.w + 'W</div>' +
+                    '<label class="appliance-label">Horas/dia <span id="ah' + i + '">' + a.h + 'h</span></label>' +
+                    '<input type="range" min="0" max="24" value="' + a.h + '" step="0.5" oninput="updApp(' + i + ',this.value)">';
+                g.appendChild(d);
+            });
+            updTotal();
+        }
+
+        function updApp(i, v) {
+            apps[i].h = +v;
+            document.getElementById('ah' + i).textContent = (+v).toFixed(1) + 'h';
+            updTotal();
+        }
+
+        function updTotal() {
+            var t = apps.reduce(function (s, a) { return s + (a.w * a.h * 30) / 1000; }, 0);
+            document.getElementById('tcons').textContent = Math.round(t) + ' kWh';
+        }
+
+        calcP();
+        calcB();
+        calcROI();
+        buildApps();
     </script>
 </body>
 </html>
