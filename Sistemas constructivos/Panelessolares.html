@@ -165,6 +165,57 @@
             </div>
         </section>
 
+        <section class="section" id="calculadora-paneles">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-eyebrow">Calculadora</p>
+                    <h2>Calcula cuantos paneles necesitas</h2>
+                    <p class="section-text">Completa los datos y obtene una estimacion rapida para tu consumo.</p>
+                </div>
+                <div class="info-grid">
+                    <article class="info-card reveal hover-lift" style="--reveal-delay: 0.05s;">
+                        <h3>Datos de entrada</h3>
+                        <p class="section-text">Consumo mensual (kWh)</p>
+                        <input id="calc-consumo" type="number" min="50" max="1500" step="10" value="300">
+
+                        <p class="section-text">Horas pico solar (HSP)</p>
+                        <input id="calc-hsp" type="number" min="2.5" max="7" step="0.1" value="4.8">
+
+                        <p class="section-text">Potencia por panel (W)</p>
+                        <input id="calc-potencia" type="number" min="200" max="600" step="10" value="400">
+
+                        <p class="section-text">Eficiencia del sistema (%)</p>
+                        <input id="calc-eficiencia" type="number" min="70" max="95" step="1" value="85">
+
+                        <button type="button" class="button button-primary shine" id="calc-paneles-btn">Calcular</button>
+                    </article>
+
+                    <article class="info-card reveal hover-lift" style="--reveal-delay: 0.1s;">
+                        <h3>Resultados estimados</h3>
+                        <div class="contact-cards">
+                            <div class="contact-card">
+                                <p class="contact-card-label">Paneles necesarios</p>
+                                <p class="contact-card-value" id="res-paneles">8</p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="contact-card-label">Potencia total</p>
+                                <p class="contact-card-value"><span id="res-kwp">3.2</span> kWp</p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="contact-card-label">Superficie aprox.</p>
+                                <p class="contact-card-value"><span id="res-m2">13</span> m2</p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="contact-card-label">Generacion mensual</p>
+                                <p class="contact-card-value"><span id="res-kwh">296</span> kWh</p>
+                            </div>
+                        </div>
+                        <p class="section-text" style="margin-top: 12px;">Valores orientativos. Para un calculo preciso, consultanos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="section contact-section">
             <div class="container">
                 <div class="contact-shell reveal">
@@ -203,5 +254,28 @@
     </a>
 
     <script src="../script.js"></script>
+    <script>
+        function calcPaneles() {
+            var consumo = Number(document.getElementById('calc-consumo').value) || 0;
+            var hsp = Number(document.getElementById('calc-hsp').value) || 0;
+            var potencia = Number(document.getElementById('calc-potencia').value) || 0;
+            var eficiencia = (Number(document.getElementById('calc-eficiencia').value) || 0) / 100;
+
+            var consumoDiario = consumo / 30;
+            var generacionPorPanel = (potencia / 1000) * hsp * eficiencia;
+            var paneles = generacionPorPanel > 0 ? Math.ceil(consumoDiario / generacionPorPanel) : 0;
+
+            document.getElementById('res-paneles').textContent = paneles;
+            document.getElementById('res-kwp').textContent = (paneles * potencia / 1000).toFixed(1);
+            document.getElementById('res-m2').textContent = Math.round(paneles * 1.65);
+            document.getElementById('res-kwh').textContent = Math.round(paneles * generacionPorPanel * 30);
+        }
+
+        document.getElementById('calc-paneles-btn').addEventListener('click', calcPaneles);
+        ['calc-consumo', 'calc-hsp', 'calc-potencia', 'calc-eficiencia'].forEach(function (id) {
+            document.getElementById(id).addEventListener('input', calcPaneles);
+        });
+        calcPaneles();
+    </script>
 </body>
 </html>
