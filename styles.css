@@ -1278,3 +1278,311 @@ h3 {
         transform: none;
     }
 }
+
+/* Paneles solares: calculadoras */
+.info-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.info-card {
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.info-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.45rem;
+}
+
+.calc-section .section-heading {
+    margin-bottom: 2.5rem;
+}
+
+.calc-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.calc-card {
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.calc-card h3 {
+    font-size: 1.4rem;
+}
+
+.calc-card-wide {
+    margin-top: 1.5rem;
+}
+
+.calc-subtext {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.calc-subnote {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.calc-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.calc-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.calc-row label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.calc-row label span {
+    color: var(--color-forest);
+    font-weight: 600;
+}
+
+.calc-row input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    outline: none;
+    cursor: pointer;
+}
+
+.calc-row input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-forest);
+    box-shadow: 0 0 12px rgba(46, 125, 50, 0.6);
+}
+
+.calc-row input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-forest);
+    border: none;
+    box-shadow: 0 0 12px rgba(46, 125, 50, 0.6);
+}
+
+.calc-row select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.85rem;
+    border: 1px solid var(--border-soft);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+}
+
+.calc-results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.calc-result {
+    padding: 0.85rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-soft);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.calc-result-number {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    color: var(--color-forest);
+}
+
+.calc-result-label {
+    margin-top: 0.25rem;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.calc-roi-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.calc-metrics {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.calc-metric {
+    padding: 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-soft);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.calc-metric-label {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.calc-metric-value {
+    margin-top: 0.4rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.calc-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 120px;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+.calc-chart-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.calc-chart-bar > div:first-child {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+}
+
+.calc-chart-label {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.appliance-grid {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.appliance-card {
+    padding: 0.85rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-soft);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.appliance-card input[type="range"] {
+    margin-top: 0.35rem;
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    appearance: none;
+}
+
+.appliance-card input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-forest);
+    box-shadow: 0 0 10px rgba(46, 125, 50, 0.6);
+}
+
+.appliance-card input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-forest);
+    border: none;
+    box-shadow: 0 0 10px rgba(46, 125, 50, 0.6);
+}
+
+.appliance-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.appliance-power {
+    margin-top: 0.15rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.appliance-label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.appliance-label span {
+    color: var(--color-forest);
+    font-weight: 600;
+}
+
+.appliance-total {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.appliance-total-card {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-soft);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 720px) {
+    .calc-results {
+        grid-template-columns: 1fr;
+    }
+}
