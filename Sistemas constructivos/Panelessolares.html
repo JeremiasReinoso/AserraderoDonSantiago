@@ -262,49 +262,6 @@
                     </article>
                 </div>
 
-                <article class="calc-card calc-card-wide reveal hover-lift" style="--reveal-delay: 0.15s;">
-                    <h3>Calculadora de rentabilidad ROI</h3>
-                    <p class="calc-subtext">En cuantos años recuperas la inversion? El grafico muestra el ahorro acumulado ano a ano.</p>
-                    <div class="calc-roi-grid">
-                        <div class="calc-row">
-                            <label>Inversion inicial<span id="vi1">8,000</span></label>
-                            <input type="range" min="2000" max="30000" value="8000" step="500" oninput="calcROI()">
-                        </div>
-                        <div class="calc-row">
-                            <label>Ahorro mensual<span id="vi2">80</span></label>
-                            <input type="range" min="20" max="400" value="80" step="5" oninput="calcROI()">
-                        </div>
-                        <div class="calc-row">
-                            <label>Aumento tarifa anual % <span id="vi3">8</span></label>
-                            <input type="range" min="0" max="30" value="8" step="1" oninput="calcROI()">
-                        </div>
-                        <div class="calc-row">
-                            <label>Subsidio / incentivo<span id="vi4">0</span></label>
-                            <input type="range" min="0" max="5000" value="0" step="100" oninput="calcROI()">
-                        </div>
-                    </div>
-                    <div class="calc-metrics">
-                        <div class="calc-metric">
-                            <p class="calc-metric-label">Retorno de inversion</p>
-                            <p class="calc-metric-value" id="rm1">7 anos</p>
-                        </div>
-                        <div class="calc-metric">
-                            <p class="calc-metric-label">Ahorro a 25 años</p>
-                            <p class="calc-metric-value" id="rm2">$42,000</p>
-                        </div>
-                        <div class="calc-metric">
-                            <p class="calc-metric-label">Ganancia neta</p>
-                            <p class="calc-metric-value" id="rm3">$34,000</p>
-                        </div>
-                        <div class="calc-metric">
-                            <p class="calc-metric-label">CO2 evitado kg/año</p>
-                            <p class="calc-metric-value" id="rm4">1,440</p>
-                        </div>
-                    </div>
-                    <p class="calc-subnote">Ahorro acumulado por año (verde = inversion recuperada)</p>
-                    <div class="calc-chart" id="roi-chart"></div>
-                </article>
-
                 <article class="calc-card calc-card-wide reveal hover-lift" style="--reveal-delay: 0.2s;">
                     <h3>Estimador por electrodomestico</h3>
                     <p class="calc-subtext">Ajusta las horas de uso de cada dispositivo para calcular tu consumo mensual.</p>
@@ -400,52 +357,6 @@
             document.getElementById('rb4').textContent = vida;
         }
 
-        function calcROI() {
-            var cc = document.querySelectorAll('.calc-card.calc-card-wide input');
-            var inv = +cc[0].value,
-                aho = +cc[1].value,
-                inc = +cc[2].value / 100,
-                sub = +cc[3].value;
-            document.getElementById('vi1').textContent = inv.toLocaleString();
-            document.getElementById('vi2').textContent = aho;
-            document.getElementById('vi3').textContent = Math.round(inc * 100);
-            document.getElementById('vi4').textContent = sub;
-            var ir = inv - sub,
-                acum = 0,
-                ry = 0,
-                mens = aho,
-                data = [];
-            for (var y = 1; y <= 25; y++) {
-                acum += mens * 12;
-                data.push(acum);
-                if (acum >= ir && ry === 0) {
-                    ry = y;
-                }
-                mens *= 1 + inc;
-            }
-            document.getElementById('rm1').textContent = ry > 0 ? ry + ' anos' : '+25 anos';
-            document.getElementById('rm2').textContent = '$' + Math.round(data[24]).toLocaleString();
-            document.getElementById('rm3').textContent = '$' + Math.round(data[24] - ir).toLocaleString();
-            document.getElementById('rm4').textContent = Math.round(aho * 12 * 0.5).toLocaleString();
-            var ch = document.getElementById('roi-chart');
-            ch.innerHTML = '';
-            var mx = data[24];
-            data.forEach(function (v, i) {
-                var w2 = document.createElement('div');
-                w2.className = 'calc-chart-bar';
-                var b = document.createElement('div');
-                var h2 = Math.max(4, Math.round((v / mx) * 90));
-                b.style.height = h2 + 'px';
-                b.style.background = v >= ir ? '#81C784' : '#F5A623';
-                var l = document.createElement('div');
-                l.className = 'calc-chart-label';
-                l.textContent = (i + 1) % 5 === 0 ? (i + 1) + 'a' : '';
-                w2.appendChild(b);
-                w2.appendChild(l);
-                ch.appendChild(w2);
-            });
-        }
-
         var apps = [
             { n: 'Heladera', w: 150, h: 12 }, { n: 'Lavarropas', w: 500, h: 1 },
             { n: 'Microondas', w: 1000, h: 0.5 }, { n: 'TV 55 pulgadas', w: 120, h: 4 },
@@ -483,8 +394,9 @@
 
         calcP();
         calcB();
-        calcROI();
         buildApps();
     </script>
 </body>
 </html>
+
+
