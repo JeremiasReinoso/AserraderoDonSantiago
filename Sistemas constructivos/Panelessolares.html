@@ -234,10 +234,10 @@
                             <div class="calc-row">
                                 <label>Tipo de bateria</label>
                                 <select onchange="calcB()" id="btype">
-                                    <option value="2500|10|15">LiFePO4 10kWh ~$2,500 USD</option>
-                                    <option value="1800|10|12">NMC 10kWh ~$1,800 USD</option>
-                                    <option value="400|2|6">AGM 2kWh ~$400 USD</option>
-                                    <option value="300|2|5">Gel 2kWh ~$300 USD</option>
+                                    <option value="2500|10|15">LiFePO4 10kWh ~$2,500 ARS</option>
+                                    <option value="1800|10|12">NMC 10kWh ~$1,800 ARS</option>
+                                    <option value="400|2|6">AGM 2kWh ~$400 ARS</option>
+                                    <option value="300|2|5">Gel 2kWh ~$300 ARS</option>
                                 </select>
                             </div>
                         </div>
@@ -251,8 +251,8 @@
                                 <p class="calc-result-label">Baterias recomendadas</p>
                             </div>
                             <div class="calc-result">
-                                <p class="calc-result-number" id="rb3">$7,500</p>
-                                <p class="calc-result-label">Costo estimado USD</p>
+                                <p class="calc-result-number" id="rb3">ARS 7,500</p>
+                                <p class="calc-result-label">Costo estimado ARS</p>
                             </div>
                             <div class="calc-result">
                                 <p class="calc-result-number" id="rb4">15</p>
@@ -353,7 +353,7 @@
                 costo = nb * precio;
             document.getElementById('rb1').textContent = cap.toFixed(1);
             document.getElementById('rb2').textContent = nb;
-            document.getElementById('rb3').textContent = '$' + costo.toLocaleString();
+            document.getElementById('rb3').textContent = 'ARS ' + costo.toLocaleString();
             document.getElementById('rb4').textContent = vida;
         }
 
