@@ -94,20 +94,13 @@
             margin: 2rem 0;
         }
 
-        /* Resultados */
         .calculator-results {
             animation: slideUp 0.5s ease;
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .results-grid {
@@ -153,64 +146,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Visualización de placas */
-        .plates-visualization {
-            margin: 2.5rem 0;
-            padding: 2rem;
-            background: rgba(255,255,255,0.02);
-            border-radius: 0.75rem;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .plates-label {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-        }
-
-        .plates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 0.75rem;
-            max-height: 300px;
-            overflow-y: auto;
-            padding-right: 0.5rem;
-        }
-
-        .plate {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #8B6F47 0%, #A0826D 50%, #8B6F47 100%);
-            border-radius: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.8);
-            font-weight: 600;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
-            animation: plateAppear 0.4s ease;
-        }
-
-        @keyframes plateAppear {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .plate:hover {
-            transform: scale(1.05);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(255,215,0,0.2);
-        }
-
-        /* Aviso de validación */
         .calculator-warning {
             padding: 1.5rem;
             background: rgba(220, 100, 100, 0.1);
@@ -221,12 +156,8 @@
             animation: slideUp 0.3s ease;
         }
 
-        .calculator-warning p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
+        .calculator-warning p { margin: 0; font-size: 0.95rem; }
 
-        /* Botón de acción */
         .calculator-action {
             margin-top: 2rem;
             text-align: center;
@@ -238,64 +169,30 @@
             transition: all 0.3s ease;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .calculator-container {
-                padding: 2rem 1.5rem;
-            }
-
-            .calculator-inputs {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .results-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .result-value {
-                font-size: 1.4rem;
-            }
-
-            .plates-grid {
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-                gap: 0.6rem;
-            }
-
-            .plate {
-                font-size: 0.7rem;
-            }
+            .calculator-container { padding: 2rem 1.5rem; }
+            .calculator-inputs { grid-template-columns: 1fr; gap: 1.5rem; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .result-value { font-size: 1.4rem; }
         }
 
         @media (max-width: 480px) {
-            .calculator-container {
-                padding: 1.5rem 1rem;
-            }
+            .calculator-container { padding: 1.5rem 1rem; }
+            .results-grid { grid-template-columns: 1fr; }
+            .result-card { padding: 1rem; }
+            .result-value { font-size: 1.2rem; }
+        }
 
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .result-card {
-                padding: 1rem;
-            }
-
-            .result-value {
-                font-size: 1.2rem;
-            }
-
-            .plates-visualization {
-                padding: 1.5rem;
-            }
-
-            .plates-grid {
-                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-                gap: 0.5rem;
-            }
+        /* FIX: métricas del hero con texto corto */
+        .metric-value {
+            font-size: 1rem !important;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .metric-label {
+            margin-bottom: 0.25rem;
         }
     </style>
-
 </head>
 <body>
     <!-- Pantalla de carga -->
@@ -305,10 +202,8 @@
     <style>
         #loading-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: #1a1a1a;
             display: flex;
             justify-content: center;
@@ -316,15 +211,8 @@
             z-index: 9999;
             transition: opacity 0.5s ease;
         }
-        #loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .loading-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        #loading-screen.hidden { opacity: 0; pointer-events: none; }
+        .loading-logo { width: 100%; height: 100%; object-fit: cover; }
     </style>
     <script>
         window.addEventListener('load', function() {
@@ -334,7 +222,7 @@
         });
     </script>
 
-    <!-- Navbar principal -->
+    <!-- Navbar -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
@@ -369,10 +257,12 @@
     </header>
 
     <main>
-        <section class="hero-section">
-            <img src="https://source.unsplash.com/1600x900/?osb,wood,board" alt="OSB" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div class="hero-fade"></div>
+        <!-- HERO: corregido — usa clase .hero en lugar de .hero-section -->
+        <section class="hero">
+            <div class="hero-bg is-active" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80');">
+                <div class="overlay"></div>
+                <div class="hero-fade"></div>
+            </div>
             <div class="container hero-content">
                 <div class="hero-grid">
                     <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
@@ -380,19 +270,31 @@
                         <h1>OSB</h1>
                         <p class="hero-description">Tableros resistentes para estructura y cerramiento.</p>
                         <div class="hero-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20OSB." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20OSB." target="_blank" rel="noreferrer" class="button button-primary button-whatsapp hero-whatsapp shine">Consultar por WhatsApp</a>
                         </div>
                     </div>
                     <aside class="hero-panel glass-panel reveal reveal-active" data-reveal="hero-panel">
                         <div class="metrics-grid">
-                            <div class="metric-card"><p class="metric-label">Material</p><p class="metric-value">OSB Tablero de virutas orientadas de alta densidad para construcción en seco.</p></div>
-                            <div class="metric-card"><p class="metric-label">Aplicación</p><p class="metric-value">Muros,techos y pisos ideal para steel frame, wood frame y construcción modular</p></div>
-                            <div class="metric-card"><p class="metric-label">Resistencia</p><p class="metric-value">Alta carga estructural, soporta esfuerzos de compresión, tracción y cizallamiento</p></div>
-                            <div class="metric-card"><p class="metric-label">Durabilidad</p><p class="metric-value">Estabilidad dimensional, Resiste variaciones de humedad sin deformarse ni perder rigidez</p></div>
+                            <div class="metric-card">
+                                <p class="metric-label">Material</p>
+                                <p class="metric-value">OSB Estructural</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="metric-label">Aplicación</p>
+                                <p class="metric-value">Muros, techos y pisos</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="metric-label">Resistencia</p>
+                                <p class="metric-value">Alta carga estructural</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="metric-label">Durabilidad</p>
+                                <p class="metric-value">Estabilidad dimensional</p>
+                            </div>
                         </div>
                         <div class="hero-panel-detail">
                             <p class="panel-label">Diferencial</p>
-                            <p class="panel-text">Relación costo-beneficio, mayor rendimiento por metro cuadrado frente a otros materiales estructurales del mercado.</p>
+                            <p class="panel-text">Mejor relación costo-beneficio por m² frente a otros materiales estructurales.</p>
                         </div>
                     </aside>
                 </div>
@@ -402,9 +304,9 @@
         <section class="section">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="section-eyebrow">Descripcion</p>
+                    <p class="section-eyebrow">Descripción</p>
                     <h2>Sobre OSB</h2>
-                    <p class="section-text">Te asesoramos segun uso estructural o terminacion.</p>
+                    <p class="section-text">Te asesoramos según uso estructural o terminación.</p>
                 </div>
             </div>
         </section>
@@ -416,10 +318,26 @@
                     <h2>Ventajas para tu proyecto</h2>
                 </div>
                 <div class="services-grid">
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;"><h3>Rapidez</h3><p>Rapido armado y montaje.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;"><h3>Eficiencia</h3><p>Buen rendimiento estructural.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;"><h3>Calidad</h3><p>Calidad consistente por tablero.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;"><h3>Valor agregado</h3><p>Eficiencia en obra por su versatilidad.</p><div class="service-divider"></div></article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;">
+                        <h3>Rapidez</h3>
+                        <p>Rápido armado y montaje en obra.</p>
+                        <div class="service-divider"></div>
+                    </article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;">
+                        <h3>Eficiencia</h3>
+                        <p>Buen rendimiento estructural por m².</p>
+                        <div class="service-divider"></div>
+                    </article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;">
+                        <h3>Calidad</h3>
+                        <p>Calidad consistente en cada tablero.</p>
+                        <div class="service-divider"></div>
+                    </article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;">
+                        <h3>Versatilidad</h3>
+                        <p>Apto para pisos, muros, techos y revestimientos.</p>
+                        <div class="service-divider"></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -429,15 +347,27 @@
                 <div class="differential-intro reveal">
                     <div class="differential-panel">
                         <p class="section-eyebrow">Proceso</p>
-                        <h2>Como trabajamos</h2>
-                        <p>Te asesoramos segun uso estructural o terminacion.</p>
+                        <h2>Cómo trabajamos</h2>
+                        <p>Te asesoramos según uso estructural o terminación.</p>
                     </div>
                 </div>
                 <div class="differential-list">
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;"><div class="differential-number">01</div><div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;"><div class="differential-number">02</div><div><h3>Diseno</h3><p>Planificamos con criterio tecnico y visual.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;"><div class="differential-number">03</div><div><h3>Fabricacion</h3><p>Producimos con control de calidad y detalle.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;"><div class="differential-number">04</div><div><h3>Montaje</h3><p>Instalamos y entregamos con terminaciones prolijas.</p></div></article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;">
+                        <div class="differential-number">01</div>
+                        <div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div>
+                    </article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;">
+                        <div class="differential-number">02</div>
+                        <div><h3>Diseño</h3><p>Planificamos con criterio técnico y visual.</p></div>
+                    </article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;">
+                        <div class="differential-number">03</div>
+                        <div><h3>Fabricación</h3><p>Producimos con control de calidad y detalle.</p></div>
+                    </article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;">
+                        <div class="differential-number">04</div>
+                        <div><h3>Entrega</h3><p>Despachamos y coordinamos con vos la recepción.</p></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -452,9 +382,7 @@
                 </div>
                 <div class="calculator-wrapper reveal">
                     <div class="calculator-container glass-panel">
-                        <!-- Inputs principales -->
                         <div class="calculator-inputs">
-                            <!-- Selector de tipo de uso -->
                             <div class="calc-input-group">
                                 <label for="calc-type" class="calc-label">Tipo de Uso</label>
                                 <select id="calc-type" class="calc-select">
@@ -464,20 +392,14 @@
                                     <option value="revestimiento">Revestimiento</option>
                                 </select>
                             </div>
-
-                            <!-- Largo -->
                             <div class="calc-input-group">
                                 <label for="calc-largo" class="calc-label">Largo (metros)</label>
                                 <input type="number" id="calc-largo" class="calc-input" placeholder="ej: 5" min="0" step="0.1">
                             </div>
-
-                            <!-- Ancho -->
                             <div class="calc-input-group">
                                 <label for="calc-ancho" class="calc-label">Ancho (metros)</label>
                                 <input type="number" id="calc-ancho" class="calc-input" placeholder="ej: 4" min="0" step="0.1">
                             </div>
-
-                            <!-- Desperdicio -->
                             <div class="calc-input-group">
                                 <label for="calc-desperdicio" class="calc-label">Desperdicio</label>
                                 <select id="calc-desperdicio" class="calc-select">
@@ -488,11 +410,7 @@
                                 </select>
                             </div>
                         </div>
-
-                        <!-- Divisor visual -->
                         <div class="calculator-divider"></div>
-
-                        <!-- Resultados -->
                         <div class="calculator-results" id="calc-results" style="display: none;">
                             <div class="results-grid">
                                 <div class="result-card">
@@ -512,18 +430,14 @@
                                     <p class="result-value"><span id="result-cobertura">0</span> m²</p>
                                 </div>
                             </div>
-
-                            <!-- Botón WhatsApp -->
                             <div class="calculator-action">
                                 <a id="whatsapp-button" href="#" target="_blank" rel="noreferrer" class="button button-primary shine">
                                     Solicitar Presupuesto por WhatsApp
                                 </a>
                             </div>
                         </div>
-
-                        <!-- Aviso de validación -->
                         <div class="calculator-warning" id="calc-warning" style="display: none;">
-                            <p>Por favor completa todos los campos para calcular.</p>
+                            <p>Por favor completá todos los campos para calcular.</p>
                         </div>
                     </div>
                 </div>
@@ -536,13 +450,13 @@
                     <div class="contact-grid">
                         <div>
                             <p class="section-eyebrow">¿Listo para avanzar?</p>
-                            <h2>¿Queres empezar tu proyecto?</h2>
+                            <h2>¿Querés empezar tu proyecto?</h2>
                             <p class="contact-text">Escribinos y armamos una propuesta profesional y a medida.</p>
                         </div>
                         <div class="contact-cards">
                             <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">24 Horas</p></div>
                             <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Atencion</p><p class="contact-card-value">Personalizada</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Atención</p><p class="contact-card-value">Personalizada</p></div>
                         </div>
                     </div>
                     <div class="contact-action">
@@ -555,7 +469,7 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p>Aserradero Don Santiago. Construccion, madera y soluciones profesionales.</p>
+            <p>Aserradero Don Santiago. Construcción, madera y soluciones profesionales.</p>
             <p>El Hoyo, Chubut, Argentina</p>
         </div>
     </footer>
@@ -569,8 +483,7 @@
 
     <script src="../script.js"></script>
     <script>
-        // ===== CALCULADORA OSB =====
-        const COBERTURA_PLACA = 2.97; // m² por placa
+        const COBERTURA_PLACA = 2.97;
 
         const elements = {
             type: document.getElementById('calc-type'),
@@ -584,13 +497,11 @@
             conDesperdicio: document.getElementById('result-con-desperdicio'),
             placas: document.getElementById('result-placas'),
             cobertura: document.getElementById('result-cobertura'),
-            platesGrid: document.getElementById('plates-grid')
         };
 
-        // Event listeners para cálculo en tiempo real
-        [elements.type, elements.largo, elements.ancho, elements.desperdicio].forEach(element => {
-            element.addEventListener('change', calcular);
-            element.addEventListener('input', calcular);
+        [elements.type, elements.largo, elements.ancho, elements.desperdicio].forEach(el => {
+            el.addEventListener('change', calcular);
+            el.addEventListener('input', calcular);
         });
 
         function calcular() {
@@ -599,73 +510,25 @@
             const desperdicio = parseFloat(elements.desperdicio.value);
             const tipo = elements.type.value;
 
-            // Validar que todos los campos estén completos
             if (!largo || !ancho || isNaN(largo) || isNaN(ancho) || largo <= 0 || ancho <= 0) {
                 mostrarWarning();
                 return;
             }
 
-            // Calcular superficie
             const superficie = largo * ancho;
             const superficieConDesperdicio = superficie * (1 + desperdicio / 100);
             const cantidadPlacas = Math.ceil(superficieConDesperdicio / COBERTURA_PLACA);
             const coberturaTotal = cantidadPlacas * COBERTURA_PLACA;
 
-            // Mostrar resultados
-            mostrarResultados(superficie, superficieConDesperdicio, cantidadPlacas, coberturaTotal, tipo);
-            
-            // Generar mensaje para WhatsApp
-            generarMensajeWhatsApp(cantidadPlacas, tipo);
-        }
-
-        function mostrarResultados(superficie, superficieConDesperdicio, cantidadPlacas, coberturaTotal, tipo) {
             elements.warning.style.display = 'none';
             elements.resultados.style.display = 'block';
-
-            // Actualizar valores con formatos prolijos
             elements.superficie.textContent = superficie.toFixed(2);
             elements.conDesperdicio.textContent = superficieConDesperdicio.toFixed(2);
             elements.placas.textContent = cantidadPlacas;
             elements.cobertura.textContent = coberturaTotal.toFixed(2);
 
-            // Generar visualización de placas
-            generarVisualizacionPlacas(cantidadPlacas);
-        }
-
-        function generarVisualizacionPlacas(cantidad) {
-            elements.platesGrid.innerHTML = '';
-            
-            // Limitar visualización a 20 placas para no hacer scroll excesivo
-            const mostrar = Math.min(cantidad, 20);
-            
-            for (let i = 1; i <= mostrar; i++) {
-                const plate = document.createElement('div');
-                plate.className = 'plate';
-                plate.textContent = i;
-                plate.style.animationDelay = `${(i - 1) * 0.05}s`;
-                elements.platesGrid.appendChild(plate);
-            }
-
-            // Si hay más de 20, agregar indicador
-            if (cantidad > 20) {
-                const moreIndicator = document.createElement('div');
-                moreIndicator.className = 'plate';
-                moreIndicator.style.background = 'rgba(255,255,255,0.1)';
-                moreIndicator.style.cursor = 'default';
-                moreIndicator.textContent = `+${cantidad - 20}`;
-                moreIndicator.style.border = '2px dashed rgba(255,215,0,0.3)';
-                elements.platesGrid.appendChild(moreIndicator);
-            }
-        }
-
-        function generarMensajeWhatsApp(cantidadPlacas, tipo) {
-            const tipoCapitalizado = tipo.charAt(0).toUpperCase() + tipo.slice(1);
             const mensaje = `Hola, calculé ${cantidadPlacas} placas OSB para ${tipo} en la web y quiero presupuesto.`;
-            const numeroWhatsApp = '5492944928970';
-            const mensajeCodificado = encodeURIComponent(mensaje);
-            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
-            
-            elements.whatsappBtn.href = urlWhatsApp;
+            elements.whatsappBtn.href = `https://wa.me/5492944928970?text=${encodeURIComponent(mensaje)}`;
         }
 
         function mostrarWarning() {
@@ -673,7 +536,6 @@
             elements.warning.style.display = 'block';
         }
 
-        // Inicializar - ocultar resultados al cargar
         document.addEventListener('DOMContentLoaded', () => {
             elements.resultados.style.display = 'none';
             elements.warning.style.display = 'none';
