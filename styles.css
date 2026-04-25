@@ -1162,6 +1162,19 @@ h3 {
     }
 }
 
+/* FIX PANTALLA DE CARGA MOBILE */
+.loading-logo {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .loading-logo {
+        width: 320px;
+    }
+}
+
 /* FIX NAVBAR MOBILE */
 @media (max-width: 767px) {
     .site-header {
