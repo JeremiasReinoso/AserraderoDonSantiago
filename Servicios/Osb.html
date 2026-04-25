@@ -16,11 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* ===== CALCULADORA OSB ===== */
-        .calculator-wrapper {
-            margin-top: 3rem;
-        }
-
+        .calculator-wrapper { margin-top: 3rem; }
         .calculator-container {
             padding: 3rem 2rem;
             border-radius: 1rem;
@@ -29,190 +25,119 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
-
         .calculator-container:hover {
             border: 1px solid rgba(255,255,255,0.15);
             box-shadow: 0 12px 40px rgba(0,0,0,0.15);
         }
-
         .calculator-inputs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
-
-        .calc-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
+        .calc-input-group { display: flex; flex-direction: column; gap: 0.5rem; }
         .calc-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            opacity: 0.9;
+            font-size: 0.9rem; font-weight: 600; color: #ffffff;
+            text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;
         }
-
-        .calc-input,
-        .calc-select {
+        .calc-input, .calc-select {
             padding: 0.875rem 1rem;
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 0.625rem;
             background: rgba(26, 26, 26, 0.5);
-            color: #ffffff;
-            font-size: 1rem;
+            color: #ffffff; font-size: 1rem;
             font-family: 'Manrope', sans-serif;
             transition: all 0.3s ease;
         }
-
-        .calc-input:hover,
-        .calc-select:hover {
+        .calc-input:hover, .calc-select:hover {
             border: 1px solid rgba(255,255,255,0.3);
             background: rgba(26, 26, 26, 0.7);
         }
-
-        .calc-input:focus,
-        .calc-select:focus {
+        .calc-input:focus, .calc-select:focus {
             outline: none;
             border: 1px solid rgba(255,255,255,0.5);
             background: rgba(26, 26, 26, 0.8);
             box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
         }
-
-        .calc-select option {
-            background: #1a1a1a;
-            color: #ffffff;
-        }
-
+        .calc-select option { background: #1a1a1a; color: #ffffff; }
         .calculator-divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             margin: 2rem 0;
         }
-
-        .calculator-results {
-            animation: slideUp 0.5s ease;
-        }
-
+        .calculator-results { animation: slideUp 0.5s ease; }
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem; margin-bottom: 2rem;
         }
-
         .result-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
+            border-radius: 0.75rem; padding: 1.5rem;
+            text-align: center; transition: all 0.3s ease;
         }
-
         .result-card:hover {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.2);
             transform: translateY(-2px);
         }
-
         .result-card.highlight {
             background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0.05) 100%);
             border: 1px solid rgba(255,215,0,0.3);
             box-shadow: 0 0 20px rgba(255,215,0,0.1);
         }
-
         .result-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem; color: rgba(255,255,255,0.6);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;
         }
-
         .result-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #ffffff;
-            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem; font-weight: 700;
+            color: #ffffff; font-family: 'Playfair Display', serif;
         }
-
         .calculator-warning {
             padding: 1.5rem;
             background: rgba(220, 100, 100, 0.1);
             border: 1px solid rgba(220, 100, 100, 0.3);
-            border-radius: 0.75rem;
-            color: #ff9999;
-            text-align: center;
-            animation: slideUp 0.3s ease;
+            border-radius: 0.75rem; color: #ff9999;
+            text-align: center; animation: slideUp 0.3s ease;
         }
-
         .calculator-warning p { margin: 0; font-size: 0.95rem; }
-
-        .calculator-action {
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .calculator-action .button {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
+        .calculator-action { margin-top: 2rem; text-align: center; }
+        .calculator-action .button { padding: 1rem 2.5rem; font-size: 1rem; transition: all 0.3s ease; }
+        .metric-value { font-size: 1rem !important; font-weight: 600; line-height: 1.4; }
+        .metric-label { margin-bottom: 0.25rem; }
         @media (max-width: 768px) {
             .calculator-container { padding: 2rem 1.5rem; }
             .calculator-inputs { grid-template-columns: 1fr; gap: 1.5rem; }
             .results-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .result-value { font-size: 1.4rem; }
         }
-
         @media (max-width: 480px) {
             .calculator-container { padding: 1.5rem 1rem; }
             .results-grid { grid-template-columns: 1fr; }
             .result-card { padding: 1rem; }
             .result-value { font-size: 1.2rem; }
         }
-
-        /* FIX: métricas del hero con texto corto */
-        .metric-value {
-            font-size: 1rem !important;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        .metric-label {
-            margin-bottom: 0.25rem;
-        }
     </style>
 </head>
 <body>
-    <!-- Pantalla de carga -->
     <div id="loading-screen">
         <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Cargando..." class="loading-logo">
     </div>
     <style>
         #loading-screen {
-            position: fixed;
-            top: 0; left: 0;
+            position: fixed; top: 0; left: 0;
             width: 100%; height: 100%;
             background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
+            display: flex; justify-content: center; align-items: center;
+            z-index: 9999; transition: opacity 0.5s ease;
         }
         #loading-screen.hidden { opacity: 0; pointer-events: none; }
-        .loading-logo { width: 100%; height: 100%; object-fit: cover; }
     </style>
     <script>
         window.addEventListener('load', function() {
@@ -222,7 +147,6 @@
         });
     </script>
 
-    <!-- Navbar -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
@@ -257,7 +181,6 @@
     </header>
 
     <main>
-        <!-- HERO: corregido — usa clase .hero en lugar de .hero-section -->
         <section class="hero">
             <div class="hero-bg is-active">
                 <div class="overlay"></div>
@@ -301,68 +224,6 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Beneficios</p>
-                    <h2>Ventajas para tu proyecto</h2>
-                </div>
-                <div class="services-grid">
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;">
-                        <h3>Rapidez</h3>
-                        <p>Rápido armado y montaje en obra.</p>
-                        <div class="service-divider"></div>
-                    </article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;">
-                        <h3>Eficiencia</h3>
-                        <p>Buen rendimiento estructural por m².</p>
-                        <div class="service-divider"></div>
-                    </article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;">
-                        <h3>Calidad</h3>
-                        <p>Calidad consistente en cada tablero.</p>
-                        <div class="service-divider"></div>
-                    </article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;">
-                        <h3>Versatilidad</h3>
-                        <p>Apto para pisos, muros, techos y revestimientos.</p>
-                        <div class="service-divider"></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container differential-layout">
-                <div class="differential-intro reveal">
-                    <div class="differential-panel">
-                        <p class="section-eyebrow">Proceso</p>
-                        <h2>Cómo trabajamos</h2>
-                        <p>Te asesoramos según uso estructural o terminación.</p>
-                    </div>
-                </div>
-                <div class="differential-list">
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;">
-                        <div class="differential-number">01</div>
-                        <div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div>
-                    </article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;">
-                        <div class="differential-number">02</div>
-                        <div><h3>Diseño</h3><p>Planificamos con criterio técnico y visual.</p></div>
-                    </article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;">
-                        <div class="differential-number">03</div>
-                        <div><h3>Fabricación</h3><p>Producimos con control de calidad y detalle.</p></div>
-                    </article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;">
-                        <div class="differential-number">04</div>
-                        <div><h3>Entrega</h3><p>Despachamos y coordinamos con vos la recepción.</p></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Calculadora de Placas OSB -->
         <section class="section">
             <div class="container">
                 <div class="section-heading reveal">
@@ -430,6 +291,36 @@
                             <p>Por favor completá todos los campos para calcular.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container differential-layout">
+                <div class="differential-intro reveal">
+                    <div class="differential-panel">
+                        <p class="section-eyebrow">Proceso</p>
+                        <h2>Cómo trabajamos</h2>
+                        <p>Te asesoramos según uso estructural o terminación.</p>
+                    </div>
+                </div>
+                <div class="differential-list">
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;">
+                        <div class="differential-number">01</div>
+                        <div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div>
+                    </article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;">
+                        <div class="differential-number">02</div>
+                        <div><h3>Diseño</h3><p>Planificamos con criterio técnico y visual.</p></div>
+                    </article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;">
+                        <div class="differential-number">03</div>
+                        <div><h3>Fabricación</h3><p>Producimos con control de calidad y detalle.</p></div>
+                    </article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;">
+                        <div class="differential-number">04</div>
+                        <div><h3>Entrega</h3><p>Despachamos y coordinamos con vos la recepción.</p></div>
+                    </article>
                 </div>
             </div>
         </section>
