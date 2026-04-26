@@ -31,7 +31,7 @@
         }
         .calculator-inputs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -39,6 +39,12 @@
         .calc-label {
             font-size: 0.9rem; font-weight: 600; color: #ffffff;
             text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;
+        }
+        .calc-label-hint {
+            font-size: 0.75rem; font-weight: 400;
+            color: rgba(255,255,255,0.45);
+            text-transform: none; letter-spacing: 0;
+            margin-top: 0.15rem; display: block;
         }
         .calc-input, .calc-select {
             padding: 0.875rem 1rem;
@@ -60,6 +66,16 @@
             box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
         }
         .calc-select option { background: #1a1a1a; color: #ffffff; }
+
+        /* Desperdicio sugerido badge */
+        .desperdicio-sugerido {
+            font-size: 0.72rem;
+            color: #2e7d32;
+            margin-top: 0.35rem;
+            min-height: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
         .calculator-divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
@@ -72,13 +88,13 @@
         }
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem; margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.25rem; margin-bottom: 2rem;
         }
         .result-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 0.75rem; padding: 1.5rem;
+            border-radius: 0.75rem; padding: 1.25rem;
             text-align: center; transition: all 0.3s ease;
         }
         .result-card:hover {
@@ -87,18 +103,31 @@
             transform: translateY(-2px);
         }
         .result-card.highlight {
-            background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            border: 1px solid rgba(255,215,0,0.3);
-            box-shadow: 0 0 20px rgba(255,215,0,0.1);
+            background: linear-gradient(135deg, rgba(46,125,50,0.15) 0%, rgba(255,255,255,0.04) 100%);
+            border: 1px solid rgba(46,125,50,0.4);
+            box-shadow: 0 0 20px rgba(46,125,50,0.12);
+        }
+        .result-card.sobrante {
+            background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
         }
         .result-label {
-            font-size: 0.85rem; color: rgba(255,255,255,0.6);
+            font-size: 0.78rem; color: rgba(255,255,255,0.55);
             text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;
         }
         .result-value {
-            font-size: 1.75rem; font-weight: 700;
+            font-size: 1.6rem; font-weight: 700;
             color: #ffffff; font-family: 'Playfair Display', serif;
         }
+        .result-card.highlight .result-value { color: #6fcf7a; }
+
+        /* Nota de sobrante */
+        .sobrante-nota {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 0.3rem;
+        }
+
         .calculator-warning {
             padding: 1.5rem;
             background: rgba(220, 100, 100, 0.1);
@@ -109,8 +138,10 @@
         .calculator-warning p { margin: 0; font-size: 0.95rem; }
         .calculator-action { margin-top: 2rem; text-align: center; }
         .calculator-action .button { padding: 1rem 2.5rem; font-size: 1rem; transition: all 0.3s ease; }
+
         .metric-value { font-size: 1rem !important; font-weight: 600; line-height: 1.4; }
         .metric-label { margin-bottom: 0.25rem; }
+
         @media (max-width: 768px) {
             .calculator-container { padding: 2rem 1.5rem; }
             .calculator-inputs { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -119,7 +150,7 @@
         }
         @media (max-width: 480px) {
             .calculator-container { padding: 1.5rem 1rem; }
-            .results-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
             .result-card { padding: 1rem; }
             .result-value { font-size: 1.2rem; }
         }
@@ -224,44 +255,71 @@
             </div>
         </section>
 
+        <!-- Calculadora de Placas OSB -->
         <section class="section">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-eyebrow">Herramienta</p>
                     <h2>Calculadora de Placas OSB</h2>
-                    <p class="section-text">Calculá en segundos cuántas placas necesitás para piso, pared o techo.</p>
+                    <p class="section-text">Calculá cuántas placas necesitás según el uso y el tamaño del tablero.</p>
                 </div>
                 <div class="calculator-wrapper reveal">
                     <div class="calculator-container glass-panel">
                         <div class="calculator-inputs">
+
                             <div class="calc-input-group">
-                                <label for="calc-type" class="calc-label">Tipo de Uso</label>
+                                <label for="calc-type" class="calc-label">Tipo de uso</label>
                                 <select id="calc-type" class="calc-select">
                                     <option value="piso">Piso</option>
                                     <option value="pared">Pared</option>
                                     <option value="techo">Techo</option>
                                     <option value="revestimiento">Revestimiento</option>
                                 </select>
+                                <span class="desperdicio-sugerido" id="desperdicio-sugerido"></span>
                             </div>
+
                             <div class="calc-input-group">
-                                <label for="calc-largo" class="calc-label">Largo (metros)</label>
+                                <label for="calc-medida" class="calc-label">Medida de la placa</label>
+                                <select id="calc-medida" class="calc-select">
+                                    <option value="2.9768">1.22 × 2.44 m — estándar (2.97 m²)</option>
+                                    <option value="2.2326">1.22 × 1.83 m (2.23 m²)</option>
+                                    <option value="custom">Medida personalizada</option>
+                                </select>
+                            </div>
+
+                            <div class="calc-input-group" id="custom-medida-group" style="display:none;">
+                                <label class="calc-label">Medida personalizada (m)
+                                    <span class="calc-label-hint">Ingresá ancho y largo de la placa</span>
+                                </label>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+                                    <input type="number" id="calc-placa-ancho" class="calc-input" placeholder="Ancho" min="0" step="0.01">
+                                    <input type="number" id="calc-placa-largo" class="calc-input" placeholder="Largo" min="0" step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label for="calc-largo" class="calc-label">Largo del área (m)</label>
                                 <input type="number" id="calc-largo" class="calc-input" placeholder="ej: 5" min="0" step="0.1">
                             </div>
+
                             <div class="calc-input-group">
-                                <label for="calc-ancho" class="calc-label">Ancho (metros)</label>
+                                <label for="calc-ancho" class="calc-label">Ancho del área (m)</label>
                                 <input type="number" id="calc-ancho" class="calc-input" placeholder="ej: 4" min="0" step="0.1">
                             </div>
+
                             <div class="calc-input-group">
                                 <label for="calc-desperdicio" class="calc-label">Desperdicio</label>
                                 <select id="calc-desperdicio" class="calc-select">
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10" selected>10%</option>
-                                    <option value="15">15%</option>
+                                    <option value="5">5% — cortes simples</option>
+                                    <option value="10" selected>10% — uso general</option>
+                                    <option value="15">15% — cortes complejos</option>
+                                    <option value="20">20% — techo con pendiente</option>
                                 </select>
                             </div>
+
                         </div>
                         <div class="calculator-divider"></div>
+
                         <div class="calculator-results" id="calc-results" style="display: none;">
                             <div class="results-grid">
                                 <div class="result-card">
@@ -269,16 +327,17 @@
                                     <p class="result-value"><span id="result-superficie">0</span> m²</p>
                                 </div>
                                 <div class="result-card">
-                                    <p class="result-label">Con Desperdicio</p>
+                                    <p class="result-label">Con desperdicio</p>
                                     <p class="result-value"><span id="result-con-desperdicio">0</span> m²</p>
                                 </div>
                                 <div class="result-card highlight">
-                                    <p class="result-label">Placas Necesarias</p>
+                                    <p class="result-label">Placas necesarias</p>
                                     <p class="result-value" id="result-placas">0</p>
                                 </div>
-                                <div class="result-card">
-                                    <p class="result-label">Cobertura Total</p>
-                                    <p class="result-value"><span id="result-cobertura">0</span> m²</p>
+                                <div class="result-card sobrante">
+                                    <p class="result-label">Área sobrante</p>
+                                    <p class="result-value"><span id="result-sobrante">0</span> m²</p>
+                                    <p class="sobrante-nota" id="sobrante-nota"></p>
                                 </div>
                             </div>
                             <div class="calculator-action">
@@ -287,6 +346,7 @@
                                 </a>
                             </div>
                         </div>
+
                         <div class="calculator-warning" id="calc-warning" style="display: none;">
                             <p>Por favor completá todos los campos para calcular.</p>
                         </div>
@@ -364,62 +424,118 @@
 
     <script src="../script.js"></script>
     <script>
-        const COBERTURA_PLACA = 2.97;
-
-        const elements = {
-            type: document.getElementById('calc-type'),
-            largo: document.getElementById('calc-largo'),
-            ancho: document.getElementById('calc-ancho'),
-            desperdicio: document.getElementById('calc-desperdicio'),
-            resultados: document.getElementById('calc-results'),
-            warning: document.getElementById('calc-warning'),
-            whatsappBtn: document.getElementById('whatsapp-button'),
-            superficie: document.getElementById('result-superficie'),
-            conDesperdicio: document.getElementById('result-con-desperdicio'),
-            placas: document.getElementById('result-placas'),
-            cobertura: document.getElementById('result-cobertura'),
+        // Desperdicio sugerido y descripción por tipo de uso
+        const TIPO_CONFIG = {
+            piso:          { desperdicio: '10', hint: '💡 Para piso se sugiere 10% de desperdicio.' },
+            pared:         { desperdicio: '10', hint: '💡 Para pared se sugiere 10% de desperdicio.' },
+            techo:         { desperdicio: '20', hint: '💡 Para techo con pendiente se sugiere 20%.' },
+            revestimiento: { desperdicio: '15', hint: '💡 Para revestimiento se sugiere 15% por cortes.' },
         };
 
-        [elements.type, elements.largo, elements.ancho, elements.desperdicio].forEach(el => {
-            el.addEventListener('change', calcular);
-            el.addEventListener('input', calcular);
+        const el = {
+            tipo:            document.getElementById('calc-type'),
+            medida:          document.getElementById('calc-medida'),
+            customGroup:     document.getElementById('custom-medida-group'),
+            placaAncho:      document.getElementById('calc-placa-ancho'),
+            placaLargo:      document.getElementById('calc-placa-largo'),
+            largo:           document.getElementById('calc-largo'),
+            ancho:           document.getElementById('calc-ancho'),
+            desperdicio:     document.getElementById('calc-desperdicio'),
+            results:         document.getElementById('calc-results'),
+            warning:         document.getElementById('calc-warning'),
+            whatsappBtn:     document.getElementById('whatsapp-button'),
+            superficie:      document.getElementById('result-superficie'),
+            conDesperdicio:  document.getElementById('result-con-desperdicio'),
+            placas:          document.getElementById('result-placas'),
+            sobrante:        document.getElementById('result-sobrante'),
+            sobranteNota:    document.getElementById('sobrante-nota'),
+            despiHint:       document.getElementById('desperdicio-sugerido'),
+        };
+
+        // Al cambiar tipo de uso, sugerir desperdicio
+        el.tipo.addEventListener('change', () => {
+            const config = TIPO_CONFIG[el.tipo.value];
+            if (config) {
+                el.desperdicio.value = config.desperdicio;
+                el.despiHint.textContent = config.hint;
+            }
+            calcular();
         });
 
-        function calcular() {
-            const largo = parseFloat(elements.largo.value);
-            const ancho = parseFloat(elements.ancho.value);
-            const desperdicio = parseFloat(elements.desperdicio.value);
-            const tipo = elements.type.value;
+        // Mostrar/ocultar medida personalizada
+        el.medida.addEventListener('change', () => {
+            el.customGroup.style.display = el.medida.value === 'custom' ? 'flex' : 'none';
+            el.customGroup.style.flexDirection = 'column';
+            calcular();
+        });
 
-            if (!largo || !ancho || isNaN(largo) || isNaN(ancho) || largo <= 0 || ancho <= 0) {
-                mostrarWarning();
+        // Escuchar todos los inputs
+        [el.largo, el.ancho, el.desperdicio, el.medida, el.placaAncho, el.placaLargo].forEach(input => {
+            input.addEventListener('input', calcular);
+            input.addEventListener('change', calcular);
+        });
+
+        function getCobertura() {
+            if (el.medida.value === 'custom') {
+                const a = parseFloat(el.placaAncho.value);
+                const l = parseFloat(el.placaLargo.value);
+                if (!a || !l || a <= 0 || l <= 0) return null;
+                return a * l;
+            }
+            return parseFloat(el.medida.value);
+        }
+
+        function calcular() {
+            const largo = parseFloat(el.largo.value);
+            const ancho = parseFloat(el.ancho.value);
+            const desperdicio = parseFloat(el.desperdicio.value);
+            const tipo = el.tipo.value;
+            const cobertura = getCobertura();
+
+            if (!largo || !ancho || largo <= 0 || ancho <= 0 || !cobertura) {
+                el.results.style.display = 'none';
+                el.warning.style.display = 'block';
                 return;
             }
 
             const superficie = largo * ancho;
             const superficieConDesperdicio = superficie * (1 + desperdicio / 100);
-            const cantidadPlacas = Math.ceil(superficieConDesperdicio / COBERTURA_PLACA);
-            const coberturaTotal = cantidadPlacas * COBERTURA_PLACA;
+            const cantidadPlacas = Math.ceil(superficieConDesperdicio / cobertura);
+            const coberturaTotal = cantidadPlacas * cobertura;
+            const sobrante = coberturaTotal - superficieConDesperdicio;
 
-            elements.warning.style.display = 'none';
-            elements.resultados.style.display = 'block';
-            elements.superficie.textContent = superficie.toFixed(2);
-            elements.conDesperdicio.textContent = superficieConDesperdicio.toFixed(2);
-            elements.placas.textContent = cantidadPlacas;
-            elements.cobertura.textContent = coberturaTotal.toFixed(2);
+            el.warning.style.display = 'none';
+            el.results.style.display = 'block';
 
-            const mensaje = `Hola, calculé ${cantidadPlacas} placas OSB para ${tipo} en la web y quiero presupuesto.`;
-            elements.whatsappBtn.href = `https://wa.me/5492944928970?text=${encodeURIComponent(mensaje)}`;
+            el.superficie.textContent = superficie.toFixed(2);
+            el.conDesperdicio.textContent = superficieConDesperdicio.toFixed(2);
+            el.placas.textContent = cantidadPlacas;
+            el.sobrante.textContent = sobrante.toFixed(2);
+
+            // Nota de sobrante
+            if (sobrante < 0.5) {
+                el.sobranteNota.textContent = 'Margen muy ajustado';
+            } else if (sobrante > cobertura) {
+                el.sobranteNota.textContent = 'Podés reducir el desperdicio';
+            } else {
+                el.sobranteNota.textContent = 'Buen margen de seguridad';
+            }
+
+            // Mensaje WhatsApp
+            const medidaTexto = el.medida.value === 'custom'
+                ? `${el.placaAncho.value}×${el.placaLargo.value}m`
+                : el.medida.options[el.medida.selectedIndex].text.split('—')[0].trim();
+
+            const mensaje = `Hola, calculé ${cantidadPlacas} placas OSB (${medidaTexto}) para ${tipo} — superficie ${superficie.toFixed(1)} m². Quiero presupuesto.`;
+            el.whatsappBtn.href = `https://wa.me/5492944928970?text=${encodeURIComponent(mensaje)}`;
         }
 
-        function mostrarWarning() {
-            elements.resultados.style.display = 'none';
-            elements.warning.style.display = 'block';
-        }
-
+        // Inicializar hint al cargar
         document.addEventListener('DOMContentLoaded', () => {
-            elements.resultados.style.display = 'none';
-            elements.warning.style.display = 'none';
+            el.results.style.display = 'none';
+            el.warning.style.display = 'none';
+            const config = TIPO_CONFIG[el.tipo.value];
+            if (config) el.despiHint.textContent = config.hint;
         });
     </script>
 </body>
