@@ -281,42 +281,43 @@
                             <div class="calc-input-group">
                                 <label for="calc-medida" class="calc-label">Medida de la placa</label>
                                 <select id="calc-medida" class="calc-select">
-                                    <option value="2.9768">1.22 × 2.44 m — estándar (2.97 m²)</option>
-                                    <option value="2.2326">1.22 × 1.83 m (2.23 m²)</option>
+                                    <option value="2.9768" selected>1.22 x 2.44 m - estandar (2.97 m2)</option>
+                                    <option value="2.2326">1.22 x 1.83 m (2.23 m2)</option>
                                     <option value="custom">Medida personalizada</option>
                                 </select>
                             </div>
 
-                            <div class="calc-input-group" id="custom-medida-group" style="display:none;">
-                                <label class="calc-label">Medida personalizada (m)
-                                    <span class="calc-label-hint">Ingresá ancho y largo de la placa</span>
-                                </label>
-                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
-                                    <input type="number" id="calc-placa-ancho" class="calc-input" placeholder="Ancho" min="0" step="0.01">
-                                    <input type="number" id="calc-placa-largo" class="calc-input" placeholder="Largo" min="0" step="0.01">
-                                </div>
-                            </div>
-
                             <div class="calc-input-group">
-                                <label for="calc-largo" class="calc-label">Largo del área (m)</label>
+                                <label for="calc-largo" class="calc-label">Largo del area (m)</label>
                                 <input type="number" id="calc-largo" class="calc-input" placeholder="ej: 5" min="0" step="0.1">
                             </div>
 
                             <div class="calc-input-group">
-                                <label for="calc-ancho" class="calc-label">Ancho del área (m)</label>
+                                <label for="calc-ancho" class="calc-label">Ancho del area (m)</label>
                                 <input type="number" id="calc-ancho" class="calc-input" placeholder="ej: 4" min="0" step="0.1">
                             </div>
 
                             <div class="calc-input-group">
                                 <label for="calc-desperdicio" class="calc-label">Desperdicio</label>
                                 <select id="calc-desperdicio" class="calc-select">
-                                    <option value="5">5% — cortes simples</option>
-                                    <option value="10" selected>10% — uso general</option>
-                                    <option value="15">15% — cortes complejos</option>
-                                    <option value="20">20% — techo con pendiente</option>
+                                    <option value="5">5% - cortes simples</option>
+                                    <option value="10" selected>10% - uso general</option>
+                                    <option value="15">15% - cortes complejos</option>
+                                    <option value="20">20% - techo con pendiente</option>
                                 </select>
                             </div>
 
+                        </div>
+
+                        <!-- Medida personalizada fuera del grid -->
+                        <div id="custom-medida-group" style="display:none; margin-top:1.5rem;">
+                            <label class="calc-label">Medida de la placa personalizada (m)
+                                <span class="calc-label-hint">Ingresa el ancho y el largo de la placa</span>
+                            </label>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem; max-width:400px;">
+                                <input type="number" id="calc-placa-ancho" class="calc-input" placeholder="Ancho (ej: 1.22)" min="0" step="0.01">
+                                <input type="number" id="calc-placa-largo" class="calc-input" placeholder="Largo (ej: 2.44)" min="0" step="0.01">
+                            </div>
                         </div>
                         <div class="calculator-divider"></div>
 
