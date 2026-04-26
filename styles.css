@@ -1553,5 +1553,5 @@ h3 {
 @media (max-width: 720px) {
     .calculadoras-solares .calc-results {
         grid-template-columns: 1fr;
-    }
+    }    
 }
