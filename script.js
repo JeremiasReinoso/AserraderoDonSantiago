@@ -221,6 +221,27 @@ function setupGallerySliders() {
     });
 }
 
+function setupTimelineAnimation() {
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    if (!timelineItems.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("is-visible");
+                    }, index * 150);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    timelineItems.forEach(item => observer.observe(item));
+}
+
 // Slider de fondo del HERO (imagenes estables)
 function setupHeroSlider() {
     const hero = document.querySelector(".hero");
@@ -365,6 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupAnchorOffset();
     setupGallerySliders();
     setupHeroSlider();
+    setupTimelineAnimation();
 
     window.addEventListener("scroll", updateHeaderState, { passive: true });
 });
