@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <!-- Pantalla de carga -->
     <div id="loading-screen">
         <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Cargando..." class="loading-logo">
     </div>
@@ -28,7 +27,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #1a1a1a;
+            background: #050505;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,7 +52,6 @@
         });
     </script>
 
-    <!-- Navbar principal -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
@@ -88,124 +86,307 @@
     </header>
 
     <main>
-        <section class="hero-section">
-            <img src="https://source.unsplash.com/1600x900/?wood,furniture,interior" alt="Muebles de madera" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div class="hero-fade"></div>
-            <div class="container hero-content">
-                <div class="hero-grid">
-                    <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
-                        <p class="hero-kicker">Servicios</p>
-                        <h1>Muebles de madera</h1>
-                        <p class="hero-description">Diseño a medida con terminación premium.</p>
-                        <div class="hero-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Muebles%20de%20Madera." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
+        <section class="muebles-hero">
+            <div class="muebles-hero-bg"></div>
+            <div class="muebles-hero-overlay"></div>
+            <div class="container muebles-hero-content reveal" data-reveal="muebles-hero">
+                <div class="muebles-hero-copy">
+                    <p class="muebles-hero-kicker">Showroom Premium</p>
+                    <h1 class="muebles-hero-title">Muebles de Madera</h1>
+                    <p class="muebles-hero-description">Diseño a medida con terminación premium. Cada pieza única, construida con artesanía y materiales seleccionados.</p>
+                    <div class="muebles-hero-actions">
+                        <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Muebles%20de%20Madera." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="muebles-showroom">
+            <div class="container">
+                <div class="showroom-header reveal" data-reveal="showroom-header">
+                    <p class="section-eyebrow">Showroom Virtual</p>
+                    <h2>Ver en Ambiente</h2>
+                    <p class="section-text">Explora nuestros muebles integrados en espacios reales. Cada ambiente cuenta una historia de diseño y funcionalidad.</p>
+                </div>
+
+                <div class="showroom-tabs reveal" data-reveal="showroom-tabs">
+                    <button class="showroom-tab active" data-showroom-tab="living">Living</button>
+                    <button class="showroom-tab" data-showroom-tab="dormitorio">Dormitorio</button>
+                    <button class="showroom-tab" data-showroom-tab="oficina">Oficina</button>
+                    <button class="showroom-tab" data-showroom-tab="cocina">Cocina</button>
+                </div>
+
+                <div class="showroom-content">
+                    <div class="showroom-panel active" data-showroom-panel="living">
+                        <div class="showroom-grid">
+                            <div class="showroom-card reveal" data-reveal="showroom-item" style="--reveal-delay: 0.1s">
+                                <div class="showroom-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Living moderno con muebles de madera" class="showroom-image">
+                                </div>
+                                <div class="showroom-overlay">
+                                    <div class="showroom-caption">
+                                        <h3>Living Premium</h3>
+                                        <p>Muebles integrales con diseño minimalista</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showroom-card reveal" data-reveal="showroom-item" style="--reveal-delay: 0.2s">
+                                <div class="showroom-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1505409628601-edc9af17fda6?auto=format&fit=crop&w=1200&q=80" alt="Sala de estar con madera natural" class="showroom-image">
+                                </div>
+                                <div class="showroom-overlay">
+                                    <div class="showroom-caption">
+                                        <h3>Sala de Estar</h3>
+                                        <p>Combinación de materiales y texturas</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <aside class="hero-panel glass-panel reveal reveal-active" data-reveal="hero-panel">
-                        <div class="metrics-grid">
-                            <div class="metric-card"><p class="metric-label">Rapidez</p><p class="metric-value">Alta</p></div>
-                            <div class="metric-card"><p class="metric-label">Eficiencia</p><p class="metric-value">Superior</p></div>
-                            <div class="metric-card"><p class="metric-label">Calidad</p><p class="metric-value">Premium</p></div>
-                            <div class="metric-card"><p class="metric-label">Respuesta</p><p class="metric-value">Personalizada</p></div>
+                    <div class="showroom-panel" data-showroom-panel="dormitorio">
+                        <div class="showroom-grid">
+                            <div class="showroom-card reveal" data-reveal="showroom-item" style="--reveal-delay: 0.1s">
+                                <div class="showroom-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Dormitorio moderno" class="showroom-image">
+                                </div>
+                                <div class="showroom-overlay">
+                                    <div class="showroom-caption">
+                                        <h3>Dormitorio Premium</h3>
+                                        <p>Diseño funcional y elegante</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="hero-panel-detail">
-                            <p class="panel-label">Diferencial</p>
-                            <p class="panel-text">Creamos muebles personalizados para interiores con identidad. Madera seleccionada, diseño funcional y terminación profesional.</p>
+                    </div>
+                    <div class="showroom-panel" data-showroom-panel="oficina">
+                        <div class="showroom-grid">
+                            <div class="showroom-card reveal" data-reveal="showroom-item" style="--reveal-delay: 0.1s">
+                                <div class="showroom-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Oficina con muebles de madera" class="showroom-image">
+                                </div>
+                                <div class="showroom-overlay">
+                                    <div class="showroom-caption">
+                                        <h3>Oficina Moderna</h3>
+                                        <p>Espacio productivo con madera natural</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </aside>
+                    </div>
+                    <div class="showroom-panel" data-showroom-panel="cocina">
+                        <div class="showroom-grid">
+                            <div class="showroom-card reveal" data-reveal="showroom-item" style="--reveal-delay: 0.1s">
+                                <div class="showroom-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1520034475321-cbe63696469a?auto=format&fit=crop&w=1200&q=80" alt="Cocina moderna con madera" class="showroom-image">
+                                </div>
+                                <div class="showroom-overlay">
+                                    <div class="showroom-caption">
+                                        <h3>Cocina Integrada</h3>
+                                        <p>Diseño a medida con acabados premium</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="muebles-customization">
             <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Descripcion</p>
-                    <h2>Sobre Muebles de madera</h2>
-                    <p class="section-text">Diseñamos y fabricamos con precision.</p>
+                <div class="customization-header reveal" data-reveal="customization-header">
+                    <p class="section-eyebrow">Personalización</p>
+                    <h2>Muebles a Medida</h2>
+                    <p class="section-text">Elige el tipo de madera y acabado que mejor se adapte a tu estilo. Cada selección actualiza el visual del mueble en tiempo real.</p>
+                </div>
+
+                <div class="customization-content">
+                    <div class="customization-options reveal" data-reveal="customization-options">
+                        <div class="wood-selector">
+                            <p class="selector-label">Tipo de Madera</p>
+                            <div class="wood-options">
+                                <button class="wood-option active" data-wood="pine" data-wood-name="Pino">
+                                    <div class="wood-preview wood-pine"></div>
+                                    <span>Pino</span>
+                                </button>
+                                <button class="wood-option" data-wood="cedar" data-wood-name="Cedro">
+                                    <div class="wood-preview wood-cedar"></div>
+                                    <span>Cedro</span>
+                                </button>
+                                <button class="wood-option" data-wood="walnut" data-wood-name="Nogal">
+                                    <div class="wood-preview wood-walnut"></div>
+                                    <span>Nogal</span>
+                                </button>
+                                <button class="wood-option" data-wood="oak-dark" data-wood-name="Roble Oscuro">
+                                    <div class="wood-preview wood-oak-dark"></div>
+                                    <span>Roble Oscuro</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="finish-selector">
+                            <p class="selector-label">Acabado</p>
+                            <div class="finish-options">
+                                <button class="finish-option active" data-finish="natural" data-finish-name="Natural">Natural</button>
+                                <button class="finish-option" data-finish="matte" data-finish-name="Mate">Mate</button>
+                                <button class="finish-option" data-finish="gloss" data-finish-name="Brillante">Brillante</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="furniture-showcase reveal" data-reveal="furniture-showcase">
+                        <div class="furniture-display" id="furnitureDisplay">
+                            <div class="furniture-placeholder">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Mueble de madera" class="furniture-image" id="furnitureImage">
+                            </div>
+                            <div class="wood-info">
+                                <h3 id="woodTitle">Pino Natural</h3>
+                                <p id="woodDescription">Madera premium con tonos cálidos y naturales. Ideal para espacios luminosos.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="muebles-gallery">
             <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Beneficios</p>
-                    <h2>Ventajas para tu proyecto</h2>
+                <div class="gallery-header reveal" data-reveal="gallery-header">
+                    <p class="section-eyebrow">Galería</p>
+                    <h2>Proyectos Destacados</h2>
                 </div>
-                <div class="services-grid">
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;"><h3>Rapidez</h3><p>Plazos claros y produccion controlada.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;"><h3>Eficiencia</h3><p>Aprovechamiento inteligente del espacio.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;"><h3>Calidad</h3><p>Materiales durables y terminaciones finas.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;"><h3>Valor agregado</h3><p>Diseño a medida según tu estilo.</p><div class="service-divider"></div></article>
-                </div>
-            </div>
-        </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-heading section-heading-centered reveal">
-                    <p class="section-eyebrow">Galeria</p>
-                    <h2>Proyectos y detalles</h2>
-                </div>
                 <div class="gallery-grid">
-                    <article class="gallery-card reveal" style="--reveal-delay: 0.05s;">
-                        <div class="gallery-slider">
+                    <article class="gallery-card reveal furniture-card" data-reveal="gallery-item" style="--reveal-delay: 0.1s">
+                        <div class="gallery-slider" data-slider>
                             <img class="slide active" src="https://source.unsplash.com/1200x800/?wood,furniture" alt="Muebles de madera proyecto 1">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Mueble 1</h3></div>
+                        <div class="gallery-caption">
+                            <h3>Mesa de Comedor</h3>
+                            <p>Pino con acabado natural</p>
+                        </div>
                     </article>
-                    <article class="gallery-card reveal" style="--reveal-delay: 0.1s;">
-                        <div class="gallery-slider">
+                    <article class="gallery-card reveal furniture-card" data-reveal="gallery-item" style="--reveal-delay: 0.2s">
+                        <div class="gallery-slider" data-slider>
                             <img class="slide active" src="https://source.unsplash.com/1200x800/?kitchen,wood" alt="Muebles de madera proyecto 2">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Mueble 2</h3></div>
+                        <div class="gallery-caption">
+                            <h3>Cocina Integrada</h3>
+                            <p>Nogal con encabezado de mitad</p>
+                        </div>
                     </article>
-                    <article class="gallery-card reveal" style="--reveal-delay: 0.15s;">
-                        <div class="gallery-slider">
+                    <article class="gallery-card reveal furniture-card" data-reveal="gallery-item" style="--reveal-delay: 0.3s">
+                        <div class="gallery-slider" data-slider>
                             <img class="slide active" src="https://source.unsplash.com/1200x800/?interior,wood" alt="Muebles de madera proyecto 3">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Mueble 3</h3></div>
+                        <div class="gallery-caption">
+                            <h3>Armario Empotrado</h3>
+                            <p>Roble oscuro con puertas espejo</p>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container differential-layout">
-                <div class="differential-intro reveal">
-                    <div class="differential-panel">
-                        <p class="section-eyebrow">Proceso</p>
-                        <h2>Como trabajamos</h2>
-                        <p>Diseñamos y fabricamos con precision.</p>
-                    </div>
+        <section class="muebles-benefits">
+            <div class="container">
+                <div class="benefits-header reveal" data-reveal="benefits-header">
+                    <p class="section-eyebrow">Ventajas</p>
+                    <h2>Por Quéelegirnos</h2>
                 </div>
-                <div class="differential-list">
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;"><div class="differential-number">01</div><div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;"><div class="differential-number">02</div><div><h3>Diseño</h3><p>Planificamos con criterio tecnico y visual.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;"><div class="differential-number">03</div><div><h3>Fabricacion</h3><p>Producimos con control de calidad y detalle.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;"><div class="differential-number">04</div><div><h3>Montaje</h3><p>Instalamos y entregamos con terminaciones prolijas.</p></div></article>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card reveal hover-lift" data-reveal="benefit-item" style="--reveal-delay: 0.1s">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        </div>
+                        <h3>Calidad Premium</h3>
+                        <p>Materiales seleccionados y acabados de alta calidad para durabilidad total.</p>
+                    </article>
+                    <article class="benefit-card reveal hover-lift" data-reveal="benefit-item" style="--reveal-delay: 0.2s">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></svg>
+                        </div>
+                        <h3>Diseño Único</h3>
+                        <p>Cada pieza creada a medida según tus necesidades y estilo personal.</p>
+                    </article>
+                    <article class="benefit-card reveal hover-lift" data-reveal="benefit-item" style="--reveal-delay: 0.3s">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3>Entrega Rápida</h3>
+                        <p>Plazos claros y producción controlada para tu comodidad.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="section contact-section">
+        <section class="muebles-process">
             <div class="container">
-                <div class="contact-shell reveal">
+                <div class="process-header reveal" data-reveal="process-header">
+                    <p class="section-eyebrow">Proceso</p>
+                    <h2>Cómo Trabajamos</h2>
+                    <p>Un camino desde la idea hasta el mueble final, con participación activa del cliente en cada etapa.</p>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-item reveal" data-reveal="process-item" style="--reveal-delay: 0.1s">
+                        <div class="process-number">01</div>
+                        <div class="process-content">
+                            <h3>Asesoramiento</h3>
+                            <p>Relevamos tus necesidades y definimos el alcance ideal del proyecto.</p>
+                        </div>
+                    </div>
+                    <div class="process-item reveal" data-reveal="process-item" style="--reveal-delay: 0.2s">
+                        <div class="process-number">02</div>
+                        <div class="process-content">
+                            <h3>Diseño</h3>
+                            <p>Planificamos con criterio técnico y visual, creando tu plano único.</p>
+                        </div>
+                    </div>
+                    <div class="process-item reveal" data-reveal="process-item" style="--reveal-delay: 0.3s">
+                        <div class="process-number">03</div>
+                        <div class="process-content">
+                            <h3>Fabricación</h3>
+                            <p>Producimos con control de calidad y detalle en cada esquina.</p>
+                        </div>
+                    </div>
+                    <div class="process-item reveal" data-reveal="process-item" style="--reveal-delay: 0.4s">
+                        <div class="process-number">04</div>
+                        <div class="process-content">
+                            <h3>Montaje</h3>
+                            <p>Instalamos y entregamos con terminaciones prolijas y funcionalidad garantizada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="muebles-contact">
+            <div class="container">
+                <div class="contact-shell reveal" data-reveal="contact-shell">
                     <div class="contact-grid">
                         <div>
                             <p class="section-eyebrow">¿Listo para avanzar?</p>
-                            <h2>¿Queres empezar tu mueble?</h2>
-                            <p class="contact-text">Escribinos y te mostramos un mueble con todo lo que necesitas.</p>
+                            <h2>¿Querés empezar tu mueble?</h2>
+                            <p class="contact-text">Escribinos y te mostramos un mueble con todo lo que necesitas. Asesoramiento personalizado sin compromiso.</p>
                         </div>
                         <div class="contact-cards">
-                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">24 Horas</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Atencion</p><p class="contact-card-value">Personalizada</p></div>
+                            <div class="contact-card">
+                                <p class="contact-card-label">Respuesta</p>
+                                <p class="contact-card-value">24 Horas</p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="contact-card-label">Cobertura</p>
+                                <p class="contact-card-value">Patagonia</p>
+                            </div>
+                            <div class="contact-card">
+                                <p class="contact-card-label">Atención</p>
+                                <p class="contact-card-value">Personalizada</p>
+                            </div>
                         </div>
                     </div>
                     <div class="contact-action">
@@ -231,9 +412,83 @@
     </a>
 
     <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const woodOptions = document.querySelectorAll('.wood-option');
+            const finishOptions = document.querySelectorAll('.finish-option');
+            const furnitureImage = document.getElementById('furnitureImage');
+            const woodTitle = document.getElementById('woodTitle');
+            const woodDescription = document.getElementById('woodDescription');
+
+            const woodData = {
+                pine: {
+                    name: 'Pino',
+                    description: 'Madera premium con tonos cálidos y naturales. Ideal para espacios luminosos.',
+                    color: '#D2B48C',
+                    texture: 'textura-pino'
+                },
+                cedar: {
+                    name: 'Cedro',
+                    description: 'Madera con vetas profundas y aroma característico. Perfecta para ambientes íntimos.',
+                    color: '#A0522D',
+                    texture: 'textura-cedro'
+                },
+                walnut: {
+                    name: 'Nogal',
+                    description: 'Tono oscuro elegante con brillo natural. Ideal para diseños modernos.',
+                    color: '#5D4037',
+                    texture: 'textura-nogal'
+                },
+                'oak-dark': {
+                    name: 'Roble Oscuro',
+                    description: 'Madera robusta con vetas marcadas. Perfecta para proyectos premium.',
+                    color: '#3E2723',
+                    texture: 'textura-roble'
+                }
+            };
+
+            let currentWood = 'pine';
+            let currentFinish = 'natural';
+
+            woodOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    woodOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    currentWood = this.dataset.wood;
+                    updateFurnitureDisplay();
+                });
+            });
+
+            finishOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    finishOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFinish = this.dataset.finish;
+                    updateFurnitureDisplay();
+                });
+            });
+
+            function updateFurnitureDisplay() {
+                const wood = woodData[currentWood];
+                woodTitle.textContent = `${wood.name} ${currentFinish === 'natural' ? '' : currentFinish.charAt(0).toUpperCase() + currentFinish.slice(1)}`;
+                
+                const finishText = currentFinish === 'natural' ? '' : ` con acabado ${currentFinish}`;
+                woodDescription.textContent = wood.description + finishText;
+            }
+
+            const showroomTabs = document.querySelectorAll('.showroom-tab');
+            const showroomPanels = document.querySelectorAll('.showroom-panel');
+
+            showroomTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    showroomTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    showroomPanels.forEach(panel => panel.classList.remove('active'));
+                    document.querySelector(`[data-showroom-panel="${this.dataset.showroomTab}"]`).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
