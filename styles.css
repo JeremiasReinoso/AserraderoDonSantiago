@@ -1797,3 +1797,593 @@ h3 {
 .timeline-container {
     overflow: hidden;
 }
+
+:root {
+    --color-pine: #D2B48C;
+    --color-cedar: #A0522D;
+    --color-walnut: #5D4037;
+    --color-oak-dark: #3E2723;
+    --shadow-3d: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.muebles-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-coal) 0%, var(--color-coal-soft) 100%);
+}
+
+.muebles-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(46, 125, 50, 0.15) 0%, transparent 70%);
+}
+
+.muebles-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 7, 6, 0.4) 0%, rgba(13, 17, 16, 0.2) 100%);
+}
+
+.muebles-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 0;
+}
+
+.muebles-hero-kicker {
+    display: inline-flex;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-forest);
+    margin-bottom: 1.5rem;
+}
+
+.muebles-hero-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, #fff 0%, #cbb4a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.muebles-hero-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 42rem;
+    margin-bottom: 2.5rem;
+}
+
+.muebles-hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.muebles-showroom {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, var(--color-coal) 0%, var(--color-coal-soft) 100%);
+}
+
+.showroom-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+}
+
+.showroom-tabs {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.showroom-tab {
+    padding: 0.85rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.showroom-tab:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.showroom-tab.active {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.25), rgba(141, 110, 99, 0.15));
+    border-color: rgba(46, 125, 50, 0.4);
+    color: #fff;
+}
+
+.showroom-content {
+    overflow: hidden;
+}
+
+.showroom-panel {
+    display: none;
+}
+
+.showroom-panel.active {
+    display: block;
+}
+
+.showroom-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .showroom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.showroom-card {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-glass);
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 500ms ease, box-shadow 500ms ease;
+}
+
+.showroom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.showroom-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 24rem;
+    overflow: hidden;
+}
+
+.showroom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms ease;
+}
+
+.showroom-card:hover .showroom-image {
+    transform: scale(1.08);
+}
+
+.showroom-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 40%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    z-index: 2;
+}
+
+.showroom-caption h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.25rem 0;
+}
+
+.showroom-caption p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.muebles-customization {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(141, 110, 99, 0.1), rgba(5, 5, 5, 0.95));
+}
+
+.customization-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+}
+
+.customization-content {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.customization-options {
+    margin-bottom: 3rem;
+}
+
+.wood-selector, .finish-selector {
+    margin-bottom: 2rem;
+}
+
+.selector-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-soft);
+    margin-bottom: 1rem;
+}
+
+.wood-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.wood-option, .finish-option {
+    flex: 1;
+    min-width: 120px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 300ms ease;
+    text-align: center;
+}
+
+.wood-option:hover, .finish-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.wood-option.active, .finish-option.active {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.25), rgba(141, 110, 99, 0.15));
+    border-color: rgba(46, 125, 50, 0.4);
+    color: #fff;
+}
+
+.wood-preview {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--color-wood) 0%, var(--color-pine) 100%);
+}
+
+.wood-pine { background: linear-gradient(135deg, #D2B48C 0%, #A0522D 100%); }
+.wood-cedar { background: linear-gradient(135deg, #A0522D 0%, #5D4037 100%); }
+.wood-walnut { background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%); }
+.wood-oak-dark { background: linear-gradient(135deg, #3E2723 0%, #2E7D32 100%); }
+
+.furniture-showcase {
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    padding: 3rem;
+    box-shadow: var(--shadow-glass);
+}
+
+.furniture-display {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.furniture-placeholder {
+    flex: 1;
+    min-width: 250px;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(46, 125, 50, 0.1) 0%, transparent 70%);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.furniture-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: opacity 500ms ease;
+}
+
+.wood-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.wood-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    color: #fff;
+}
+
+.wood-info p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.muebles-gallery {
+    padding: 8rem 0;
+}
+
+.gallery-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+}
+
+.gallery-grid {
+    margin-top: 0;
+}
+
+.furniture-card {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-glass);
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 500ms ease, box-shadow 500ms ease;
+}
+
+.furniture-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-slider {
+    position: relative;
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+}
+
+.gallery-card .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 900ms ease-in-out, transform 500ms ease;
+}
+
+.gallery-card .slide.active {
+    opacity: 1;
+}
+
+.furniture-card:hover .slide.active {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 1.5rem;
+}
+
+.gallery-caption h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+}
+
+.gallery-caption p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.muebles-benefits {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, var(--color-coal) 0%, var(--color-coal-soft) 100%);
+}
+
+.benefits-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+}
+
+.benefit-card {
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    box-shadow: var(--shadow-glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.benefit-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.2), rgba(141, 110, 99, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-forest);
+}
+
+.benefit-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #fff;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.muebles-process {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(141, 110, 99, 0.08), rgba(5, 5, 5, 0.95));
+}
+
+.process-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+}
+
+.process-header p {
+    margin-bottom: 1rem;
+}
+
+.process-timeline {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .process-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.process-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    box-shadow: var(--shadow-glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 300ms ease;
+}
+
+.process-item:hover {
+    transform: translateY(-5px);
+}
+
+.process-number {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(141, 110, 99, 0.2));
+    color: var(--color-forest);
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    color: #fff;
+}
+
+.process-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.muebles-contact {
+    padding: 8rem 0 7rem;
+}
+
+.muebles-contact .contact-shell {
+    margin-top: 0;
+}
+
+.muebles-contact .contact-grid {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+    .muebles-hero {
+        min-height: auto;
+        padding: 6rem 0;
+    }
+    
+    .muebles-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .muebles-showroom {
+        padding: 5rem 0;
+    }
+    
+    .showroom-image-wrapper {
+        height: 18rem;
+    }
+    
+    .muebles-customization {
+        padding: 5rem 0;
+    }
+    
+    .furniture-display {
+        flex-direction: column;
+    }
+    
+    .furniture-placeholder {
+        height: 20rem;
+    }
+    
+    .muebles-gallery {
+        padding: 5rem 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .muebles-benefits {
+        padding: 5rem 0;
+    }
+    
+    .muebles-process {
+        padding: 5rem 0;
+    }
+    
+    .process-item {
+        padding: 1.5rem;
+    }
+    
+    .furniture-showcase {
+        padding: 2rem;
+    }
+}
