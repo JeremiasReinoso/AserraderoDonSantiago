@@ -13,7 +13,7 @@ func main() {
 
 	// Si no existe, usa 8080 localmente
 	if port == "" {
-		port = "8080"
+		port = "https://aserraderodonsantiago.onrender.com"
 	}
 
 	// Carpeta pública del sitio
