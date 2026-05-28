@@ -13,7 +13,10 @@ func main() {
 
 	// Si no existe, usa 8080 localmente
 	if port == "" {
-		port = "https://aserraderodonsantiago.onrender.com"
+		port = "74.220.48.0/24"
+		port = "74.220.56.0/24"
+		port = "216.151.17.91"
+		port = "216.151.17.92"
 	}
 
 	// Carpeta pública del sitio
