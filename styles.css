@@ -489,11 +489,14 @@ h3 {
     text-transform: uppercase;
     border: 1px solid transparent;
     box-shadow: var(--shadow-glow);
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.9), rgba(26, 86, 39, 0.9));
+    color: #fff;
 }
 
 .button-whatsapp-hero:hover {
-    background: linear-gradient(135deg, rgba(24, 55, 34, 0.95), rgba(38, 82, 49, 0.95));
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, rgba(54, 145, 58, 0.95), rgba(38, 110, 54, 0.95));
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(46, 125, 50, 0.5), var(--shadow-glow);
 }
 
 @media (max-width: 767px) {
