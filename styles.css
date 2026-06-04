@@ -31,6 +31,10 @@
 }
 
 @keyframes reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(2.5rem);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
@@ -38,9 +42,62 @@
 }
 
 @keyframes timeline-slide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(46, 125, 50, 0.4), var(--shadow-glow);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(46, 125, 50, 0.6), var(--shadow-glow);
+    }
+}
+
+@keyframes soft-glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(46, 125, 50, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(46, 125, 50, 0.5);
+    }
+}
+
+@keyframes card-float {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes hover-glow {
+    0%, 100% {
+        box-shadow: 0 0 0px rgba(46, 125, 50, 0), var(--shadow-glow);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(46, 125, 50, 0.4), var(--shadow-glow);
     }
 }
 
@@ -95,6 +152,23 @@ h1,
 h2,
 h3 {
     margin: 0;
+}
+
+/* Animaciones de reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+.reveal-active,
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: reveal-up 800ms ease-out both;
+}
+
+.reveal[style*="--reveal-delay"] {
+    animation-delay: var(--reveal-delay);
 }
 
 .container {
@@ -265,11 +339,26 @@ h3 {
     justify-content: center;
     border-radius: 999px;
     border: 1px solid transparent;
-    transition: transform 450ms ease, background 450ms ease, border-color 450ms ease, box-shadow 450ms ease;
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 400ms ease;
 }
 
 .button:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+}
+
+.button:hover::before {
+    opacity: 1;
 }
 
 .button-primary,
@@ -348,18 +437,50 @@ h3 {
 }
 
 .glass-panel {
-    background: var(--glass-bg);
-    border: 1px solid var(--border-strong);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: var(--shadow-glass);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    border: 1.5px solid rgba(46, 125, 50, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(46, 125, 50, 0.3),
+        var(--shadow-glass);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(46, 125, 50, 0.05), transparent 60%);
+    pointer-events: none;
 }
 
 /* Estilos de servicios */
 .service-card {
     padding: 2rem;
     border-radius: var(--radius-lg);
-    transition: all 500ms ease;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.service-card:hover::after {
+    opacity: 1;
 }
 
 .service-card h3 {
@@ -379,35 +500,73 @@ h3 {
 
 .service-divider {
     width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--color-forest), transparent);
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-forest), rgba(46, 125, 50, 0.2), transparent);
     margin-top: 1.5rem;
-    opacity: 0.5;
+    opacity: 0.7;
+    transition: all 500ms ease;
+}
+
+.service-card:hover .service-divider {
+    opacity: 1;
+    background: linear-gradient(90deg, var(--color-forest), rgba(46, 125, 50, 0.4), transparent);
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.3);
 }
 
 .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(-12px);
+    border-color: rgba(46, 125, 50, 0.4);
+    box-shadow: 
+        0 0 40px rgba(46, 125, 50, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hover-scale:hover {
+    transform: scale(1.03) translateY(-8px);
+    border-color: rgba(46, 125, 50, 0.3);
+    box-shadow: 
+        0 0 30px rgba(46, 125, 50, 0.15),
+        0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .hover-shift:hover {
-    transform: translateX(4px);
+    transform: translateX(8px);
 }
 
 /* Diferenciales */
 .differential-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--border-strong);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    border: 1.5px solid rgba(46, 125, 50, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 2rem;
     border-radius: var(--radius-lg);
-    transition: all 500ms ease;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(46, 125, 50, 0.3);
+}
+
+.differential-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(46, 125, 50, 0.05), transparent 70%);
+    pointer-events: none;
 }
 
 .differential-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    border-color: rgba(46, 125, 50, 0.4);
+    box-shadow: 
+        0 0 40px rgba(46, 125, 50, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .differential-number {
@@ -469,10 +628,63 @@ h3 {
 
 .hero-panel {
     margin-top: 2rem;
+    padding: 2rem;
 }
 
 .hero-panel .metrics-grid {
     margin-top: 0;
+}
+
+.hero-panel-detail {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-forest);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.panel-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.metric-card {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.metric-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 0.25rem 0;
+}
+
+.metric-value {
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-forest);
+    margin: 0;
 }
 
 .hero-bg {
@@ -545,8 +757,9 @@ h3 {
 .hero-copy h1 {
     max-width: 48rem;
     margin-top: 0.75rem;
-    font-size: clamp(2.25rem, 5.5vw, 3.25rem);
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
     line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
 .hero-copy h1 span {
@@ -582,22 +795,42 @@ h3 {
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    border: 1px solid transparent;
-    box-shadow: var(--shadow-glow);
+    border: 1px solid rgba(46, 125, 50, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(46, 125, 50, 0.2),
+        0 0 20px rgba(46, 125, 50, 0.2),
+        var(--shadow-glow);
     background: linear-gradient(135deg, rgba(46, 125, 50, 0.9), rgba(26, 86, 39, 0.9));
     color: #fff;
 }
 
 .button-whatsapp-hero:hover {
     background: linear-gradient(135deg, rgba(54, 145, 58, 0.95), rgba(38, 110, 54, 0.95));
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(46, 125, 50, 0.5), var(--shadow-glow);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 48px rgba(46, 125, 50, 0.35),
+        0 0 40px rgba(46, 125, 50, 0.4),
+        var(--shadow-glow);
+    border-color: rgba(46, 125, 50, 0.5);
 }
 
 @media (max-width: 767px) {
     .hero-actions {
         margin-top: 2rem;
     }
+
+    .header-whatsapp {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .contact-shell {
+        padding: 2rem;
+    }
+}
 }
 
 @media (min-width: 768px) {
@@ -697,20 +930,28 @@ h3 {
 }
 
 /* Sección de productos - Bento Grid */
-.products-background {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(46, 125, 50, 0.08), transparent);
-    pointer-events: none;
-}
-
-.section-products {
+.section {
     position: relative;
-}
-
-.section-products-content {
-    position: relative;
+    padding: 5rem 0;
     z-index: 1;
+}
+
+.section-heading {
+    margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    margin: 1rem 0 1.5rem 0;
+    line-height: 1.1;
+}
+
+.services-grid,
+.gallery-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 3rem;
 }
 
 .products-bento {
@@ -729,24 +970,40 @@ h3 {
 .product-card {
     position: relative;
     border-radius: var(--radius-lg);
-    background: var(--glass-bg);
-    border: 1px solid var(--border-strong);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    border: 1.5px solid rgba(46, 125, 50, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     overflow: hidden;
-    transition: all 500ms ease;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: var(--shadow-glass);
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(46, 125, 50, 0.3);
+}
+
+.product-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(46, 125, 50, 0.04), transparent 60%);
+    pointer-events: none;
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    border-color: rgba(46, 125, 50, 0.3);
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(46, 125, 50, 0.4);
+    box-shadow: 
+        0 0 40px rgba(46, 125, 50, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .product-card--large {
@@ -1644,15 +1901,16 @@ h3 {
     height: 22rem;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 900ms ease-in-out, transform 500ms ease;
+    transition: opacity 900ms ease-in-out, transform 700ms ease;
 }
 
 .gallery-card .slide.active {
     opacity: 1;
+    animation: slide-fade-in 900ms ease-out both;
 }
 
 .furniture-card:hover .slide.active {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .gallery-caption {
@@ -1871,13 +2129,28 @@ h3 {
 }
 
 .contact-shell {
-    background: var(--glass-bg);
-    border: 1px solid var(--border-strong);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    border: 1.5px solid rgba(46, 125, 50, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 3rem;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-glass);
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(46, 125, 50, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(46, 125, 50, 0.05), transparent 70%);
+    pointer-events: none;
 }
 
 .contact-shell h2 {
@@ -1998,29 +2271,31 @@ h3 {
 /* Botón flotante WhatsApp */
 .floating-whatsapp {
     position: fixed;
-    bottom: 2rem;
+    bottom: 2.5rem;
     right: 2rem;
     z-index: 40;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    width: auto;
-    min-width: 160px;
-    height: 3.5rem;
-    padding: 0 1.5rem;
+    min-width: 180px;
+    height: 56px;
+    padding: 0 1.75rem;
     border-radius: 999px;
     background: linear-gradient(135deg, rgba(46, 125, 50, 0.95), rgba(26, 86, 39, 0.95));
     color: #fff;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    box-shadow: 0 10px 40px rgba(46, 125, 50, 0.4), var(--shadow-glow);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 400ms ease;
+    letter-spacing: 0.12em;
+    box-shadow: 
+        0 8px 32px rgba(46, 125, 50, 0.35),
+        0 0 20px rgba(46, 125, 50, 0.25),
+        var(--shadow-glow);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(46, 125, 50, 0.35);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     text-decoration: none;
     white-space: nowrap;
@@ -2028,18 +2303,27 @@ h3 {
 }
 
 .floating-whatsapp:hover {
-    transform: translateY(-6px) scale(1.05);
-    background: linear-gradient(135deg, rgba(54, 145, 58, 0.98), rgba(38, 110, 54, 0.98));
-    box-shadow: 0 15px 50px rgba(46, 125, 50, 0.5), 0 0 30px rgba(46, 125, 50, 0.3);
+    transform: translateY(-8px) scale(1.08);
+    background: linear-gradient(135deg, rgba(54, 145, 58, 0.99), rgba(38, 110, 54, 0.99));
+    box-shadow: 
+        0 16px 56px rgba(46, 125, 50, 0.45),
+        0 0 40px rgba(46, 125, 50, 0.35),
+        var(--shadow-glow);
+    border-color: rgba(46, 125, 50, 0.6);
 }
 
 .floating-whatsapp-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.875rem;
+    height: 1.875rem;
     flex-shrink: 0;
+    transition: transform 400ms ease;
+}
+
+.floating-whatsapp:hover .floating-whatsapp-icon {
+    transform: scale(1.1);
 }
 
 .whatsapp-icon {
@@ -2068,10 +2352,390 @@ h3 {
         height: 56px;
         padding: 0;
         font-size: 0;
+        gap: 0;
+        border-radius: 999px;
+        box-shadow: 
+            0 6px 24px rgba(46, 125, 50, 0.4),
+            0 0 20px rgba(46, 125, 50, 0.25);
+    }
+    
+    .floating-whatsapp:hover {
+        transform: translateY(-10px) scale(1.15);
     }
     
     .floating-whatsapp-icon {
         width: 2rem;
         height: 2rem;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 2rem;
+        right: 1.5rem;
+        min-width: 160px;
+        height: 48px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .floating-whatsapp {
+        bottom: 2.5rem;
+        right: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-whatsapp {
+        bottom: 1rem;
+        right: 1rem;
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating-whatsapp-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-bg.is-active {
+    opacity: 1;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.timeline-content {
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: all 400ms ease;
+}
+
+.timeline-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+}
+
+.timeline-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.benefit-card {
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    box-shadow: var(--shadow-glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(46, 125, 50, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 0 40px rgba(46, 125, 50, 0.25),
+        0 20px 60px rgba(0, 0, 0, 0.35);
+    border-color: rgba(46, 125, 50, 0.35);
+}
+
+.benefit-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.25), rgba(141, 110, 99, 0.18));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    transition: all 400ms ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 30px rgba(46, 125, 50, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.benefit-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: var(--color-forest);
+}
+
+.benefit-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #fff;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 50%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    z-index: 2;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-caption {
+    position: relative;
+    z-index: 3;
+    padding: 1.5rem;
+    color: #fff;
+    transition: transform 400ms ease;
+}
+
+.gallery-caption h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+}
+
+.gallery-caption p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    pointer-events: none;
+}
+
+.shine:hover::after {
+    opacity: 1;
+}
+
+.glow-green {
+    box-shadow: 
+        0 0 20px rgba(46, 125, 50, 0.3),
+        var(--shadow-glow);
+}
+
+.glow-green:hover {
+    box-shadow: 
+        0 0 40px rgba(46, 125, 50, 0.5),
+        var(--shadow-glow);
+}
+
+.premium-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    border: 1.5px solid rgba(46, 125, 50, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        0 0 1px rgba(46, 125, 50, 0.3);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(46, 125, 50, 0.06), transparent 60%);
+    pointer-events: none;
+}
+
+.premium-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(46, 125, 50, 0.4);
+    box-shadow: 
+        0 0 50px rgba(46, 125, 50, 0.3),
+        0 25px 80px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.premium-card.glow-hover:hover {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rotate-y {
+    perspective: 1000px;
+}
+
+.rotate-y-card {
+    transform-style: preserve-3d;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotate-y-card:hover {
+    transform: rotateY(5deg);
+}
+
+.depth-layer {
+    position: relative;
+}
+
+.depth-layer::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.08), transparent 60%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+.depth-layer:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .benefit-card {
+        padding: 1.5rem;
+    }
+    
+    .benefit-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .gallery-caption h3 {
+        font-size: 1.15rem;
+    }
+    
+    .model-content {
+        padding: 1.25rem;
+    }
+    
+    .model-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    .models-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-panel {
+        margin-top: 0;
+    }
+    
+    .contact-grid-new {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .models-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        width: min(calc(100% - 3rem), var(--container));
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-actions {
+        flex-direction: row;
+        justify-content: flex-start;
     }
 }
