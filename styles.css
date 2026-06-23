@@ -183,28 +183,28 @@ h3 {
     position: fixed;
     inset: 0 0 auto;
     z-index: 50;
-    padding: 1.25rem 0;
+    padding: 0.65rem 0;
     animation: nav-drop 900ms ease both;
 }
 
 .nav-shell {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-xl);
-    padding: 1rem 1.75rem;
+    padding: 0.6rem 1.5rem;
     background: linear-gradient(135deg, rgba(5, 7, 6, 0.35), rgba(10, 12, 11, 0.2));
     box-shadow: none;
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: background 450ms ease, border-color 450ms ease, backdrop-filter 450ms ease, transform 450ms ease, padding 450ms ease;
 }
 
 .nav-shell.is-scrolled {
     background: linear-gradient(135deg, rgba(6, 8, 7, 0.82), rgba(9, 11, 10, 0.7));
     border-color: rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     transform: translateY(-1px);
-    padding: 0.85rem 1.5rem;
+    padding: 0.55rem 1.25rem;
 }
 
 .nav-main {
@@ -598,6 +598,10 @@ h3 {
     height: auto;
     overflow: hidden;
     background-color: #0b0f0d;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 5.5rem;
 }
 
 .hero-section {
@@ -611,11 +615,11 @@ h3 {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 0;
+    padding: 0 0 4rem;
 }
 
 .hero-content--center {
-    justify-content: center;
+    justify-content: flex-end;
     text-align: center;
 }
 
@@ -722,7 +726,9 @@ h3 {
 .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
+    background: 
+        linear-gradient(180deg, rgba(5, 5, 5, 0.3) 0%, rgba(5, 5, 5, 0.0) 30%, rgba(5, 5, 5, 0.45) 60%, rgba(5, 5, 5, 0.88) 100%),
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
     pointer-events: none;
     z-index: 2;
 }
@@ -756,10 +762,11 @@ h3 {
 
 .hero-copy h1 {
     max-width: 48rem;
-    margin-top: 0.75rem;
+    margin: 0 auto 0.75rem;
     font-size: clamp(2.25rem, 5.5vw, 3.5rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 4px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-copy h1 span {
@@ -768,10 +775,11 @@ h3 {
 
 .hero-description {
     max-width: 38rem;
-    margin-top: 1.25rem;
+    margin: 0 auto 1.25rem;
     font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.76);
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -779,7 +787,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 @media (min-width: 640px) {
@@ -815,6 +823,14 @@ h3 {
 }
 
 @media (max-width: 767px) {
+    .hero {
+        padding-top: 4.5rem;
+    }
+
+    .hero-content {
+        padding-bottom: 2.5rem;
+    }
+
     .hero-actions {
         margin-top: 2rem;
     }
@@ -838,7 +854,7 @@ h3 {
     }
 
     .nav-shell {
-        padding: 1rem 2rem;
+        padding: 0.7rem 1.75rem;
     }
 
     .desktop-nav {
