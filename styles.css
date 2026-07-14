@@ -183,28 +183,28 @@ h3 {
     position: fixed;
     inset: 0 0 auto;
     z-index: 50;
-    padding: 0.65rem 0;
+    padding: 0.4rem 0;
     animation: nav-drop 900ms ease both;
 }
 
 .nav-shell {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-xl);
-    padding: 0.6rem 1.5rem;
+    padding: 0.45rem 1.25rem;
     background: linear-gradient(135deg, rgba(5, 7, 6, 0.35), rgba(10, 12, 11, 0.2));
     box-shadow: none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     transition: background 450ms ease, border-color 450ms ease, backdrop-filter 450ms ease, transform 450ms ease, padding 450ms ease;
 }
 
 .nav-shell.is-scrolled {
     background: linear-gradient(135deg, rgba(6, 8, 7, 0.88), rgba(9, 11, 10, 0.82));
     border-color: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     transform: translateY(-1px);
-    padding: 0.5rem 1.25rem;
+    padding: 0.35rem 1.1rem;
 }
 
 .nav-main {
@@ -601,7 +601,7 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-top: 5.5rem;
+    padding-top: 7.5rem;
 }
 
 .hero-section {
@@ -615,7 +615,7 @@ h3 {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 0 0 4rem;
+    padding: 0 0 1.5rem;
 }
 
 .hero-content--center {
@@ -731,8 +731,8 @@ h3 {
     position: absolute;
     inset: 0;
     background: 
-        linear-gradient(180deg, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0.2) 25%, rgba(5, 5, 5, 0.4) 55%, rgba(5, 5, 5, 0.92) 100%),
-        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6));
+        linear-gradient(180deg, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0.28) 25%, rgba(5, 5, 5, 0.5) 55%, rgba(5, 5, 5, 0.94) 100%),
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65));
     pointer-events: none;
     z-index: 2;
 }
@@ -791,7 +791,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
 }
 
 @media (min-width: 640px) {
@@ -828,15 +828,15 @@ h3 {
 
 @media (max-width: 767px) {
     .hero {
-        padding-top: 4.5rem;
+        padding-top: 5.5rem;
     }
 
     .hero-content {
-        padding-bottom: 2.5rem;
+        padding-bottom: 1.25rem;
     }
 
     .hero-actions {
-        margin-top: 2rem;
+        margin-top: 2.25rem;
     }
 
     .header-whatsapp {
@@ -858,7 +858,7 @@ h3 {
     }
 
     .nav-shell {
-        padding: 0.7rem 1.75rem;
+        padding: 0.5rem 1.5rem;
     }
 
     .desktop-nav {
