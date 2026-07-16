@@ -627,6 +627,7 @@ h3 {
 .hero-content--center {
     justify-content: flex-end;
     text-align: left;
+    margin: 50vh 0 0 0;
 }
 
 .hero-grid {
