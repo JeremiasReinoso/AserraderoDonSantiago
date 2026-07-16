@@ -607,7 +607,9 @@ h3 {
 .hero-section {
     position: relative;
     min-height: 100vh;
-    padding: 6rem 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     background-color: #0b0f0d;
 }
@@ -615,7 +617,11 @@ h3 {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
 }
 
 .hero-content--center {
@@ -766,11 +772,12 @@ h3 {
 
 .hero-copy h1 {
     max-width: 48rem;
-    margin: 0 auto 0.75rem;
+    margin: 0 auto 1.5rem;
     font-size: clamp(2.25rem, 5.5vw, 3.5rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 4px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .hero-copy h1 span {
@@ -778,12 +785,13 @@ h3 {
 }
 
 .hero-description {
-    max-width: 38rem;
-    margin: 0 auto 1.25rem;
+    max-width: 44rem;
+    margin: 0 auto;
     font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.88);
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .hero-actions {
