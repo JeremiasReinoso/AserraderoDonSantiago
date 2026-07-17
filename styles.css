@@ -1011,10 +1011,10 @@ h3 {
     overflow: hidden;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem;
-    min-height: 280px;
+    height: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
     box-sizing: border-box;
     box-shadow: 
@@ -1040,68 +1040,38 @@ h3 {
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.product-card--large {
-    grid-column: span 1;
-}
-
-.product-card--wide {
-    grid-column: span 1;
-}
-
-.product-card--tall {
-    grid-column: span 1;
-}
-
+.product-card--large,
+.product-card--wide,
+.product-card--tall,
 .product-card--small {
     grid-column: span 1;
 }
 
-.product-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.product-card-top > div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.product-tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    background: rgba(46, 125, 50, 0.2);
-    color: var(--color-forest);
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.75rem;
-}
-
 .product-card h3 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.6rem 0;
     line-height: 1.2;
+    flex-shrink: 0;
 }
 
 .product-card-desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
-    margin-top: 0.75rem;
+    margin: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .product-availability {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.9rem;
     border-radius: 6px;
     background: rgba(46, 125, 50, 0.15);
     color: var(--color-forest);
@@ -1110,6 +1080,9 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     white-space: nowrap;
+    align-self: flex-start;
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 .hover-scale:hover {
