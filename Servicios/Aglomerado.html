@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aglomerado | Aserradero Don Santiago</title>
-    <meta name="description" content="Solucion versatil para muebles y revestimientos.">
-    <meta name="keywords" content="aglomerado, tableros, muebles">
+    <title>Tableros de Aglomerado | Aserradero Don Santiago</title>
+    <meta name="description" content="Tableros de aglomerado versátiles para muebles, placares, estanterías y revestimientos interiores en El Hoyo, Chubut.">
+    <meta name="keywords" content="aglomerado, tableros aglomerados, muebles, carpinteria interior, el hoyo, chubut">
     <meta name="author" content="Aserradero Don Santiago">
-    <meta property="og:title" content="Aglomerado | Aserradero Don Santiago">
-    <meta property="og:description" content="Solucion versatil para muebles y revestimientos.">
+    <meta property="og:title" content="Tableros de Aglomerado | Aserradero Don Santiago">
+    <meta property="og:description" content="Solución versátil para muebles, equipamiento comercial y revestimientos interiores.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,48 +17,17 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <!-- Pantalla de carga -->
-    <div id="loading-screen">
-        <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Cargando..." class="loading-logo">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <div id="loading-screen" aria-hidden="true">
+        <img src="../Logos/Pantalla%20de%20carga%20Don%20Santiago.png" alt="Cargando Aserradero Don Santiago" class="loading-logo">
     </div>
-    <style>
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        #loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .loading-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 1500);
-        });
-    </script>
 
-    <!-- Navbar principal -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
                 <div class="nav-main">
                     <a href="../index.html#inicio" class="brand" aria-label="Aserradero Don Santiago">
+                        <img src="../Logos/Pantalla%20de%20carga%20Don%20Santiago.png" alt="Logo Aserradero Don Santiago" class="brand-logo" width="44" height="44">
                         <div class="brand-copy">
                             <span class="brand-title">Don Santiago</span>
                             <span class="brand-subtitle">Aserradero</span>
@@ -67,19 +36,21 @@
                     <nav class="desktop-nav" aria-label="Principal">
                         <a href="../index.html#inicio">Inicio</a>
                         <a href="../index.html#productos">Productos</a>
+                        <a href="../index.html#herramientas">Calculadoras</a>
                         <a href="../index.html#servicios">Servicios</a>
                         <a href="../index.html#contacto">Contacto</a>
                     </nav>
                     <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Aglomerado." target="_blank" rel="noreferrer" class="button button-whatsapp header-whatsapp">WhatsApp</a>
-                    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+                    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                     </button>
                 </div>
-                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal movil" data-mobile-nav>
+                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal móvil" data-mobile-nav>
                     <a href="../index.html#inicio">Inicio</a>
                     <a href="../index.html#productos">Productos</a>
+                    <a href="../index.html#herramientas">Calculadoras</a>
                     <a href="../index.html#servicios">Servicios</a>
                     <a href="../index.html#contacto">Contacto</a>
                 </nav>
@@ -87,17 +58,19 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero-section">
-            <img src="https://source.unsplash.com/1600x900/?particleboard,wood" alt="Aglomerado" class="hero-image">
+            <img src="../img/Aglomerados/Madera%20Aglomerada%201.jpg" alt="Tableros de aglomerado en Aserradero Don Santiago" class="hero-image">
             <div class="hero-overlay"></div>
             <div class="hero-fade"></div>
             <div class="container hero-content">
                 <div class="hero-grid">
                     <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
+                        <span class="availability-badge">Disponible</span>
                         <h1>Aglomerado</h1>
-                        <p class="hero-description">Solucion versatil para muebles y revestimientos.</p>
+                        <p class="hero-description">Solución versátil y pareja para muebles, divisiones internas y revestimientos.</p>
                         <div class="hero-actions">
+                            <a href="../index.html#herramientas" class="button button-secondary">Calcular placas</a>
                             <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Aglomerado." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
                         </div>
                     </div>
@@ -110,7 +83,7 @@
                         </div>
                         <div class="hero-panel-detail">
                             <p class="panel-label">Diferencial</p>
-                            <p class="panel-text">Aglomerado para usos interiores, con buena estabilidad y terminacion uniforme.</p>
+                            <p class="panel-text">Aglomerado para usos interiores con excelente estabilidad dimensional, corte limpio y terminación uniforme.</p>
                         </div>
                     </aside>
                 </div>
@@ -120,24 +93,15 @@
         <section class="section">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="section-eyebrow">Descripcion</p>
+                    <p class="section-eyebrow">Descripción</p>
                     <h2>Sobre Aglomerado</h2>
-                    <p class="section-text">Te asesoramos segun el uso y terminacion.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-eyebrow">Beneficios</p>
-                    <h2>Ventajas para tu proyecto</h2>
+                    <p class="section-text">Te asesoramos según el uso en mobiliario o revestimiento interior y el espesor recomendado.</p>
                 </div>
                 <div class="services-grid">
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;"><h3>Rapidez</h3><p>Corte y armado rapido.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;"><h3>Eficiencia</h3><p>Versatil para multiples aplicaciones.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;"><h3>Calidad</h3><p>Superficie pareja y prolija.</p><div class="service-divider"></div></article>
-                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;"><h3>Valor agregado</h3><p>Ahorro por su rendimiento.</p><div class="service-divider"></div></article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.05s;"><h3>Rapidez</h3><p>Corte limpio y armado rápido en taller o en obra.</p><div class="service-divider"></div></article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.1s;"><h3>Eficiencia</h3><p>Versátil para múltiples aplicaciones de carpintería interior.</p><div class="service-divider"></div></article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.15s;"><h3>Calidad</h3><p>Superficie pareja, homogénea y lista para trabajar.</p><div class="service-divider"></div></article>
+                    <article class="service-card glass-panel reveal hover-lift" style="--reveal-delay: 0.2s;"><h3>Valor agregado</h3><p>Excelente ahorro por rendimiento de placa (1.22 × 2.44 m y 1.22 × 1.83 m).</p><div class="service-divider"></div></article>
                 </div>
             </div>
         </section>
@@ -145,30 +109,30 @@
         <section class="section">
             <div class="container">
                 <div class="section-heading section-heading-centered reveal">
-                    <p class="section-eyebrow">Galeria</p>
-                    <h2>Proyectos y detalles</h2>
+                    <p class="section-eyebrow">Galería</p>
+                    <h2>Placas y aplicaciones</h2>
                 </div>
                 <div class="gallery-grid">
                     <article class="gallery-card reveal" style="--reveal-delay: 0.05s;">
                         <div class="gallery-slider">
-                            <img class="slide active" src="https://source.unsplash.com/1200x800/?particleboard,wood" alt="Aglomerado proyecto 1">
+                            <img class="slide active" src="../img/Aglomerados/Madera%20Aglomerada%201.jpg" alt="Placas de madera aglomerada en depósito" loading="lazy">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Proyecto real</h3></div>
+                        <div class="gallery-caption"><h3>Stock de tableros</h3></div>
                     </article>
                     <article class="gallery-card reveal" style="--reveal-delay: 0.1s;">
                         <div class="gallery-slider">
-                            <img class="slide active" src="https://source.unsplash.com/1200x800/?wood,panels" alt="Aglomerado proyecto 2">
+                            <img class="slide active" src="../img/Aglomerados/Madera%20Aglomerada%202.jpg" alt="Textura y densidad del tablero aglomerado" loading="lazy">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Detalle tecnico</h3></div>
+                        <div class="gallery-caption"><h3>Detalle técnico</h3></div>
                     </article>
                     <article class="gallery-card reveal" style="--reveal-delay: 0.15s;">
                         <div class="gallery-slider">
-                            <img class="slide active" src="https://source.unsplash.com/1200x800/?interior,wood" alt="Aglomerado proyecto 3">
+                            <img class="slide active" src="../img/Muebles%20De%20Madera/Ropero%20de%20madera.jpg" alt="Aplicación en mobiliario e interiores" loading="lazy">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Terminacion</h3></div>
+                        <div class="gallery-caption"><h3>Terminación interior</h3></div>
                     </article>
                 </div>
             </div>
@@ -179,15 +143,15 @@
                 <div class="differential-intro reveal">
                     <div class="differential-panel">
                         <p class="section-eyebrow">Proceso</p>
-                        <h2>Como trabajamos</h2>
-                        <p>Te asesoramos segun el uso y terminacion.</p>
+                        <h2>Cómo trabajamos</h2>
+                        <p>Te asesoramos según el uso y la terminación que buscás.</p>
                     </div>
                 </div>
                 <div class="differential-list">
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;"><div class="differential-number">01</div><div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el alcance ideal.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;"><div class="differential-number">02</div><div><h3>Diseno</h3><p>Planificamos con criterio tecnico y visual.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;"><div class="differential-number">03</div><div><h3>Fabricacion</h3><p>Producimos con control de calidad y detalle.</p></div></article>
-                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;"><div class="differential-number">04</div><div><h3>Montaje</h3><p>Instalamos y entregamos con terminaciones prolijas.</p></div></article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.05s;"><div class="differential-number">01</div><div><h3>Asesoramiento</h3><p>Relevamos tu necesidad y definimos el formato ideal.</p></div></article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.1s;"><div class="differential-number">02</div><div><h3>Diseño</h3><p>Planificamos el aprovechamiento de placas con criterio técnico.</p></div></article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.15s;"><div class="differential-number">03</div><div><h3>Preparación</h3><p>Seleccionamos tableros con control de calidad y bordes sanos.</p></div></article>
+                    <article class="differential-card glass-panel reveal hover-shift" style="--reveal-delay: 0.2s;"><div class="differential-number">04</div><div><h3>Entrega</h3><p>Coordinamos retiro en aserradero o envío a domicilio.</p></div></article>
                 </div>
             </div>
         </section>
@@ -198,13 +162,13 @@
                     <div class="contact-grid">
                         <div>
                             <p class="section-eyebrow">¿Listo para avanzar?</p>
-                            <h2>¿Queres empezar tu proyecto?</h2>
+                            <h2>¿Querés empezar tu proyecto?</h2>
                             <p class="contact-text">Escribinos y armamos una propuesta profesional y a medida.</p>
                         </div>
                         <div class="contact-cards">
                             <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">24 Horas</p></div>
                             <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Atencion</p><p class="contact-card-value">Personalizada</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Atención</p><p class="contact-card-value">Personalizada</p></div>
                         </div>
                     </div>
                     <div class="contact-action">
@@ -217,7 +181,7 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p>Aserradero Don Santiago. Construccion, madera y soluciones profesionales.</p>
+            <p>Aserradero Don Santiago. Construcción, madera y soluciones profesionales.</p>
             <p>El Hoyo, Chubut, Argentina</p>
         </div>
     </footer>
@@ -232,7 +196,3 @@
     <script src="../script.js"></script>
 </body>
 </html>
-
-
-
-

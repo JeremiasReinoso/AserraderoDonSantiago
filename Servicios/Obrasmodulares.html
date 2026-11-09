@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viviendas Modulares | Aserradero Don Santiago</title>
-    <meta name="description" content="Viviendas modulares modernas con diseño premium, construcción eficiente y tecnología aplicada. Explorá modelos 3D y obtené tu presupuesto.">
-    <meta name="keywords" content="viviendas modulares, diseño moderno, construccion eficiente, modulos habitacionales">
+    <meta name="description" content="Viviendas modulares modernas con diseño premium, construcción eficiente y tecnología aplicada en la Patagonia. Explorá modelos 3D y obtené tu presupuesto.">
+    <meta name="keywords" content="viviendas modulares, diseño moderno, construccion eficiente, modulos habitacionales, el hoyo, chubut">
     <meta name="author" content="Aserradero Don Santiago">
     <meta property="og:title" content="Viviendas Modulares | Aserradero Don Santiago">
     <meta property="og:description" content="Viviendas modulares modernas con diseño premium, construcción eficiente y tecnología aplicada.">
@@ -17,46 +17,17 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div id="loading-screen">
-        <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Cargando..." class="loading-logo">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <div id="loading-screen" aria-hidden="true">
+        <img src="../Logos/Pantalla%20de%20carga%20Don%20Santiago.png" alt="Cargando Aserradero Don Santiago" class="loading-logo">
     </div>
-    <style>
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        #loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .loading-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 1500);
-        });
-    </script>
 
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
                 <div class="nav-main">
                     <a href="../index.html#inicio" class="brand" aria-label="Aserradero Don Santiago">
+                        <img src="../Logos/Pantalla%20de%20carga%20Don%20Santiago.png" alt="Logo Aserradero Don Santiago" class="brand-logo" width="44" height="44">
                         <div class="brand-copy">
                             <span class="brand-title">Don Santiago</span>
                             <span class="brand-subtitle">Aserradero</span>
@@ -65,19 +36,21 @@
                     <nav class="desktop-nav" aria-label="Principal">
                         <a href="../index.html#inicio">Inicio</a>
                         <a href="../index.html#productos">Productos</a>
+                        <a href="../index.html#herramientas">Calculadoras</a>
                         <a href="../index.html#servicios">Servicios</a>
                         <a href="../index.html#contacto">Contacto</a>
                     </nav>
-                    <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Modulos%20Habitacionales." target="_blank" rel="noreferrer" class="button button-whatsapp-hero">WhatsApp</a>
-                    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+                    <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20M%C3%B3dulos%20Habitacionales." target="_blank" rel="noreferrer" class="button button-whatsapp-hero">WhatsApp</a>
+                    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                     </button>
                 </div>
-                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal movil" data-mobile-nav>
+                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal móvil" data-mobile-nav>
                     <a href="../index.html#inicio">Inicio</a>
                     <a href="../index.html#productos">Productos</a>
+                    <a href="../index.html#herramientas">Calculadoras</a>
                     <a href="../index.html#servicios">Servicios</a>
                     <a href="../index.html#contacto">Contacto</a>
                 </nav>
@@ -85,19 +58,15 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero-section">
-            <div class="hero-slides" aria-hidden="true">
-                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1611892470506-6c3e6c2e6c5a');"></div>
-                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1560448204-60b4-c4e0f1c4a');"></div>
-                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');"></div>
-            </div>
-            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1611892470506-6c3e6c2e6c5a');"></div>
+            <img src="../img/Viviendas%20Modulares/Obra%20Modular%201.jpeg" alt="Viviendas modulares construidas por Aserradero Don Santiago" class="hero-image">
             <div class="hero-overlay"></div>
             <div class="hero-fade"></div>
             <div class="container hero-content">
                 <div class="hero-grid">
                     <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
+                        <span class="availability-badge">Disponible a pedido</span>
                         <h1>Viviendas modulares modernas</h1>
                         <p class="hero-description">Diseño moderno, construcción eficiente y tecnología aplicada a cada proyecto. Explorá modelos 3D y encontrá la solución ideal para tu espacio.</p>
                         <div class="hero-actions">
@@ -114,7 +83,7 @@
                         </div>
                         <div class="hero-panel-detail">
                             <p class="panel-label">Tecnología aplicada</p>
-                            <p class="panel-text">Modulos fabricados con materiales de alta calidad y terminaciones profesionales para espacios funcional y estético.</p>
+                            <p class="panel-text">Módulos fabricados con materiales de alta calidad y terminaciones profesionales para espacios funcionales y estéticos.</p>
                         </div>
                     </aside>
                 </div>
@@ -126,26 +95,26 @@
                 <div class="section-heading reveal">
                     <p class="section-eyebrow">Modelos</p>
                     <h2>Viviendas modulares</h2>
-                    <p class="section-text">Explorá nuestros modelos y encontrá el espacio ideal para tu proyecto.</p>
+                    <p class="section-text">Explorá nuestros modelos base y encontrá el espacio ideal para tu terreno o emprendimiento.</p>
                 </div>
                 <div class="models-grid">
                     <article class="model-card premium-card reveal hover-lift" style="--reveal-delay: 0.1s;">
                         <div class="model-image">
-                            <img src="https://images.unsplash.com/photo-1512941912669-7a4b9c79d9c4" alt="vivienda 1 - 18m2">
+                            <img src="../img/Viviendas%20Modulares/Obra%20Modular%202.jpeg" alt="Vivienda modular modelo Solaris de 18 m²" loading="lazy">
                         </div>
                         <div class="model-content">
                             <h3 class="model-title">Solaris</h3>
                             <div class="model-meta">
                                 <span class="model-meta-item">18 m²</span>
-                                <span class="model-meta-item">1 ambientes</span>
+                                <span class="model-meta-item">1 ambiente</span>
                                 <span class="model-meta-item">15 días</span>
                             </div>
-                            <a href="#" class="button button-small button-secondary" aria-label="Explorar modelo Solaris">Explorar modelo</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20consultar%20por%20el%20modelo%20modular%20Solaris%20(18%20m%C2%B2)." target="_blank" rel="noreferrer" class="button button-small button-secondary" aria-label="Consultar modelo Solaris por WhatsApp">Consultar modelo Solaris</a>
                         </div>
                     </article>
                     <article class="model-card premium-card reveal hover-lift" style="--reveal-delay: 0.2s;">
                         <div class="model-image">
-                            <img src="https://images.unsplash.com/photo-1560448204-60b4-c4e0f1c4a" alt="vivienda 2 - 52m2">
+                            <img src="../img/Viviendas%20Modulares/Obra%20Modular%204.jpeg" alt="Vivienda modular modelo Luna de 52 m²" loading="lazy">
                         </div>
                         <div class="model-content">
                             <h3 class="model-title">Luna</h3>
@@ -154,7 +123,7 @@
                                 <span class="model-meta-item">2 ambientes</span>
                                 <span class="model-meta-item">12 días</span>
                             </div>
-                            <a href="#" class="button button-small button-secondary" aria-label="Explorar modelo Luna">Explorar modelo</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20consultar%20por%20el%20modelo%20modular%20Luna%20(52%20m%C2%B2)." target="_blank" rel="noreferrer" class="button button-small button-secondary" aria-label="Consultar modelo Luna por WhatsApp">Consultar modelo Luna</a>
                         </div>
                     </article>
                 </div>
@@ -165,14 +134,14 @@
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-eyebrow">Visualización 3D</p>
-                    <h2>Explorá el modelo en 3D</h2>
-                    <p class="section-text">Rotá, acercá y explorá cada detalle de nuestras viviendas modulares. Usá los controles o deslizá con el mouse/touch.</p>
+                    <h2>Explorá el volumen en 3D</h2>
+                    <p class="section-text">Rotá, acercá y explorá la disposición volumétrica de nuestros módulos. Usá el mouse o gestos táctiles.</p>
                 </div>
                 <div class="model-viewer-container glass-panel reveal">
                     <canvas id="model-canvas" class="model-canvas"></canvas>
                     <div class="model-viewer-overlay">
                         <div class="model-viewer-info">
-                            <p class="model-viewer-label">Modelo Solaris - 65m²</p>
+                            <p class="model-viewer-label">Modelo Solaris - 65 m²</p>
                             <p class="model-viewer-text">Arrastrá para rotar • Rueda para zoom</p>
                         </div>
                     </div>
@@ -194,42 +163,42 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content premium-card hover-lift">
                                 <h3 class="timeline-title">Base estructural</h3>
-                                <p class="timeline-text">Preparación del terreno y colocación de la base de concreto con cimbra de acero.</p>
+                                <p class="timeline-text">Preparación del terreno y nivelación de la base o pilotes estructurales.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content premium-card hover-lift">
                                 <h3 class="timeline-title">Estructura principal</h3>
-                                <p class="timeline-text">Montaje de vigas y columnas principales con conexión machonada.</p>
+                                <p class="timeline-text">Montaje de vigas y columnas principales con uniones de alta resistencia.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content premium-card hover-lift">
                                 <h3 class="timeline-title">Paneles SIP</h3>
-                                <p class="timeline-text">Instalación de paneles de espuma de poliuretano con alta resistencia térmica.</p>
+                                <p class="timeline-text">Instalación de paneles estructurales con alta eficiencia térmica.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content premium-card hover-lift">
                                 <h3 class="timeline-title">Aislación</h3>
-                                <p class="timeline-text">Aplicación de revestimientos y aislamiento térmico en paredes y techos.</p>
+                                <p class="timeline-text">Aplicación de barreras de vapor, revestimientos y aislación en muros y techos.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content premium-card hover-lift">
                                 <h3 class="timeline-title">Instalaciones</h3>
-                                <p class="timeline-text">Cableado eléctrico, plomería y gas con tuberías de alta calidad.</p>
+                                <p class="timeline-text">Tendido eléctrico, agua y desagües con materiales certificados.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content premium-card hover-lift">
                                 <h3 class="timeline-title">Terminaciones</h3>
-                                <p class="timeline-text">Acabados de piso, paredes y mobiliario modular listo para habitar.</p>
+                                <p class="timeline-text">Acabados de piso, aberturas, revestimientos interiores y equipamiento.</p>
                             </div>
                         </div>
                     </div>
@@ -250,28 +219,28 @@
                     </article>
                     <article class="benefit-card premium-card reveal hover-lift" style="--reveal-delay: 0.2s;">
                         <h3>Eficiencia energética</h3>
-                        <p>Paneles SIP de alta aislamiento reducen hasta 50% el consumo energético.</p>
+                        <p>Cerramientos térmicos de alta densidad que reducen hasta un 50% el consumo de calefacción.</p>
                     </article>
                     <article class="benefit-card premium-card reveal hover-lift" style="--reveal-delay: 0.3s;">
                         <h3>Excelente aislación</h3>
-                        <p>Aislamiento térmico y acústico de alta calidad para confort constante.</p>
+                        <p>Aislamiento térmico y acústico preparado para el clima de la Patagonia.</p>
                     </article>
                     <article class="benefit-card premium-card reveal hover-lift" style="--reveal-delay: 0.4s;">
-                        <h3>Mayor consumo controlado</h3>
-                        <p>Diseño optimizado que reduce el consumo de recursos y materiales.</p>
+                        <h3>Presupuesto controlado</h3>
+                        <p>Diseño optimizado en taller que evita desperdicios e imprevistos de obra húmeda.</p>
                     </article>
                     <article class="benefit-card premium-card reveal hover-lift" style="--reveal-delay: 0.5s;">
-                        <h3>Adaptable</h3>
-                        <p>Modificá o expandí tu vivienda según tus necesidades futuras.</p>
+                        <h3>Adaptable y ampliable</h3>
+                        <p>Modificá o expandí tu vivienda sumando nuevos módulos según tus necesidades futuras.</p>
                     </article>
                     <article class="benefit-card premium-card reveal hover-lift" style="--reveal-delay: 0.6s;">
                         <h3>Estética moderna</h3>
-                        <p>Diseño contemporáneo con líneas limpias y materiales de calidad.</p>
+                        <p>Diseño contemporáneo con líneas limpias, chapa y maderas seleccionadas.</p>
                     </article>
                 </div>
             </div>
         </section>
-        <!-- VIVIENDAS 3D-->
+
         <section class="section">
             <div class="container">
                 <div class="section-heading section-heading-centered reveal">
@@ -281,24 +250,24 @@
                 <div class="gallery-grid">
                     <article class="gallery-card premium-card reveal" style="--reveal-delay: 0.1s;">
                         <div class="gallery-slider" data-slider>
-                            <img class="slide active" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" alt="Proyecto modular 1">
-                            <img class="slide" src="https://images.unsplash.com/photo-1505409628601-edc9af17fda6" alt="Proyecto modular 1 detalle">
+                            <img class="slide active" src="../img/Viviendas%20Modulares/Obra%20Modular%203.jpeg" alt="Proyecto modular 5x5 exterior" loading="lazy">
+                            <img class="slide" src="../img/Viviendas%20Modulares/Obra%20Modular%205.jpeg" alt="Proyecto modular 5x5 interior" loading="lazy">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Vivienda 5x5</h3></div>
+                        <div class="gallery-caption"><h3>Vivienda 5×5</h3></div>
                     </article>
                     <article class="gallery-card premium-card reveal" style="--reveal-delay: 0.2s;">
                         <div class="gallery-slider" data-slider>
-                            <img class="slide active" src="https://images.unsplash.com/photo-1513694203232-719a280e022f" alt="Proyecto modular 2">
-                            <img class="slide" src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="Proyecto modular 2 detalle">
+                            <img class="slide active" src="../img/Viviendas%20Modulares/Obra%20Modular%206.jpeg" alt="Proyecto modular 6x4 interior" loading="lazy">
+                            <img class="slide" src="../img/Viviendas%20Modulares/Obra%20Modular%207.jpeg" alt="Proyecto modular 6x4 detalle" loading="lazy">
                         </div>
                         <div class="gallery-overlay"></div>
-                        <div class="gallery-caption"><h3>Vivienda 6x4</h3></div>
+                        <div class="gallery-caption"><h3>Vivienda 6×4</h3></div>
                     </article>
                     <article class="gallery-card premium-card reveal" style="--reveal-delay: 0.3s;">
                         <div class="gallery-slider" data-slider>
-                            <img class="slide active" src="https://images.unsplash.com/photo-1449844908441-8829872d2607" alt="Proyecto modular 3">
-                            <img class="slide" src="https://images.unsplash.com/photo-1502005097973-6a7082348e28" alt="Proyecto modular 3 detalle">
+                            <img class="slide active" src="../img/Viviendas%20Modulares/Obra%20Modular%208.jpeg" alt="Proyecto Estrella en Chubut" loading="lazy">
+                            <img class="slide" src="../img/Viviendas%20Modulares/Obra%20Modular%209.jpeg" alt="Proyecto Estrella terminaciones" loading="lazy">
                         </div>
                         <div class="gallery-overlay"></div>
                         <div class="gallery-caption"><h3>Proyecto Estrella - Chubut</h3></div>
@@ -317,7 +286,7 @@
                             <p class="contact-text">Solicitá tu presupuesto personalizado y recibí una propuesta en 24 horas. Trabajamos en toda la Patagonia.</p>
                         </div>
                         <div class="contact-cards">
-                            <div class="contact-card"><p class="contact-card-label"> respuesta</p><p class="contact-card-value">24 hs</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">24 hs</p></div>
                             <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia</p></div>
                             <div class="contact-card"><p class="contact-card-label">Seguimiento</p><p class="contact-card-value">Personalizado</p></div>
                         </div>
@@ -352,7 +321,7 @@
         let scene, camera, renderer, controls, model;
 
         function initModelViewer() {
-            if (modelViewerInitialized) return;
+            if (modelViewerInitialized || typeof THREE === 'undefined') return;
             
             const canvas = document.getElementById('model-canvas');
             if (!canvas) return;
@@ -379,11 +348,10 @@
             scene.add(fillLight);
 
             const groundGeometry = new THREE.PlaneGeometry(10, 10);
-            const groundMaterial = new THREE.MeshShadowMaterial({ color: 0x000000, opacity: 0.3, transparent: true });
+            const groundMaterial = new THREE.MeshBasicMaterial({ color: 0x050505, transparent: true, opacity: 0.5 });
             const ground = new THREE.Mesh(groundGeometry, groundMaterial);
             ground.rotation.x = -Math.PI / 2;
             ground.position.y = -1.5;
-            ground.receiveShadow = true;
             scene.add(ground);
 
             const geometry = new THREE.BoxGeometry(2, 2.5, 1.5);
@@ -394,7 +362,6 @@
             });
             model = new THREE.Mesh(geometry, material);
             model.position.y = -0.5;
-            model.castShadow = true;
             scene.add(model);
 
             const geometry2 = new THREE.BoxGeometry(1.5, 1.8, 1);
@@ -405,7 +372,6 @@
             });
             const model2 = new THREE.Mesh(geometry2, material2);
             model2.position.set(2.2, 1.4, 0);
-            model2.castShadow = true;
             scene.add(model2);
 
             controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -442,7 +408,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.3 });
+            }, { threshold: 0.2 });
             
             const viewerSection = document.querySelector('#visualizador-3d');
             if (viewerSection) observer.observe(viewerSection);

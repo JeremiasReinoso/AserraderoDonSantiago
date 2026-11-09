@@ -4,61 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paneles solares | Aserradero Don Santiago</title>
-    <meta name="description" content="Energia limpia para reducir consumo.">
-    <meta name="keywords" content="paneles solares, energia, sustentable">
+    <meta name="description" content="Paneles solares y calculadoras de energía solar en Aserradero Don Santiago, El Hoyo, Chubut. Energía limpia para reducir consumo.">
+    <meta name="keywords" content="paneles solares, energía solar, sustentable, calculadora solar, baterías, El Hoyo, Chubut">
     <meta name="author" content="Aserradero Don Santiago">
     <meta property="og:title" content="Paneles solares | Aserradero Don Santiago">
-    <meta property="og:description" content="Energia limpia para reducir consumo.">
+    <meta property="og:description" content="Energía limpia para reducir consumo. Calculá tus paneles, baterías y consumo mensual.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
+    <link rel="icon" href="../Logos/Imagen oficial aserradero don santiago.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <!-- Pantalla de carga -->
-    <div id="loading-screen">
-        <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Cargando..." class="loading-logo">
-    </div>
-    <style>
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        #loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .loading-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 1500);
-        });
-    </script>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <!-- Navbar principal -->
+    <div id="loading-screen" aria-hidden="true">
+        <img src="../Logos/Pantalla de carga Don Santiago.png" alt="">
+    </div>
+
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
                 <div class="nav-main">
                     <a href="../index.html#inicio" class="brand" aria-label="Aserradero Don Santiago">
+                        <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Logo Aserradero Don Santiago" class="brand-logo" width="44" height="44">
                         <div class="brand-copy">
                             <span class="brand-title">Don Santiago</span>
                             <span class="brand-subtitle">Aserradero</span>
@@ -67,19 +38,21 @@
                     <nav class="desktop-nav" aria-label="Principal">
                         <a href="../index.html#inicio">Inicio</a>
                         <a href="../index.html#productos">Productos</a>
+                        <a href="#calculadoras">Calculadoras</a>
                         <a href="../index.html#servicios">Servicios</a>
                         <a href="../index.html#contacto">Contacto</a>
                     </nav>
-                    <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Paneles%20Solares." target="_blank" rel="noreferrer" class="button button-whatsapp header-whatsapp">WhatsApp</a>
-                    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+                    <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Paneles%20Solares." target="_blank" rel="noopener noreferrer" class="button button-whatsapp header-whatsapp">WhatsApp</a>
+                    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                     </button>
                 </div>
-                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal movil" data-mobile-nav>
+                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal móvil" data-mobile-nav>
                     <a href="../index.html#inicio">Inicio</a>
                     <a href="../index.html#productos">Productos</a>
+                    <a href="#calculadoras">Calculadoras</a>
                     <a href="../index.html#servicios">Servicios</a>
                     <a href="../index.html#contacto">Contacto</a>
                 </nav>
@@ -87,30 +60,35 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero-section">
-            <img src="https://source.unsplash.com/1600x900/?solar,panels,roof" alt="Paneles solares" class="hero-image">
+            <img src="../img/Obra/Imagen%20Obra%2010.jpeg" alt="Obra sustentable en la Patagonia - Paneles solares Aserradero Don Santiago" class="hero-image">
             <div class="hero-overlay"></div>
             <div class="hero-fade"></div>
             <div class="container hero-content">
                 <div class="hero-grid">
                     <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
-                        <h1>Paneles solares para ahorro energetico</h1>
-                        <p class="hero-description">Informacion clara y asesoramiento personalizado para decidir tu sistema.</p>
+                        <div class="calculator-card__eyebrow-row">
+                            <p class="eyebrow">Energía Sustentable · Categoría 06</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
+                        <h1>Paneles solares para ahorro energético</h1>
+                        <p class="hero-description">Información clara y asesoramiento personalizado para decidir tu sistema.</p>
                         <div class="hero-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20asesoramiento%20sobre%20Paneles%20Solares." target="_blank" rel="noreferrer" class="button button-primary shine hero-whatsapp">Consultar por WhatsApp</a>
+                            <a href="#calculadoras" class="button button-primary">Usar calculadoras solares</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20asesoramiento%20sobre%20Paneles%20Solares." target="_blank" rel="noopener noreferrer" class="button button-secondary hero-whatsapp">Consultar por WhatsApp</a>
                         </div>
                     </div>
                     <aside class="hero-panel glass-panel reveal reveal-active" data-reveal="hero-panel">
                         <div class="metrics-grid">
                             <div class="metric-card"><p class="metric-label">Ahorro</p><p class="metric-value">Mensual</p></div>
                             <div class="metric-card"><p class="metric-label">Eficiencia</p><p class="metric-value">Alta</p></div>
-                            <div class="metric-card"><p class="metric-label">Autonomia</p><p class="metric-value">Flexible</p></div>
+                            <div class="metric-card"><p class="metric-label">Autonomía</p><p class="metric-value">Flexible</p></div>
                             <div class="metric-card"><p class="metric-label">Soporte</p><p class="metric-value">Directo</p></div>
                         </div>
                         <div class="hero-panel-detail">
                             <p class="panel-label">Enfoque</p>
-                            <p class="panel-text">Te explicamos opciones reales y armamos una propuesta segun tu consumo.</p>
+                            <p class="panel-text">Te explicamos opciones reales y armamos una propuesta según tu consumo.</p>
                         </div>
                     </aside>
                 </div>
@@ -120,9 +98,9 @@
         <section class="section">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="section-eyebrow">Que son</p>
-                    <h2>Energia que se genera con el sol</h2>
-                    <p class="section-text">Los paneles solares convierten la luz solar en electricidad para usar en tu casa, comercio o proyecto. Se adaptan a diferentes consumos y pueden trabajar en conjunto con la red electrica.</p>
+                    <p class="section-eyebrow">Qué son</p>
+                    <h2>Energía que se genera con el sol</h2>
+                    <p class="section-text">Los paneles solares convierten la luz solar en electricidad para usar en tu casa, comercio o proyecto. Se adaptan a diferentes consumos y pueden trabajar en conjunto con la red eléctrica.</p>
                 </div>
             </div>
         </section>
@@ -130,21 +108,21 @@
         <section class="section">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="section-eyebrow">Como funcionan</p>
+                    <p class="section-eyebrow">Cómo funcionan</p>
                     <h2>Proceso simple y eficiente</h2>
                 </div>
                 <div class="info-grid">
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.05s;">
-                        <h3>Captacion</h3>
-                        <p>Los paneles reciben la radiacion solar durante todo el dia.</p>
+                        <h3>Captación</h3>
+                        <p>Los paneles reciben la radiación solar durante todo el día.</p>
                     </article>
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.1s;">
-                        <h3>Conversion</h3>
-                        <p>El inversor transforma la energia en electricidad usable.</p>
+                        <h3>Conversión</h3>
+                        <p>El inversor transforma la energía en electricidad usable.</p>
                     </article>
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.15s;">
                         <h3>Uso y respaldo</h3>
-                        <p>La energia alimenta el consumo y puede apoyarse con la red o baterias.</p>
+                        <p>La energía alimenta el consumo y puede apoyarse con la red o baterías.</p>
                     </article>
                 </div>
             </div>
@@ -159,15 +137,15 @@
                 <div class="benefits-grid">
                     <article class="benefit-card reveal hover-lift" style="--reveal-delay: 0.05s;">
                         <h3>Ahorro en consumo</h3>
-                        <p>Reducis costos mensuales y estabilizas el gasto energetico.</p>
+                        <p>Reducís costos mensuales y estabilizás el gasto energético.</p>
                     </article>
                     <article class="benefit-card reveal hover-lift" style="--reveal-delay: 0.1s;">
-                        <h3>Energia limpia</h3>
-                        <p>Menor impacto ambiental y mas sustentabilidad.</p>
+                        <h3>Energía limpia</h3>
+                        <p>Menor impacto ambiental y más sustentabilidad.</p>
                     </article>
                     <article class="benefit-card reveal hover-lift" style="--reveal-delay: 0.15s;">
                         <h3>Valor agregado</h3>
-                        <p>Mejoras tu propiedad con tecnologia moderna.</p>
+                        <p>Mejorás tu propiedad con tecnología moderna.</p>
                     </article>
                 </div>
             </div>
@@ -177,12 +155,12 @@
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-eyebrow">Aplicaciones</p>
-                    <h2>Donde se usan los paneles</h2>
+                    <h2>Dónde se usan los paneles</h2>
                 </div>
                 <div class="info-grid">
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.05s;">
                         <h3>Viviendas</h3>
-                        <p>Soluciones para consumo diario y respaldo electrico.</p>
+                        <p>Soluciones para consumo diario y respaldo eléctrico.</p>
                     </article>
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.1s;">
                         <h3>Comercios</h3>
@@ -190,11 +168,11 @@
                     </article>
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.15s;">
                         <h3>Proyectos rurales</h3>
-                        <p>Autonomia en zonas sin red o con suministro limitado.</p>
+                        <p>Autonomía en zonas sin red o con suministro limitado.</p>
                     </article>
                     <article class="info-card reveal hover-lift" style="--reveal-delay: 0.2s;">
                         <h3>Obras nuevas</h3>
-                        <p>Integracion desde el inicio con diseño eficiente.</p>
+                        <p>Integración desde el inicio con diseño eficiente.</p>
                     </article>
                 </div>
             </div>
@@ -203,31 +181,31 @@
         <section class="section calc-section calculadoras-solares" id="calculadoras">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="section-eyebrow">Herramientas</p>
+                    <p class="section-eyebrow">Herramientas Interactivas</p>
                     <h2>Calculadoras para tu proyecto</h2>
-                    <p class="section-text">Ajusta los valores a tu situacion real y obtene estimaciones al instante.</p>
+                    <p class="section-text">Ajustá los valores a tu situación real, obtené estimaciones al instante y envianos el resultado por WhatsApp.</p>
                 </div>
 
                 <div class="calc-grid">
                     <article class="calc-card reveal hover-lift" style="--reveal-delay: 0.05s;">
-                        <h3>Cuantos paneles necesito?</h3>
-                        <p class="calc-subtext">Calcula la cantidad segun tu consumo y ubicacion.</p>
+                        <h3>¿Cuántos paneles necesito?</h3>
+                        <p class="calc-subtext">Calculá la cantidad según tu consumo y ubicación.</p>
                         <div class="calc-rows">
                             <div class="calc-row">
-                                <label>Consumo mensual kWh <span id="v1">300</span></label>
-                                <input type="range" min="50" max="1500" value="300" step="10" oninput="calcP()">
+                                <label for="solar-c">Consumo mensual kWh <span id="v1">300</span></label>
+                                <input id="solar-c" type="range" min="50" max="1500" value="300" step="10" oninput="calcP()">
                             </div>
                             <div class="calc-row">
-                                <label>Horas pico solar diarias <span id="v2">4.8</span></label>
-                                <input type="range" min="2.5" max="7" value="4.8" step="0.1" oninput="calcP()">
+                                <label for="solar-h">Horas pico solar diarias <span id="v2">4.8</span></label>
+                                <input id="solar-h" type="range" min="2.5" max="7" value="4.8" step="0.1" oninput="calcP()">
                             </div>
                             <div class="calc-row">
-                                <label>Potencia por panel W <span id="v3">400</span></label>
-                                <input type="range" min="200" max="600" value="400" step="10" oninput="calcP()">
+                                <label for="solar-w">Potencia por panel W <span id="v3">400</span></label>
+                                <input id="solar-w" type="range" min="200" max="600" value="400" step="10" oninput="calcP()">
                             </div>
                             <div class="calc-row">
-                                <label>Eficiencia del sistema % <span id="v4">85</span></label>
-                                <input type="range" min="70" max="95" value="85" step="1" oninput="calcP()">
+                                <label for="solar-e">Eficiencia del sistema % <span id="v4">85</span></label>
+                                <input id="solar-e" type="range" min="70" max="95" value="85" step="1" oninput="calcP()">
                             </div>
                         </div>
                         <div class="calc-results">
@@ -241,33 +219,36 @@
                             </div>
                             <div class="calc-result">
                                 <p class="calc-result-number" id="rp3">13</p>
-                                <p class="calc-result-label">m2 de techo</p>
+                                <p class="calc-result-label">m² de techo</p>
                             </div>
                             <div class="calc-result">
                                 <p class="calc-result-number" id="rp4">296</p>
                                 <p class="calc-result-label">kWh/mes generados</p>
                             </div>
                         </div>
+                        <div class="calc-card-actions">
+                            <a id="wa-paneles" href="https://wa.me/5492944928970" target="_blank" rel="noopener noreferrer" class="button button-primary button-full">Solicitar presupuesto de estos paneles por WhatsApp</a>
+                        </div>
                     </article>
 
                     <article class="calc-card reveal hover-lift" style="--reveal-delay: 0.1s;">
-                        <h3>Que bateria necesito?</h3>
-                        <p class="calc-subtext">Estima la capacidad para tu autonomia deseada.</p>
+                        <h3>¿Qué batería necesito?</h3>
+                        <p class="calc-subtext">Estimá la capacidad para tu autonomía deseada.</p>
                         <div class="calc-rows">
                             <div class="calc-row">
-                                <label>Consumo diario kWh <span id="vb1">10</span></label>
-                                <input type="range" min="2" max="40" value="10" step="0.5" oninput="calcB()">
+                                <label for="bat-d">Consumo diario kWh <span id="vb1">10</span></label>
+                                <input id="bat-d" type="range" min="2" max="40" value="10" step="0.5" oninput="calcB()">
                             </div>
                             <div class="calc-row">
-                                <label>Dias de autonomia <span id="vb2">2</span></label>
-                                <input type="range" min="1" max="7" value="2" step="1" oninput="calcB()">
+                                <label for="bat-dias">Días de autonomía <span id="vb2">2</span></label>
+                                <input id="bat-dias" type="range" min="1" max="7" value="2" step="1" oninput="calcB()">
                             </div>
                             <div class="calc-row">
-                                <label>Descarga maxima DOD % <span id="vb3">80</span></label>
-                                <input type="range" min="40" max="95" value="80" step="5" oninput="calcB()">
+                                <label for="bat-dod">Descarga máxima DOD % <span id="vb3">80</span></label>
+                                <input id="bat-dod" type="range" min="40" max="95" value="80" step="5" oninput="calcB()">
                             </div>
                             <div class="calc-row">
-                                <label>Tipo de bateria</label>
+                                <label for="btype">Tipo de batería</label>
                                 <select onchange="calcB()" id="btype">
                                     <option value="2500|10|15">LiFePO4 10kWh ~$2,500 ARS</option>
                                     <option value="1800|10|12">NMC 10kWh ~$1,800 ARS</option>
@@ -283,7 +264,7 @@
                             </div>
                             <div class="calc-result">
                                 <p class="calc-result-number" id="rb2">3</p>
-                                <p class="calc-result-label">Baterias recomendadas</p>
+                                <p class="calc-result-label">Baterías recomendadas</p>
                             </div>
                             <div class="calc-result">
                                 <p class="calc-result-number" id="rb3">ARS 7,500</p>
@@ -291,22 +272,31 @@
                             </div>
                             <div class="calc-result">
                                 <p class="calc-result-number" id="rb4">15</p>
-                                <p class="calc-result-label">Años de vida util</p>
+                                <p class="calc-result-label">Años de vida útil</p>
                             </div>
+                        </div>
+                        <div class="calc-card-actions">
+                            <a id="wa-baterias" href="https://wa.me/5492944928970" target="_blank" rel="noopener noreferrer" class="button button-primary button-full">Cotizar banco de baterías por WhatsApp</a>
                         </div>
                     </article>
                 </div>
 
                 <article class="calc-card calc-card-wide reveal hover-lift" style="--reveal-delay: 0.2s;">
-                    <h3>Estimador por electrodomestico</h3>
-                    <p class="calc-subtext">Ajusta las horas de uso de cada dispositivo para calcular tu consumo mensual.</p>
+                    <h3>Estimador por electrodoméstico</h3>
+                    <p class="calc-subtext">Ajustá las horas de uso de cada dispositivo para calcular tu consumo mensual.</p>
                     <div class="appliance-grid" id="agrid"></div>
                     <div class="appliance-total">
                         <div class="appliance-total-card">
                             <p class="calc-metric-label">Consumo mensual total</p>
                             <p class="calc-metric-value" id="tcons">0 kWh</p>
                         </div>
-                        <p class="calc-subtext">Ajusta las horas de uso diario de cada dispositivo para ver el consumo mensual estimado.</p>
+                        <div>
+                            <p class="calc-subtext">Podés trasladar este consumo directamente a la calculadora de paneles o enviarnos tu estimación por WhatsApp.</p>
+                            <div class="calc-card-actions" style="border-top:0; padding-top:0.5rem; margin-top:0.5rem;">
+                                <button type="button" class="button button-secondary" onclick="useApplianceTotal()">Usar este consumo en calculadora de paneles ↑</button>
+                                <a id="wa-electro" href="https://wa.me/5492944928970" target="_blank" rel="noopener noreferrer" class="button button-primary">Consultar este consumo por WhatsApp</a>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -317,18 +307,18 @@
                 <div class="contact-shell reveal">
                     <div class="contact-grid">
                         <div>
-                            <p class="section-eyebrow">Llamado a la accion</p>
-                            <h2>Empeza a ahorrar con energia solar</h2>
+                            <p class="section-eyebrow">Llamado a la acción</p>
+                            <h2>Empezá a ahorrar con energía solar</h2>
                             <p class="contact-text">Contanos tu consumo aproximado y te asesoramos con una propuesta simple.</p>
                         </div>
                         <div class="contact-cards">
-                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">Rapida</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia,Argentina</p></div>
-                            <div class="contact-card"><p class="contact-card-label">Atencion</p><p class="contact-card-value">24 Horas</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">Rápida</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Cobertura</p><p class="contact-card-value">Patagonia, Argentina</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Atención</p><p class="contact-card-value">24 Horas</p></div>
                         </div>
                     </div>
                     <div class="contact-action">
-                        <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20asesoramiento%20sobre%20Paneles%20Solares." target="_blank" rel="noreferrer" class="button button-primary shine">Consultar por WhatsApp</a>
+                        <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20asesoramiento%20sobre%20Paneles%20Solares." target="_blank" rel="noopener noreferrer" class="button button-primary">Consultar por WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -337,20 +327,22 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p>Aserradero Don Santiago. Construccion, madera y soluciones profesionales.</p>
-            <p>El Hoyo, Chubut, Argentina</p>
+            <p>Aserradero Don Santiago. Construcción, madera y soluciones profesionales.</p>
+            <p>Ruta Nacional — El Hoyo, Chubut, Argentina · Tel: 2944 92-8970</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20asesoramiento%20sobre%20Paneles%20Solares." target="_blank" rel="noreferrer" class="floating-whatsapp" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20asesoramiento%20sobre%20Paneles%20Solares." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Contactar por WhatsApp">
         <span class="floating-whatsapp-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" class="whatsapp-icon"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.11 0C5.58 0 .26 5.3.26 11.82c0 2.08.54 4.1 1.56 5.89L0 24l6.48-1.69a11.84 11.84 0 0 0 5.63 1.44h.01c6.52 0 11.82-5.31 11.82-11.83 0-3.16-1.23-6.13-3.42-8.44Zm-8.4 18.27h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.84 1 1.03-3.74-.23-.39a9.8 9.8 0 0 1-1.5-5.22c0-5.41 4.4-9.82 9.83-9.82 2.62 0 5.07 1.02 6.92 2.88a9.73 9.73 0 0 1 2.88 6.94c0 5.41-4.41 9.83-9.82 9.83Zm5.39-7.37c-.29-.14-1.73-.85-1.99-.95-.27-.1-.46-.14-.65.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.44-.86-.77-1.44-1.73-1.61-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.2.05-.36-.02-.51-.08-.14-.65-1.57-.89-2.15-.24-.58-.48-.49-.65-.5h-.55c-.19 0-.49.07-.75.36-.26.29-.99.97-.99 2.37s1.01 2.74 1.15 2.93c.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.73-.71 1.97-1.4.24-.69.24-1.29.17-1.4-.07-.11-.27-.18-.56-.32Z"></path></svg>
         </span>
-        WhatsApp
+        <span class="floating-whatsapp-label">WhatsApp</span>
     </a>
 
     <script src="../script.js"></script>
     <script>
+        var lastTotalKwh = 0;
+
         function calcP() {
             var cc = document.querySelectorAll('#calculadoras .calc-card:nth-child(1) input');
             var c = +cc[0].value,
@@ -364,10 +356,19 @@
             var d = c / 30,
                 g = (w / 1000) * h * e,
                 p = Math.ceil(d / g);
+            var kwp = (p * w / 1000).toFixed(1);
+            var m2 = Math.round(p * 1.65);
+            var gen = Math.round(p * g * 30);
             document.getElementById('rp1').textContent = p;
-            document.getElementById('rp2').textContent = (p * w / 1000).toFixed(1);
-            document.getElementById('rp3').textContent = Math.round(p * 1.65);
-            document.getElementById('rp4').textContent = Math.round(p * g * 30);
+            document.getElementById('rp2').textContent = kwp;
+            document.getElementById('rp3').textContent = m2;
+            document.getElementById('rp4').textContent = gen;
+
+            var waP = document.getElementById('wa-paneles');
+            if (waP) {
+                var msg = 'Hola Aserradero Don Santiago, calculé mi sistema de Paneles Solares: consumo mensual ' + c + ' kWh (' + h.toFixed(1) + ' hs pico solar) -> ' + p + ' paneles de ' + w + 'W (' + kwp + ' kWp, ~' + m2 + ' m² de techo, ' + gen + ' kWh/mes generados). Quisiera asesoramiento y presupuesto.';
+                waP.href = 'https://wa.me/5492944928970?text=' + encodeURIComponent(msg);
+            }
         }
 
         function calcB() {
@@ -388,15 +389,22 @@
                 costo = nb * precio;
             document.getElementById('rb1').textContent = cap.toFixed(1);
             document.getElementById('rb2').textContent = nb;
-            document.getElementById('rb3').textContent = 'ARS ' + costo.toLocaleString();
+            document.getElementById('rb3').textContent = 'ARS ' + costo.toLocaleString('es-AR');
             document.getElementById('rb4').textContent = vida;
+
+            var waB = document.getElementById('wa-baterias');
+            if (waB) {
+                var tipoTexto = sel.options[sel.selectedIndex].text;
+                var msgB = 'Hola Aserradero Don Santiago, calculé mi banco de baterías (' + tipoTexto + '): consumo diario ' + d + ' kWh y ' + dias + ' días de autonomía -> ' + nb + ' baterías recomendadas (' + cap.toFixed(1) + ' kWh necesarios, costo estimado ARS ' + costo.toLocaleString('es-AR') + '). Quisiera consultar disponibilidad y presupuesto.';
+                waB.href = 'https://wa.me/5492944928970?text=' + encodeURIComponent(msgB);
+            }
         }
 
         var apps = [
             { n: 'Heladera', w: 150, h: 12 }, { n: 'Lavarropas', w: 500, h: 1 },
             { n: 'Microondas', w: 1000, h: 0.5 }, { n: 'TV 55 pulgadas', w: 120, h: 4 },
             { n: 'Computadora', w: 200, h: 6 }, { n: 'Aire acondicionado', w: 1500, h: 3 },
-            { n: 'Iluminacion LED', w: 60, h: 6 }, { n: 'Cargadores', w: 50, h: 4 },
+            { n: 'Iluminación LED', w: 60, h: 6 }, { n: 'Cargadores', w: 50, h: 4 },
             { n: 'Bomba de agua', w: 750, h: 1 }, { n: 'Calefactor', w: 2000, h: 2 },
             { n: 'Lavavajillas', w: 1200, h: 0.5 }, { n: 'Secarropas', w: 2500, h: 0.5 }
         ];
@@ -409,8 +417,8 @@
                 d.innerHTML =
                     '<div class="appliance-title">' + a.n + '</div>' +
                     '<div class="appliance-power">' + a.w + 'W</div>' +
-                    '<label class="appliance-label">Horas/dia <span id="ah' + i + '">' + a.h + 'h</span></label>' +
-                    '<input type="range" min="0" max="24" value="' + a.h + '" step="0.5" oninput="updApp(' + i + ',this.value)">';
+                    '<label class="appliance-label" for="app-range-' + i + '">Horas/día <span id="ah' + i + '">' + a.h + 'h</span></label>' +
+                    '<input id="app-range-' + i + '" type="range" min="0" max="24" value="' + a.h + '" step="0.5" oninput="updApp(' + i + ',this.value)">';
                 g.appendChild(d);
             });
             updTotal();
@@ -424,7 +432,22 @@
 
         function updTotal() {
             var t = apps.reduce(function (s, a) { return s + (a.w * a.h * 30) / 1000; }, 0);
-            document.getElementById('tcons').textContent = Math.round(t) + ' kWh';
+            lastTotalKwh = Math.round(t);
+            document.getElementById('tcons').textContent = lastTotalKwh + ' kWh';
+            var waE = document.getElementById('wa-electro');
+            if (waE) {
+                var msgE = 'Hola Aserradero Don Santiago, estimé un consumo mensual por electrodomésticos de ' + lastTotalKwh + ' kWh/mes. Quisiera asesoramiento para dimensionar un sistema solar.';
+                waE.href = 'https://wa.me/5492944928970?text=' + encodeURIComponent(msgE);
+            }
+        }
+
+        function useApplianceTotal() {
+            var inputC = document.getElementById('solar-c');
+            if (!inputC) return;
+            var clamped = Math.max(50, Math.min(1500, Math.round(lastTotalKwh / 10) * 10));
+            inputC.value = clamped;
+            calcP();
+            inputC.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         calcP();
@@ -433,5 +456,3 @@
     </script>
 </body>
 </html>
-
-

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clavos | Aserradero Don Santiago</title>
-    <meta name="description" content="Fijaciones confiables para obra.">
-    <meta name="keywords" content="clavos, fijaciones, construccion">
+    <title>Clavos y Fijaciones para Obra | Aserradero Don Santiago</title>
+    <meta name="description" content="Clavos cabeza plana, espiralados, galvanizados para techo, para pallets y punta sin cabeza en El Hoyo, Chubut. Stock permanente por caja o kilo.">
+    <meta name="keywords" content="clavos, fijaciones, construccion, carpinteria, tiranteria, el hoyo, chubut">
     <meta name="author" content="Aserradero Don Santiago">
-    <meta property="og:title" content="Clavos | Aserradero Don Santiago">
-    <meta property="og:description" content="Fijaciones confiables para obra.">
+    <meta property="og:title" content="Clavos y Fijaciones para Obra | Aserradero Don Santiago">
+    <meta property="og:description" content="Fijaciones confiables para obra, tirantería, techos y carpintería.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,48 +17,17 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <!-- Pantalla de carga -->
-    <div id="loading-screen">
-        <img src="../Logos/Pantalla de carga Don Santiago.png" alt="Cargando..." class="loading-logo">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <div id="loading-screen" aria-hidden="true">
+        <img src="../Logos/Pantalla%20de%20carga%20Don%20Santiago.png" alt="Cargando Aserradero Don Santiago" class="loading-logo">
     </div>
-    <style>
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        #loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .loading-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 1500);
-        });
-    </script>
 
-    <!-- Navbar principal -->
     <header class="site-header">
         <div class="container">
             <div class="nav-shell" data-header-shell>
                 <div class="nav-main">
                     <a href="../index.html#inicio" class="brand" aria-label="Aserradero Don Santiago">
+                        <img src="../Logos/Pantalla%20de%20carga%20Don%20Santiago.png" alt="Logo Aserradero Don Santiago" class="brand-logo" width="44" height="44">
                         <div class="brand-copy">
                             <span class="brand-title">Don Santiago</span>
                             <span class="brand-subtitle">Aserradero</span>
@@ -67,19 +36,21 @@
                     <nav class="desktop-nav" aria-label="Principal">
                         <a href="../index.html#inicio">Inicio</a>
                         <a href="../index.html#productos">Productos</a>
+                        <a href="../index.html#herramientas">Calculadoras</a>
                         <a href="../index.html#servicios">Servicios</a>
                         <a href="../index.html#contacto">Contacto</a>
                     </nav>
                     <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavos." target="_blank" rel="noreferrer" class="button button-whatsapp header-whatsapp">WhatsApp</a>
-                    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
+                    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" data-nav-toggle>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                         <span class="nav-toggle-line"></span>
                     </button>
                 </div>
-                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal movil" data-mobile-nav>
+                <nav class="mobile-nav" id="mobile-menu" aria-label="Principal móvil" data-mobile-nav>
                     <a href="../index.html#inicio">Inicio</a>
                     <a href="../index.html#productos">Productos</a>
+                    <a href="../index.html#herramientas">Calculadoras</a>
                     <a href="../index.html#servicios">Servicios</a>
                     <a href="../index.html#contacto">Contacto</a>
                 </nav>
@@ -87,84 +58,116 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero-section">
-            <img src="https://source.unsplash.com/1600x900/?nails,hardware" alt="Clavos" class="hero-image">
+            <img src="../img/Obra/Imagen%20Obra%208.jpeg" alt="Fijaciones y clavos para obra y carpintería en Aserradero Don Santiago" class="hero-image">
             <div class="hero-overlay"></div>
             <div class="hero-fade"></div>
             <div class="container hero-content">
                 <div class="hero-grid">
                     <div class="hero-copy reveal reveal-active" data-reveal="hero-copy">
-                        <h1>Clavos para obra y carpinteria</h1>
-                        <p class="hero-description">Stock listo para entregar. Elegi el tipo y te respondemos en el momento.</p>
+                        <span class="availability-badge">Disponible</span>
+                        <h1>Clavos para obra y carpintería</h1>
+                        <p class="hero-description">Stock listo para entregar. Elegí el tipo de fijación según tu estructura y te respondemos en el momento.</p>
                         <div class="hero-actions">
+                            <a href="#catalogo-clavos" class="button button-secondary">Ver variedades</a>
                             <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavos." target="_blank" rel="noreferrer" class="button button-primary shine hero-whatsapp">Cotizar por WhatsApp</a>
                         </div>
                     </div>
+                    <aside class="hero-panel glass-panel reveal reveal-active" data-reveal="hero-panel">
+                        <div class="metrics-grid">
+                            <div class="metric-card"><p class="metric-label">Variedades</p><p class="metric-value">6 líneas</p></div>
+                            <div class="metric-card"><p class="metric-label">Formatos</p><p class="metric-value">Caja / Kilo</p></div>
+                            <div class="metric-card"><p class="metric-label">Stock</p><p class="metric-value">Inmediato</p></div>
+                            <div class="metric-card"><p class="metric-label">Uso</p><p class="metric-value">Obra y Techo</p></div>
+                        </div>
+                        <div class="hero-panel-detail">
+                            <p class="panel-label">Diferencial</p>
+                            <p class="panel-text">Fijaciones probadas para tirantería pesada, machimbre, cubiertas exteriores y armado de estructuras de madera.</p>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="catalogo-clavos">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-eyebrow">Productos</p>
-                    <h2>Elegi el clavo ideal</h2>
-                    <p class="section-text">Te asesoramos segun el material y el tipo de trabajo.</p>
+                    <h2>Elegí el clavo ideal</h2>
+                    <p class="section-text">Te asesoramos según la madera, el espesor y el esfuerzo estructural de cada unión.</p>
                 </div>
                 <div class="products-grid">
                     <article class="product-card reveal hover-lift" style="--reveal-delay: 0.05s;">
-                        <p class="product-tag">Clavos</p>
+                        <div class="product-card-top">
+                            <p class="product-tag">Clavos</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
                         <h3>Cabeza plana 2 pulgadas</h3>
                         <p>Uso general en obra, maderas blandas y estructuras livianas.</p>
-                        <p class="product-meta">Presentacion: caja o kilo</p>
+                        <p class="product-meta">Presentación: caja o kilo</p>
                         <div class="product-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20cabeza%20plana%202%20pulgadas." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20cabeza%20plana%202%20pulgadas." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">Cotizar por WhatsApp</a>
                         </div>
                     </article>
                     <article class="product-card reveal hover-lift" style="--reveal-delay: 0.1s;">
-                        <p class="product-tag">Clavos</p>
+                        <div class="product-card-top">
+                            <p class="product-tag">Clavos</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
                         <h3>Cabeza plana 3 pulgadas</h3>
-                        <p>Mayor agarre para tiranteria y carpinteria pesada.</p>
-                        <p class="product-meta">Presentacion: caja o kilo</p>
+                        <p>Mayor agarre para tirantería y carpintería pesada.</p>
+                        <p class="product-meta">Presentación: caja o kilo</p>
                         <div class="product-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20cabeza%20plana%203%20pulgadas." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20cabeza%20plana%203%20pulgadas." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">Cotizar por WhatsApp</a>
                         </div>
                     </article>
                     <article class="product-card reveal hover-lift" style="--reveal-delay: 0.15s;">
-                        <p class="product-tag">Clavos</p>
+                        <div class="product-card-top">
+                            <p class="product-tag">Clavos</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
                         <h3>Espiralado</h3>
-                        <p>Mejor sujecion en maderas duras y estructuras de alto esfuerzo.</p>
-                        <p class="product-meta">Presentacion: caja o kilo</p>
+                        <p>Mejor sujeción en maderas duras y estructuras de alto esfuerzo.</p>
+                        <p class="product-meta">Presentación: caja o kilo</p>
                         <div class="product-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20espiralado." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20espiralado." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">Cotizar por WhatsApp</a>
                         </div>
                     </article>
                     <article class="product-card reveal hover-lift" style="--reveal-delay: 0.2s;">
-                        <p class="product-tag">Clavos</p>
+                        <div class="product-card-top">
+                            <p class="product-tag">Clavos</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
                         <h3>Galvanizado para techo</h3>
-                        <p>Proteccion extra contra humedad para cubiertas y exterior.</p>
-                        <p class="product-meta">Presentacion: caja o kilo</p>
+                        <p>Protección extra contra humedad para cubiertas y exterior.</p>
+                        <p class="product-meta">Presentación: caja o kilo</p>
                         <div class="product-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20galvanizado%20para%20techo." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20galvanizado%20para%20techo." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">Cotizar por WhatsApp</a>
                         </div>
                     </article>
                     <article class="product-card reveal hover-lift" style="--reveal-delay: 0.25s;">
-                        <p class="product-tag">Clavos</p>
+                        <div class="product-card-top">
+                            <p class="product-tag">Clavos</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
                         <h3>Para pallets</h3>
                         <p>Resistentes para armado de embalajes, pallets y cajones.</p>
-                        <p class="product-meta">Presentacion: bolsa o kilo</p>
+                        <p class="product-meta">Presentación: bolsa o kilo</p>
                         <div class="product-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20para%20pallets." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20para%20pallets." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">Cotizar por WhatsApp</a>
                         </div>
                     </article>
                     <article class="product-card reveal hover-lift" style="--reveal-delay: 0.3s;">
-                        <p class="product-tag">Clavos</p>
+                        <div class="product-card-top">
+                            <p class="product-tag">Clavos</p>
+                            <span class="availability-badge">Disponible</span>
+                        </div>
                         <h3>Punta sin cabeza</h3>
-                        <p>Terminaciones limpias para muebles y trabajos finos.</p>
-                        <p class="product-meta">Presentacion: caja</p>
+                        <p>Terminaciones limpias para muebles, molduras y trabajos finos.</p>
+                        <p class="product-meta">Presentación: caja</p>
                         <div class="product-actions">
-                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20punta%20sin%20cabeza." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">WhatsApp</a>
+                            <a href="https://wa.me/5492944928970?text=Hola%20Aserradero%20Don%20Santiago,%20quiero%20cotizar%20Clavo%20punta%20sin%20cabeza." target="_blank" rel="noreferrer" class="button button-whatsapp button-small">Cotizar por WhatsApp</a>
                         </div>
                     </article>
                 </div>
@@ -175,20 +178,20 @@
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-eyebrow">Ventajas</p>
-                    <h2>Compra rapida y segura</h2>
+                    <h2>Compra rápida y segura</h2>
                 </div>
                 <div class="benefits-grid">
                     <article class="benefit-card reveal hover-lift" style="--reveal-delay: 0.05s;">
                         <h3>Stock real</h3>
-                        <p>Te confirmamos disponibilidad en el momento.</p>
+                        <p>Te confirmamos disponibilidad en el momento para retiro o envío.</p>
                     </article>
                     <article class="benefit-card reveal hover-lift" style="--reveal-delay: 0.1s;">
                         <h3>Asesoramiento directo</h3>
-                        <p>Elegis el tipo correcto segun tu obra.</p>
+                        <p>Elegís el tipo y largo correcto según tu obra o estructura.</p>
                     </article>
                     <article class="benefit-card reveal hover-lift" style="--reveal-delay: 0.15s;">
                         <h3>Respuesta inmediata</h3>
-                        <p>Atencion agil por WhatsApp y retiro rapido.</p>
+                        <p>Atención ágil por WhatsApp y retiro rápido en El Hoyo.</p>
                     </article>
                 </div>
             </div>
@@ -200,11 +203,11 @@
                     <div class="contact-grid">
                         <div>
                             <p class="section-eyebrow">Listo para comprar</p>
-                            <h2>Pedinos tu cotizacion ahora</h2>
+                            <h2>Pedinos tu cotización ahora</h2>
                             <p class="contact-text">Contanos tipo, medida y cantidad y te respondemos en minutos.</p>
                         </div>
                         <div class="contact-cards">
-                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">Rapida</p></div>
+                            <div class="contact-card"><p class="contact-card-label">Respuesta</p><p class="contact-card-value">Rápida</p></div>
                             <div class="contact-card"><p class="contact-card-label">Entrega</p><p class="contact-card-value">Local</p></div>
                             <div class="contact-card"><p class="contact-card-label">Soporte</p><p class="contact-card-value">Personalizado</p></div>
                         </div>
@@ -219,7 +222,7 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p>Aserradero Don Santiago. Construccion, madera y soluciones profesionales.</p>
+            <p>Aserradero Don Santiago. Construcción, madera y soluciones profesionales.</p>
             <p>El Hoyo, Chubut, Argentina</p>
         </div>
     </footer>
